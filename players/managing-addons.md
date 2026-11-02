@@ -10,7 +10,7 @@ You'll find them in two places:
 - **Addons** are in **Advanced**, **Addons**.
 - **Resource packs** are in **Graphics**, **Resource Packs**.
 
-Shaderpacks work a little differently and have [their own page](https://project-viewpoint.github.io/viewpoint-docs/players/shaderpacks.md).
+Shaderpacks work a little differently and have [their own page](https://docs.projectviewpoint.org/players/shaderpacks.md).
 
 ## Install an addon
 
@@ -84,7 +84,7 @@ further that way. When you drag, drop on the top half of another card to land ab
 
 Order matters when two addons want the same thing. If they change the same model, tile or hook, the one nearer the top
 wins. Some things can only belong to one addon at a time, like the camera or the reticle. The addon nearer the top gets it,
-and the other addon's card tells you who has it. [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md) has the details.
+and the other addon's card tells you who has it. [Order](https://docs.projectviewpoint.org/concepts/order.md) has the details.
 
 ## See what an addon does
 
@@ -124,7 +124,7 @@ version. It isn't a promise about what the code will do, and Lua isn't checked a
 | **Red** | Red name and icon, on a red card | The code can do things outside Viewpoint's control. It stays off until you allow it, so only do that for authors you trust. |
 
 Point at the icon or the name to read what the label means. The full wording is on the
-[Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md#the-texts-that-the-player-sees) page.
+[Labels](https://docs.projectviewpoint.org/trust/labels.md#the-texts-that-the-player-sees) page.
 
 A card may also tell you that an addon draws over the whole screen, or that any mod's Lua can call its Java. It's worth
 reading those lines before you turn it on.
@@ -196,4 +196,4 @@ sprite, the one nearer the top wins. Older Viewpoint model packs appear here too
 
 ---
 
-Previous: [Migrating from Java](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/migrating-from-java.md) | Next: [Shaderpacks](https://project-viewpoint.github.io/viewpoint-docs/players/shaderpacks.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Migrating from Java](https://docs.projectviewpoint.org/shaderpacks/migrating-from-java.md) | Next: [Shaderpacks](https://docs.projectviewpoint.org/players/shaderpacks.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

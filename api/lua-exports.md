@@ -38,7 +38,7 @@ public final class Fireworks {
 Lua has no overloads. If two methods have the same Lua name, Viewpoint refuses both.
 
 A mod that you port from ZombieBuddy can keep its `@Exposer.LuaClass` classes: Viewpoint reads them as exports of
-their public static methods. See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+their public static methods. See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 A method that is not public and static is not an export. The instance methods of a class are never exports.
 
@@ -149,8 +149,8 @@ public static void close(LuaHandle session) {
 - Viewpoint counts each call and adds its time to `addon.<id>.mainMs`. The Performance tab shows the sum.
 - If an export **throws**, Viewpoint suspends the addon and gives a Lua error. Do not let an export throw for a wrong
   argument of the caller: check the arguments, and return a result that tells the caller.
-- Treat every argument as if a stranger sent it. Any mod can call your exports. For a path, use [`AddonFiles`](https://project-viewpoint.github.io/viewpoint-docs/api/files.md).
-  For an address, use [`AddonDownloads`](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md). Their rules apply to an argument from Lua too.
+- Treat every argument as if a stranger sent it. Any mod can call your exports. For a path, use [`AddonFiles`](https://docs.projectviewpoint.org/api/files.md).
+  For an address, use [`AddonDownloads`](https://docs.projectviewpoint.org/api/downloads.md). Their rules apply to an argument from Lua too.
 
 ## The errors that Lua sees
 
@@ -201,4 +201,4 @@ addon can then unload. Do not keep a `LuaTable` or a `LuaHandle` in a static fie
 
 ---
 
-Previous: [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md) | Next: [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md) | Next: [Files](https://docs.projectviewpoint.org/api/files.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

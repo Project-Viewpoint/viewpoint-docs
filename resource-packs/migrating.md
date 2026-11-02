@@ -3,7 +3,7 @@
 > Change an older model pack into a resource pack, replace the lines of each facing with one group bind, and join the models of the states of an object into one model.
 
 Version 1 manifests and older model packs are deprecated. They continue to work. A new pack starts at version 2: see
-[Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md). This page tells you how to change an existing pack, one step at a time. You can stop
+[Format](https://docs.projectviewpoint.org/resource-packs/format.md). This page tells you how to change an existing pack, one step at a time. You can stop
 after any step.
 
 | Step | What you get |
@@ -16,7 +16,7 @@ after any step.
 
 An older pack is a mod whose Lua calls `Viewpoint.ModelPacks.register`. Viewpoint shows it as a *legacy* pack.
 
-1. Make the file `media/viewpoint/resourcepacks/<id>/pack.properties`. See [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) for the
+1. Make the file `media/viewpoint/resourcepacks/<id>/pack.properties`. See [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) for the
    id and the common keys.
 2. Add `models=` with the path of your manifest. The path is relative to the folder of the pack.
 3. Move the manifest, the OBJ, MTL and PNG files into the folder of the pack, or set `models=` to their current path.
@@ -34,7 +34,7 @@ game.min=42.21
 models=models/manifest.txt
 ```
 
-The manifest does not change. For more, see [Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+The manifest does not change. For more, see [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 ## 2. Use group binds
 
@@ -101,7 +101,7 @@ at the same time, the names do not have the tags, or a name has both tags.
 > **Tip**
 >
 > Only the parts that change are in the model two times. A lamp that changes only its shade costs the shade two times,
-> not the whole lamp. See [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) for the objects that can be lit.
+> not the whole lamp. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) for the objects that can be lit.
 
 ## What to check
 
@@ -114,4 +114,4 @@ at the same time, the names do not have the tags, or a name has both tags.
 
 ---
 
-Previous: [Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md) | Next: [Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md) | Next: [Format](https://docs.projectviewpoint.org/shaderpacks/format.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

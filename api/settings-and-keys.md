@@ -56,7 +56,7 @@ If the file is wrong, Viewpoint does not start the addon and lists every problem
 | `<name>.apply` | All | When a change has an effect: `live`, `activate` or `restart`. The default is `live`. |
 | `<name>.shownWhen` | All | The row shows only while this condition is true. |
 | `<name>.enabledWhen` | All | The player can change the row only while this condition is true. |
-| `<name>.lua` | All | `true` lets the game's Lua read the value (see [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md)). The default is `false`. |
+| `<name>.lua` | All | `true` lets the game's Lua read the value (see [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md)). The default is `false`. |
 | `<name>.min`, `.max`, `.step`, `.unit` | `number` | The range of the slider, its step, and a unit after the value. |
 | `<name>.choices` | `choice` | The values, with commas between them. |
 
@@ -86,7 +86,7 @@ older release. Then the older addon cannot write over the values of the newer on
 
 Viewpoint keeps the values as `addon.<encoded id>.<name>` in `viewpoint-live.properties`. The encoded id writes `.` and
 `-` as `_`. For the id `example.lean` and the setting `angle`, the key is `addon.example_lean.angle`. **Reset** on the
-addon's settings page sets the defaults again. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+addon's settings page sets the defaults again. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## Read the values
 
@@ -199,4 +199,4 @@ A key does not operate in these conditions:
 
 ---
 
-Previous: [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) | Next: [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [View state](https://docs.projectviewpoint.org/api/view-state.md) | Next: [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

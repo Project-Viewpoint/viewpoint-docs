@@ -45,9 +45,9 @@ uniform float uAddon_example_lean_angle;
 For the addon `example.lean` and the value `angle`, this is the name above. Viewpoint sets the value on each Viewpoint
 program that declares the uniform. This includes:
 
-- the passes of a Shaderpack. See [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md#values-of-addons);
-- the snippets of addons. See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md);
-- the programs that you make with `Gpu`. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md);
+- the passes of a Shaderpack. See [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md#values-of-addons);
+- the snippets of addons. See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md);
+- the programs that you make with `Gpu`. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md);
 - the programs of an Iris pack. Viewpoint binds the values by name for each program that declares them.
 
 A program that does not declare the uniform gets nothing. A declared value that you have not set is 0. When your addon
@@ -63,8 +63,8 @@ goes off, its values are 0 again.
 > **Note**
 >
 > The game gives events of the fight itself, for example a shot. You do not have to pulse them. See
-> [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md#event-values).
+> [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md#event-values).
 
 ---
 
-Previous: [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md) | Next: [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Model providers](https://docs.projectviewpoint.org/api/model-providers.md) | Next: [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

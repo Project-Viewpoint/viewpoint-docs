@@ -8,10 +8,10 @@ page.
 - Every member on this page has a level: **Amber** or **Red**. The level goes on the label of your addon.
 - An addon that uses or hooks a member on this page is never **Normal**.
 - Internal members can change in each Viewpoint release. Your addon can stop working after an update. Test it after
-  each release. [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) lists what each release changed.
+  each release. [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) lists what each release changed.
 - Viewpoint does not load a jar that uses or hooks a member that is not on this page.
 - A new member from this page in an update needs the consent of the player again. See
-  [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+  [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## The list
 
@@ -25,7 +25,7 @@ class is public, and its level. A row in the block is one member. The columns ar
 | --- | --- |
 | **Member** | A field, or a method with its descriptor. |
 | **Use or hook** | What you can do with the member. **Use** means that you call the method or read the field. It is possible only when the class and the member are public. **Hook** means that you put a hook on a method. It is possible for any access. **Reflect** means that you look up the member by name with reflection. It is possible for any access. |
-| **Thread** | The thread on which the member runs: `main`, `render`, `any` or `worker`. It decides the kind of hook that you can use. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md#threads). |
+| **Thread** | The thread on which the member runs: `main`, `render`, `any` or `worker`. It decides the kind of hook that you can use. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md#threads). |
 | **Level** | **Amber** or **Red**. Reflection into any member is always Red. |
 | **Since** | The Viewpoint release in which the member came on the list. |
 | **Replacement** | The `viewpoint.api` type that does the same, if there is one. A deprecated member names its replacement here. |
@@ -2018,4 +2018,4 @@ not have what you need. The maintainers add members on request, and they review 
 
 ---
 
-Previous: [Permissions](https://project-viewpoint.github.io/viewpoint-docs/reference/permissions.md) | Next: [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Permissions](https://docs.projectviewpoint.org/reference/permissions.md) | Next: [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

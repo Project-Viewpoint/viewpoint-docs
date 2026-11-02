@@ -16,15 +16,15 @@ hooks.targets=zombie.characters.IsoPlayer,zombie.iso.IsoGridSquare
 ```
 
 Viewpoint refuses each `@Hook` whose `target` is not in this list. The list takes the classes of Viewpoint that are on
-the [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md), as it takes game classes. A new class in the list needs the
-player's consent again. For a class of Viewpoint, each new hooked member needs it also. See [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+the [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md), as it takes game classes. A new class in the list needs the
+player's consent again. For a class of Viewpoint, each new hooked member needs it also. See [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## Refused targets
 
 | Target | Reason |
 | --- | --- |
-| Viewpoint's classes and members that are not in the [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) | Use `viewpoint.api`, or a member from the list. A hook on a listed member gives an Amber or Red label. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md). |
-| Classes of another addon | Hooks on the code of another author cannot be ordered or checked. Ask the author to publish a [service](https://project-viewpoint.github.io/viewpoint-docs/api/services.md). |
+| Viewpoint's classes and members that are not in the [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) | Use `viewpoint.api`, or a member from the list. A hook on a listed member gives an Amber or Red label. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md). |
+| Classes of another addon | Hooks on the code of another author cannot be ordered or checked. Ask the author to publish a [service](https://docs.projectviewpoint.org/api/services.md). |
 | Java's classes | These are not the game's classes. |
 | ZombieBuddy and ByteBuddy | These load and patch the game. |
 | Game code that reads files or opens network connections, as far as Viewpoint can read it | Viewpoint does not let addons change it. |
@@ -48,7 +48,7 @@ then names the class.
 
 | Good | Bad |
 | --- | --- |
-| A method that the game calls one time each tick or less: an update, an event, a click. | A method that the game calls thousands of times each frame, for example a square accessor. It is a **costly hook**, unless the handler is [typed](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#typed-handlers). |
+| A method that the game calls one time each tick or less: an update, an event, a click. | A method that the game calls thousands of times each frame, for example a square accessor. It is a **costly hook**, unless the handler is [typed](https://docs.projectviewpoint.org/patching/managed-patching.md#typed-handlers). |
 | A method with one clear overload, selected by its descriptor. | A method whose result depends on a different thread. |
 | A hook that only reads. | A hook that skips a method that the game needs. |
 
@@ -57,7 +57,7 @@ then names the class.
 The game calls some methods from threads that are not the main thread. Viewpoint does not run a `thread = MAIN`
 handler for those calls, and counts them. A method of Viewpoint that runs on the render thread takes only a
 `thread = RENDER` hook. Viewpoint refuses a `MAIN` hook on it. See
-[Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#threads).
+[Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md#threads).
 
 > **Caution**
 >
@@ -66,4 +66,4 @@ handler for those calls, and counts them. A method of Viewpoint that runs on the
 
 ---
 
-Previous: [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md) | Next: [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md) | Next: [Permissions](https://docs.projectviewpoint.org/trust/permissions.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

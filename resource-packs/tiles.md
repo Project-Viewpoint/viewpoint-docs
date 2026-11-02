@@ -69,8 +69,8 @@ Viewpoint also bakes walls into arrays, in `memory.wallMiB`. With walls of 256 Ã
 ## Order
 
 When two packs have the same tile, the pack nearer the top of the Active column wins, for each tile. See
-[Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+[Order](https://docs.projectviewpoint.org/concepts/order.md).
 
 ---
 
-Previous: [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) | Next: [Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) | Next: [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

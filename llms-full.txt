@@ -2,23 +2,23 @@
 
 > Write an addon, a resource pack or a Shaderpack for Viewpoint, and manage the packages you install.
 
-- [Start here](https://project-viewpoint.github.io/viewpoint-docs/start/introduction.md)
-- [For players](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md)
-- [Getting started](https://project-viewpoint.github.io/viewpoint-docs/start/getting-started.md)
-- [The descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md)
+- [Start here](https://docs.projectviewpoint.org/start/introduction.md)
+- [For players](https://docs.projectviewpoint.org/players/managing-addons.md)
+- [Getting started](https://docs.projectviewpoint.org/start/getting-started.md)
+- [The descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md)
 
-For an AI agent: the list of every page is [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt).
+For an AI agent: the list of every page is [llms.txt](https://docs.projectviewpoint.org/llms.txt).
 
-- [Start](https://project-viewpoint.github.io/viewpoint-docs/start/introduction.md): What a package is. How to make the smallest addon. The samples.
-- [For players](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md): Install, order and switch packages. Read a label.
-- [Concepts](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md): The three kinds of package, the descriptor, the states, the versions and the order.
-- [API 1.0](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md): The view state, settings, services, the camera, the fight, models and shader values.
-- [Patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md): Declare hooks into game methods and into Viewpoint. Viewpoint installs, orders and lists them.
-- [Labels & consent](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md): Permissions, labels, consent and updates.
-- [Performance](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md): The memory pools, the estimates, and how to measure your package.
-- [Resource packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md): Models, tiles, sounds and data, with no code.
-- [Shaderpacks](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md): Change how Viewpoint draws the world, with GLSL files and no Java.
-- [Reference](https://project-viewpoint.github.io/viewpoint-docs/reference/descriptor-keys.md): Descriptor keys, labels, permissions, the internals list and a glossary.
+- [Start](https://docs.projectviewpoint.org/start/introduction.md): What a package is. How to make the smallest addon. The samples.
+- [For players](https://docs.projectviewpoint.org/players/managing-addons.md): Install, order and switch packages. Read a label.
+- [Concepts](https://docs.projectviewpoint.org/concepts/package-kinds.md): The three kinds of package, the descriptor, the states, the versions and the order.
+- [API 1.0](https://docs.projectviewpoint.org/api/view-state.md): The view state, settings, services, the camera, the fight, models and shader values.
+- [Patching](https://docs.projectviewpoint.org/patching/managed-patching.md): Declare hooks into game methods and into Viewpoint. Viewpoint installs, orders and lists them.
+- [Labels & consent](https://docs.projectviewpoint.org/trust/labels.md): Permissions, labels, consent and updates.
+- [Performance](https://docs.projectviewpoint.org/performance/assets-and-budgets.md): The memory pools, the estimates, and how to measure your package.
+- [Resource packs](https://docs.projectviewpoint.org/resource-packs/format.md): Models, tiles, sounds and data, with no code.
+- [Shaderpacks](https://docs.projectviewpoint.org/shaderpacks/format.md): Change how Viewpoint draws the world, with GLSL files and no Java.
+- [Reference](https://docs.projectviewpoint.org/reference/descriptor-keys.md): Descriptor keys, labels, permissions, the internals list and a glossary.
 
 ---
 
@@ -38,16 +38,16 @@ addons, resource packs and Shaderpacks. Players see each package and control it 
 | **Shaderpack** | GLSL files and their options. No Java. | `pack.properties` |
 
 A model pack in the older Viewpoint model pack format is a resource pack with the *legacy* flag. See
-[Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md).
+[Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md).
 
 ## What Viewpoint does with your package
 
 - It loads your jar in a class loader of its own. Your code can use `viewpoint.api`, and the members of Viewpoint that
-  are on the [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md).
+  are on the [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md).
 - It shows your package in the settings window: an addon in **Advanced**, **Addons**, a resource pack in **Graphics**,
   **Resource Packs**, and a Shaderpack in **Graphics**, **Shaderpacks**. The player orders it, switches it on and off, and reads what it does. A
   restart is not necessary.
-- It checks your jar when it loads it, and shows a label: **Normal**, **Amber** or **Red**. See [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md).
+- It checks your jar when it loads it, and shows a label: **Normal**, **Amber** or **Red**. See [Labels](https://docs.projectviewpoint.org/trust/labels.md).
 - It installs the hooks that you declare, runs them in the player's order, and lists each active hook.
 - It gives you files, downloads and assets through its services. Each service has a permission and limits.
 
@@ -55,25 +55,25 @@ A model pack in the older Viewpoint model pack format is a resource pack with th
 
 | To do this | Use | Page |
 | --- | --- | --- |
-| Read where the view is and what it shows | `ViewState`, `ViewListener` | [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) |
-| Give settings and key bindings | `settings.properties`, `AddonSettings`, `KeyAction` | [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md) |
-| Read the view state from Lua | `Viewpoint.Addons` | [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md) |
-| Give your Java functions to Lua | `@LuaExport` | [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) |
-| Keep files | `AddonFiles` | [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) |
-| Get a file from the internet | `AddonDownloads` | [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) |
-| Load models, textures, sounds and data | `AddonAssets` | [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md) |
-| Give a feature to other addons | `Services` | [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md) |
-| Move the camera | `CameraLayer`, `CameraClaim` | [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) |
-| Follow the aim and the shots | `AimListener`, `ShotListener` | [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) |
-| Choose the model of an object | `ModelProvider`, `AttachmentProvider` | [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md) |
-| Give numbers to shader code | `ShaderValues` | [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md) |
-| Add a piece of GLSL to a shader | `AddonSnippets` | [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) |
-| Draw with OpenGL | `DrawCallback`, `Gpu` | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned) |
-| Change what a game method does | `@Hook` | [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) |
-| Change what a method of Viewpoint does | `@Hook` on a listed member | [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md) |
-| Replace the game's tile art | The `tiles` folder of a resource pack | [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md) |
-| Choose a model from the state of an object | A version 2 manifest | [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) |
-| Change how the whole frame looks | A Shaderpack | [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md) |
+| Read where the view is and what it shows | `ViewState`, `ViewListener` | [View state](https://docs.projectviewpoint.org/api/view-state.md) |
+| Give settings and key bindings | `settings.properties`, `AddonSettings`, `KeyAction` | [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md) |
+| Read the view state from Lua | `Viewpoint.Addons` | [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md) |
+| Give your Java functions to Lua | `@LuaExport` | [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) |
+| Keep files | `AddonFiles` | [Files](https://docs.projectviewpoint.org/api/files.md) |
+| Get a file from the internet | `AddonDownloads` | [Downloads](https://docs.projectviewpoint.org/api/downloads.md) |
+| Load models, textures, sounds and data | `AddonAssets` | [Assets](https://docs.projectviewpoint.org/api/assets.md) |
+| Give a feature to other addons | `Services` | [Services](https://docs.projectviewpoint.org/api/services.md) |
+| Move the camera | `CameraLayer`, `CameraClaim` | [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) |
+| Follow the aim and the shots | `AimListener`, `ShotListener` | [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) |
+| Choose the model of an object | `ModelProvider`, `AttachmentProvider` | [Model providers](https://docs.projectviewpoint.org/api/model-providers.md) |
+| Give numbers to shader code | `ShaderValues` | [Shader values](https://docs.projectviewpoint.org/api/shader-values.md) |
+| Add a piece of GLSL to a shader | `AddonSnippets` | [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) |
+| Draw with OpenGL | `DrawCallback`, `Gpu` | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned) |
+| Change what a game method does | `@Hook` | [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) |
+| Change what a method of Viewpoint does | `@Hook` on a listed member | [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md) |
+| Replace the game's tile art | The `tiles` folder of a resource pack | [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md) |
+| Choose a model from the state of an object | A version 2 manifest | [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) |
+| Change how the whole frame looks | A Shaderpack | [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md) |
 
 A page marked *planned* is not written yet. Its feature is part of API 1.0. The sidebar group **Planned** lists these pages.
 
@@ -81,20 +81,20 @@ A page marked *planned* is not written yet. Its feature is part of API 1.0. The 
 >
 > A mod that loads its Java through ZombieBuddy (`javaJarFile` in `mod.info`) is not managed by Viewpoint. Viewpoint
 > shows it as **Unmanaged**. Viewpoint cannot order it, switch it off or check it. To change such a mod into an addon,
-> read [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+> read [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 ## Licence
 
 The addon API (`viewpoint-api.jar`), the samples and these pages have the MIT licence. Viewpoint itself has a different
-licence. The font of these pages is Roboto Medium, under the Apache 2.0 licence ([notice](https://project-viewpoint.github.io/viewpoint-docs/notices/Roboto.txt)).
+licence. The font of these pages is Roboto Medium, under the Apache 2.0 licence ([notice](https://docs.projectviewpoint.org/notices/Roboto.txt)).
 
 ## Where to go next
 
-1. [Getting started](https://project-viewpoint.github.io/viewpoint-docs/start/getting-started.md): make the smallest addon and switch it on.
-2. [Sample walkthrough](https://project-viewpoint.github.io/viewpoint-docs/start/sample-walkthrough.md): the samples that use each service.
-3. [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md): which kind of package to make.
-4. [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md): all keys of the descriptors.
-5. [Glossary](https://project-viewpoint.github.io/viewpoint-docs/reference/glossary.md): the terms these pages use.
+1. [Getting started](https://docs.projectviewpoint.org/start/getting-started.md): make the smallest addon and switch it on.
+2. [Sample walkthrough](https://docs.projectviewpoint.org/start/sample-walkthrough.md): the samples that use each service.
+3. [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md): which kind of package to make.
+4. [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md): all keys of the descriptors.
+5. [Glossary](https://docs.projectviewpoint.org/reference/glossary.md): the terms these pages use.
 
 ---
 
@@ -104,7 +104,7 @@ licence. The font of these pages is Roboto Medium, under the Apache 2.0 licence 
 
 This page makes an addon that writes a line to the game's log when it switches on and off. The addon has three
 parts: a descriptor, a jar with one class, and a mod folder. The code on this page is the code of
-`minimaladdon` in the source repository. [`sampleaddon`](https://project-viewpoint.github.io/viewpoint-docs/start/sample-walkthrough.md) has a part for each service.
+`minimaladdon` in the source repository. [`sampleaddon`](https://docs.projectviewpoint.org/start/sample-walkthrough.md) has a part for each service.
 
 ## What you need
 
@@ -161,7 +161,7 @@ entry=example.minimal.MinimalAddon
 side=client
 ```
 
-An addon must have `game.min`, `api`, `jar` and `entry`. The [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) page gives all keys.
+An addon must have `game.min`, `api`, `jar` and `entry`. The [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) page gives all keys.
 This addon asks for no permission, because it uses no service that needs one.
 
 ## The class
@@ -232,16 +232,16 @@ tasks.jar {
 
 After you switch it off, none of the code of the addon runs. If you change the jar, the next enable loads the new
 jar. If the new jar asks for more, the player must give consent again. See
-[Lifecycle & threads](https://project-viewpoint.github.io/viewpoint-docs/concepts/lifecycle-and-threads.md) and [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Lifecycle & threads](https://docs.projectviewpoint.org/concepts/lifecycle-and-threads.md) and [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## Next
 
-- Add a [setting and a key](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md).
-- Read the [view state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) of every frame.
-- Hook a game method with [managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
-- Add an [offset to the camera](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) with a layer.
-- Make a [Shaderpack](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md) or a [resource pack](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md) in place of an addon, if you
-  have no code. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md).
+- Add a [setting and a key](https://docs.projectviewpoint.org/api/settings-and-keys.md).
+- Read the [view state](https://docs.projectviewpoint.org/api/view-state.md) of every frame.
+- Hook a game method with [managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md).
+- Add an [offset to the camera](https://docs.projectviewpoint.org/api/camera-layers.md) with a layer.
+- Make a [Shaderpack](https://docs.projectviewpoint.org/shaderpacks/format.md) or a [resource pack](https://docs.projectviewpoint.org/resource-packs/format.md) in place of an addon, if you
+  have no code. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md).
 
 ## If it does not appear
 
@@ -250,7 +250,7 @@ jar. If the new jar asks for more, the player must give consent again. See
 | No card | The mod was off when the game started, or the folder name is not the `id`. | Enable the mod and start the game again. Make the folder name the same as the `id`. |
 | **Incompatible** | `game.min`, `game.max`, `viewpoint.min`, `viewpoint.max` or `api` does not agree with this installation. | Read the card. It names the range. Correct the range or the build. |
 | **Failed** | The jar did not load, or `entry` is not a class that implements `Addon`. | Read the card and `console.txt`. They give the cause. |
-| Nothing occurs when you click the green tick | The check refused the jar, or the ZombieBuddy policy blocks addons with Java. | Read the card. It gives the cause. See [ZombieBuddy policy & signatures](https://project-viewpoint.github.io/viewpoint-docs/trust/relation-to-zombiebuddy.md). |
+| Nothing occurs when you click the green tick | The check refused the jar, or the ZombieBuddy policy blocks addons with Java. | Read the card. It gives the cause. See [ZombieBuddy policy & signatures](https://docs.projectviewpoint.org/trust/relation-to-zombiebuddy.md). |
 
 ---
 
@@ -294,22 +294,22 @@ uses `example.sample`. It has these parts:
 
 | Part | What it does | Page |
 | --- | --- | --- |
-| `SampleAddon` | Starts the parts. Writes a line to the log when the addon switches on, when its hooks are live, and when it switches off. | [Getting started](https://project-viewpoint.github.io/viewpoint-docs/start/getting-started.md) |
-| `ViewPart` | A `ViewListener`. Once a second, it writes the eye's height and the ground height under the crosshair. | [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) |
-| `SettingsPart` | One toggle, two numbers and one key. The key writes a line when you push it. It also adds a settings page, with a button and two value rows. | [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md) |
-| `FilesPart` | Writes a counter with `AddonFiles` at each enable, and reads it again. | [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) |
-| `DownloadPart` | Asks to download one small file when you click its button on the settings page. The player sees the prompt each time. | [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) |
-| `HookPart` | One `@Hook.Before` hook on a game method. Its handler only reads the call. | [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) |
-| `ViewpointHookPart` | One hook on a listed method of Viewpoint. The render thread calls that method, so the hook has `thread = ANY`, with a typed handler. | [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md) |
-| `ExportPart` | Gives one Java function to Lua: `Sample.twice(21)`. | [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) |
-| `CameraPart` | A camera layer that rolls the view a little while the key is down. | [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) |
-| `ShotPart` | A `ShotListener` that writes the number of hits of each shot. | [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) |
-| `DrawPart` | A draw callback that draws one small triangle with `Gpu`, in the top right corner of the screen. | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) |
-| `SnippetPart` | A shader snippet that tints the light at `colour.end`. While it links, the game pauses. | [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) |
-| `ValuesPart` | Sets a shader value that the snippet reads. | [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md) |
-| `AssetsPart` | Writes what its model and its texture take, reads one data file, and loads and plays one sound. | [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md) |
+| `SampleAddon` | Starts the parts. Writes a line to the log when the addon switches on, when its hooks are live, and when it switches off. | [Getting started](https://docs.projectviewpoint.org/start/getting-started.md) |
+| `ViewPart` | A `ViewListener`. Once a second, it writes the eye's height and the ground height under the crosshair. | [View state](https://docs.projectviewpoint.org/api/view-state.md) |
+| `SettingsPart` | One toggle, two numbers and one key. The key writes a line when you push it. It also adds a settings page, with a button and two value rows. | [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md) |
+| `FilesPart` | Writes a counter with `AddonFiles` at each enable, and reads it again. | [Files](https://docs.projectviewpoint.org/api/files.md) |
+| `DownloadPart` | Asks to download one small file when you click its button on the settings page. The player sees the prompt each time. | [Downloads](https://docs.projectviewpoint.org/api/downloads.md) |
+| `HookPart` | One `@Hook.Before` hook on a game method. Its handler only reads the call. | [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) |
+| `ViewpointHookPart` | One hook on a listed method of Viewpoint. The render thread calls that method, so the hook has `thread = ANY`, with a typed handler. | [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md) |
+| `ExportPart` | Gives one Java function to Lua: `Sample.twice(21)`. | [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) |
+| `CameraPart` | A camera layer that rolls the view a little while the key is down. | [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) |
+| `ShotPart` | A `ShotListener` that writes the number of hits of each shot. | [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) |
+| `DrawPart` | A draw callback that draws one small triangle with `Gpu`, in the top right corner of the screen. | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) |
+| `SnippetPart` | A shader snippet that tints the light at `colour.end`. While it links, the game pauses. | [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) |
+| `ValuesPart` | Sets a shader value that the snippet reads. | [Shader values](https://docs.projectviewpoint.org/api/shader-values.md) |
+| `AssetsPart` | Writes what its model and its texture take, reads one data file, and loads and plays one sound. | [Assets](https://docs.projectviewpoint.org/api/assets.md) |
 
-The descriptor asks only for the permissions that the sample uses. See [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md).
+The descriptor asks only for the permissions that the sample uses. See [Permissions](https://docs.projectviewpoint.org/trust/permissions.md).
 
 The card shows the label of the sample. Open the card's **Info**. Read **Trust**, then **Permissions**, then **Hooks**.
 The player reads these tabs before they give consent. Look at them once from the player's side.
@@ -333,8 +333,8 @@ It has these parts:
 - a floor and a wall, each with its normal and specular texture;
 - one sound, which the card includes. Viewpoint does not play the sounds of a resource pack.
 
-See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md), [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) and
-[Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md).
+See [Format](https://docs.projectviewpoint.org/resource-packs/format.md), [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) and
+[Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md).
 
 ## `sampleshaderpack`
 
@@ -348,13 +348,13 @@ A Shaderpack, with no Java.
     - tint.frag
 
 It builds on the `default` pack. It adds one option and one pass at the `final` stage. See
-[Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md) and [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md).
+[Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md) and [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md).
 
 ## The legacy model pack
 
 `samplelegacypack` is a small mod. Its Lua calls `Viewpoint.ModelPacks.register`, as older model packs do. Viewpoint shows
 it as the resource pack `legacy.ViewpointSampleLegacyPack`, with the *legacy* flag. Its manifest is version 1. It shows that older packs continue to work and follow the player's order. Do not copy it for a new pack.
-See [Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+See [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 ## Try these changes
 
@@ -414,7 +414,7 @@ Two older kinds of shader pack continue to work. They are not packages.
   consent and no descriptor of the package kind.
 - **Iris packs.** A shader pack made for Minecraft, as a `.zip` or a folder in the same folder. Viewpoint reads it in place.
 
-The **Graphics**, **Shaderpacks** page lists them beside the packages. See [Shaderpacks for players](https://project-viewpoint.github.io/viewpoint-docs/players/shaderpacks.md).
+The **Graphics**, **Shaderpacks** page lists them beside the packages. See [Shaderpacks for players](https://docs.projectviewpoint.org/players/shaderpacks.md).
 
 ## Legacy and Unmanaged are flags
 
@@ -426,7 +426,7 @@ Viewpoint.ModelPacks.register("MyPackMod", "media/models/pack.json")
 
 Viewpoint shows this pack as a resource pack with the id `legacy.<modId>` and the *legacy* flag. The version and the
 game range come from `mod.info`. A legacy pack follows the player's order and switch, as all packages do. See
-[Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+[Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 **Unmanaged.** A mod that has `javaJarFile` in `mod.info` and requires Viewpoint is loaded by ZombieBuddy. Viewpoint
 does not load it. Viewpoint shows it on a card, with a label that comes from `mod.info` only:
@@ -435,7 +435,7 @@ does not load it. Viewpoint shows it on a card, with a label that comes from `mo
 - Red, when the mod starts before Viewpoint: **loads before Viewpoint**
 
 Viewpoint does not read the jar of an Unmanaged mod. Viewpoint cannot order it, switch it off, or show what it does. To
-change it into an addon, see [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+change it into an addon, see [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 > **Note**
 >
@@ -446,8 +446,8 @@ change it into an addon, see [Migrating from ZombieBuddy](https://project-viewpo
 
 Each kind has a page of its own in the settings window: **Advanced**, **Addons**; **Graphics**, **Resource Packs**; and
 **Graphics**, **Shaderpacks**. The first two have an **Inactive** column and an **Active** column. When two packages change the same thing, the package nearer the top of the
-Active column wins. The Shaderpacks page has no order. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md) and
-[Managing addons](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md).
+Active column wins. The Shaderpacks page has no order. See [Order](https://docs.projectviewpoint.org/concepts/order.md) and
+[Managing addons](https://docs.projectviewpoint.org/players/managing-addons.md).
 
 ## Ids
 
@@ -491,7 +491,7 @@ It is a Java properties file in UTF-8. A comment is a full line that starts with
 value.
 
 The folder of the file tells Viewpoint the kind: `addons/`, `resourcepacks/` or `shaderpacks/`. See
-[Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md).
+[Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md).
 
 ```properties title="addon.properties"
 format=1
@@ -526,7 +526,7 @@ Viewpoint ignores a key that it does not know, and writes it to the log. If `for
 Viewpoint reads, the package is **Incompatible**. The card tells you this.
 
 Viewpoint **refuses** a package when a required key is missing or a value is not valid. For example: an id that does not
-follow the [rules for ids](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#ids), a version that is not dotted numbers, a path that goes out of
+follow the [rules for ids](https://docs.projectviewpoint.org/concepts/package-kinds.md#ids), a version that is not dotted numbers, a path that goes out of
 the package folder (with `..`), or a permission that Viewpoint does not know. The card names each key and tells why. The
 player cannot switch on a refused package. Viewpoint also refuses a descriptor that is larger than 64 KiB.
 
@@ -537,7 +537,7 @@ All descriptors use these keys.
 | Key | Required | Meaning |
 | --- | --- | --- |
 | `format` | Yes | The format of the descriptor: `1`. |
-| `id` | Yes | The id of the package (see [Ids](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#ids)). The folder name must be the same. |
+| `id` | Yes | The id of the package (see [Ids](https://docs.projectviewpoint.org/concepts/package-kinds.md#ids)). The folder name must be the same. |
 | `name` | Yes | The name on the card. |
 | `version` | Yes | The version of the package: major, minor and patch, each of at most three digits (`MMM.NNN.PPP`, for example `1.2.0`). Consent is for one version. |
 | `author` | No | The name of the author on the card. |
@@ -558,17 +558,17 @@ Only `addon.properties` uses these keys. Another descriptor ignores them.
 | Key | Required | Meaning |
 | --- | --- | --- |
 | `side` | No | `client` (the default) or `gameplay`. See [`side`](#side). |
-| `api` | Yes | The API version that you compiled against: `1.0`. See [Versions & compatibility](https://project-viewpoint.github.io/viewpoint-docs/concepts/versions-and-compatibility.md). |
+| `api` | Yes | The API version that you compiled against: `1.0`. See [Versions & compatibility](https://docs.projectviewpoint.org/concepts/versions-and-compatibility.md). |
 | `jar` | Yes | The name of the jar in the package folder. Do not use `javaJarFile`. |
 | `entry` | Yes | The class that implements `Addon`. |
-| `settings` | No | A `settings.properties` file. See [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md). |
-| `permissions` | No | A list of the permissions that the addon asks for, with commas between them. See [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md). |
-| `hooks.targets` | With `hooks` | The classes that the addon can hook, with commas between them. A game class or a listed class of Viewpoint. See [Hookable targets](https://project-viewpoint.github.io/viewpoint-docs/patching/hookable-targets.md). |
+| `settings` | No | A `settings.properties` file. See [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md). |
+| `permissions` | No | A list of the permissions that the addon asks for, with commas between them. See [Permissions](https://docs.projectviewpoint.org/trust/permissions.md). |
+| `hooks.targets` | With `hooks` | The classes that the addon can hook, with commas between them. A game class or a listed class of Viewpoint. See [Hookable targets](https://docs.projectviewpoint.org/patching/hookable-targets.md). |
 | `files.quotaMiB` | No | The space for the files folder of the addon, in MiB. The default is 64. More than 64 needs the player's consent. |
-| `draw.gpuMiB` | No | The video memory for the `Gpu` objects of the addon, in MiB, 1 or more. The default is 64. More than 128 needs the permission `vram`. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md). |
+| `draw.gpuMiB` | No | The video memory for the `Gpu` objects of the addon, in MiB, 1 or more. The default is 64. More than 128 needs the permission `vram`. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md). |
 | `downloads.hosts` | With `downloads` | The hosts that the addon can download from, with commas between them. |
 | `lua.globals` | No | Names of Lua globals for your exports, with commas between them. Without it, the exports are in `Viewpoint.Addons["<id>"]`. |
-| `exports` | No | The Java packages that other addons can link to. See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md). |
+| `exports` | No | The Java packages that other addons can link to. See [Services](https://docs.projectviewpoint.org/api/services.md). |
 
 ## Asset keys
 
@@ -576,12 +576,12 @@ An addon and a resource pack use these keys. A Shaderpack does not.
 
 | Key | Required | Meaning |
 | --- | --- | --- |
-| `models`, `tiles`, `sounds`, `data` | No | The assets. `models` is the path of a model manifest. The other three are folders. See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md). |
+| `models`, `tiles`, `sounds`, `data` | No | The assets. `models` is the path of a model manifest. The other three are folders. See [Format](https://docs.projectviewpoint.org/resource-packs/format.md). |
 
 ## Shaderpack keys
 
 A Shaderpack uses the common keys, and the keys of its pack. It has no `jar`, `entry`, `api` or `permissions`. It can
-also set `library`, the Viewpoint version that you made the pack for. See [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md).
+also set `library`, the Viewpoint version that you made the pack for. See [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md).
 
 ## Version ranges
 
@@ -620,13 +620,13 @@ Viewpoint runs only on the client. Your code runs on the client also when the se
 
 If you call a service without its permission, your code gets a `SecurityException`. If a hook target is not in
 `hooks.targets`, the addon cannot start. The card tells you this before the player sees a consent dialog. See
-[Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md).
+[Permissions](https://docs.projectviewpoint.org/trust/permissions.md).
 
 ## Encoded keys
 
 A setting of an addon is saved as `addon.<encoded id>.<name>`. An option of a Shaderpack is saved as
 `pack.<encoded id>.<option>`. A shader value is `uAddon_<encoded id>_<name>`. The encoded id writes `.` and `-` as `_`.
-See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## The descriptor of a resource pack
 
@@ -645,7 +645,7 @@ It uses the common keys and the asset keys. It has no `jar`, `entry`, `api` or `
 
 > **Tip**
 >
-> The [Descriptor keys](https://project-viewpoint.github.io/viewpoint-docs/reference/descriptor-keys.md) page has all keys in one table.
+> The [Descriptor keys](https://docs.projectviewpoint.org/reference/descriptor-keys.md) page has all keys in one table.
 
 ---
 
@@ -672,7 +672,7 @@ Each package has one state at a time. The card shows it. Viewpoint compares a pa
 | **Lingering** | Off, but Java has not yet released its classes from memory. The card shows **Inactive**. |
 | **Failed** | It did not load, `enable` failed, or its hooks did not install. The card gives the cause. |
 | **Suspended** | Stopped for this session. A handler threw an exception, or the server does not list the mod of a `side=gameplay` addon. |
-| **Needs an update** | The addon uses a member of Viewpoint that Viewpoint has removed. The card names the member and the replacement, or says that nothing replaces it. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md#removed-members). |
+| **Needs an update** | The addon uses a member of Viewpoint that Viewpoint has removed. The card names the member and the replacement, or says that nothing replaces it. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md#removed-members). |
 
 A resource pack and a Shaderpack use the same states, but not the states that are about code.
 
@@ -770,7 +770,7 @@ Three things keep your classes in memory that Viewpoint cannot clear for you. Do
 A loaded addon keeps the jar that it loaded, in memory. If the files on disk change, also if only the jar changes, the
 card shows a dot and *update available, applies at next enable or restart*. The next enable reads the new jar and compares it with the player's consent. An
 update that asks for more never starts without the player's consent. This is also true after a restart. See
-[Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## Suspension
 
@@ -810,7 +810,7 @@ Viewpoint does file work, downloads and asset decoding on its own threads. You g
 Your code runs on the render thread only in two places:
 
 - a **draw callback**, which uses the `Gpu` object and a short list of OpenGL calls. See
-  [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned);
+  [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned);
 - a hook with `thread = RENDER`, which can read and set values only. It cannot draw.
 
 Viewpoint measures each of these calls. If one throws an exception, Viewpoint suspends the addon. Values from the main
@@ -828,7 +828,7 @@ The javadoc of each public API method has a `@thread` tag. It tells you the thre
 
 A hook has `thread = MAIN` by default. If the game calls the hooked method from a different thread, Viewpoint **does
 not run your handler**. The card counts the call as *skipped off-thread*. You can use `thread = ANY` for a handler that
-reads only values. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#threads).
+reads only values. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md#threads).
 
 ## Re-entry
 
@@ -850,7 +850,7 @@ not the same as the Viewpoint version.
   implement never gets a new abstract method.
 - **Deprecated members** stay for two releases. Then they are removed.
 - **Use `viewpoint.api` when you can.** You can also use or hook some of Viewpoint's internal members. They are in the
-  [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md). Internal members can change in each release, and they
+  [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md). Internal members can change in each release, and they
   give your addon an Amber or Red label. Viewpoint does not load a jar that uses an internal member that is not in the
   list.
 
@@ -880,7 +880,7 @@ The passes of a Shaderpack have a version also. Ask for it with `Version.has("pa
 ## Internal members change
 
 The members of Viewpoint on the internals list have no promise of stability. Each release can add, deprecate or remove
-members. [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) lists the changes of each release.
+members. [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) lists the changes of each release.
 
 | The member is | What occurs |
 | --- | --- |
@@ -957,7 +957,7 @@ When the game calls a hooked method:
 4. The `After` handlers run from bottom to top. The pre-empted handlers do not run in this step.
 
 Viewpoint keeps a copy of the handler list from the start of the call. A veto or a new order during the call does not
-change which `After` handlers run for that call. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
+change which `After` handlers run for that call. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md).
 
 ## The first position
 
@@ -971,7 +971,7 @@ different position.
 > Read where Viewpoint's view is, what it shows and where the crosshair points, one time each frame.
 
 `ViewState` is a snapshot of Viewpoint's view. You can read it. You cannot change the view with it. To change the view, use
-[camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md). To follow the aim and the shots, use [aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md).
+[camera layers](https://docs.projectviewpoint.org/api/camera-layers.md). To follow the aim and the shots, use [aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md).
 
 No permission is necessary.
 
@@ -1067,9 +1067,9 @@ the floor height of the game.
 
 > **Note**
 >
-> The game's Lua can read the same state through `Viewpoint.Addons`. See [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md). On the render
+> The game's Lua can read the same state through `Viewpoint.Addons`. See [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md). On the render
 > thread, a draw callback gets the matrices and sizes of the frame in a `FrameView`. See
-> [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned).
+> [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned).
 
 ---
 
@@ -1131,7 +1131,7 @@ If the file is wrong, Viewpoint does not start the addon and lists every problem
 | `<name>.apply` | All | When a change has an effect: `live`, `activate` or `restart`. The default is `live`. |
 | `<name>.shownWhen` | All | The row shows only while this condition is true. |
 | `<name>.enabledWhen` | All | The player can change the row only while this condition is true. |
-| `<name>.lua` | All | `true` lets the game's Lua read the value (see [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md)). The default is `false`. |
+| `<name>.lua` | All | `true` lets the game's Lua read the value (see [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md)). The default is `false`. |
 | `<name>.min`, `.max`, `.step`, `.unit` | `number` | The range of the slider, its step, and a unit after the value. |
 | `<name>.choices` | `choice` | The values, with commas between them. |
 
@@ -1161,7 +1161,7 @@ older release. Then the older addon cannot write over the values of the newer on
 
 Viewpoint keeps the values as `addon.<encoded id>.<name>` in `viewpoint-live.properties`. The encoded id writes `.` and
 `-` as `_`. For the id `example.lean` and the setting `angle`, the key is `addon.example_lean.angle`. **Reset** on the
-addon's settings page sets the defaults again. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+addon's settings page sets the defaults again. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## Read the values
 
@@ -1281,7 +1281,7 @@ A key does not operate in these conditions:
 `Viewpoint.Addons` is a mirror for reading. A Lua mod can read two things: the view state, and the settings that an addon
 shares. Viewpoint changes nothing through these functions.
 
-To call the Java functions of your own addon from Lua, use exports. See [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md). The
+To call the Java functions of your own addon from Lua, use exports. See [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md). The
 exports of an addon are in `Viewpoint.Addons["<id>"]`. The functions on this page are in `Viewpoint.Addons` itself.
 
 ## The functions
@@ -1317,7 +1317,7 @@ if v and v.on then
 end
 ```
 
-The fields and units are the same as in [`ViewState`](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md). The coordinates are the game's world
+The fields and units are the same as in [`ViewState`](https://docs.projectviewpoint.org/api/view-state.md). The coordinates are the game's world
 coordinates.
 
 ## Rules
@@ -1328,7 +1328,7 @@ coordinates.
 - `setting` gives the value that the player has set now. This includes a value that has an effect only at the next
   enable.
 - The table that you get is a copy. If you change it, nothing changes in Viewpoint.
-- `Viewpoint.Addons` is one table that every mod shares, and it also holds the [exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) of the addons by
+- `Viewpoint.Addons` is one table that every mod shares, and it also holds the [exports](https://docs.projectviewpoint.org/api/lua-exports.md) of the addons by
   their ids. Lua lets a mod write to it. A mod that does can change what a different mod reads from it. Viewpoint does
   not protect the table.
 
@@ -1374,7 +1374,7 @@ public final class Fireworks {
 Lua has no overloads. If two methods have the same Lua name, Viewpoint refuses both.
 
 A mod that you port from ZombieBuddy can keep its `@Exposer.LuaClass` classes: Viewpoint reads them as exports of
-their public static methods. See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+their public static methods. See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 A method that is not public and static is not an export. The instance methods of a class are never exports.
 
@@ -1485,8 +1485,8 @@ public static void close(LuaHandle session) {
 - Viewpoint counts each call and adds its time to `addon.<id>.mainMs`. The Performance tab shows the sum.
 - If an export **throws**, Viewpoint suspends the addon and gives a Lua error. Do not let an export throw for a wrong
   argument of the caller: check the arguments, and return a result that tells the caller.
-- Treat every argument as if a stranger sent it. Any mod can call your exports. For a path, use [`AddonFiles`](https://project-viewpoint.github.io/viewpoint-docs/api/files.md).
-  For an address, use [`AddonDownloads`](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md). Their rules apply to an argument from Lua too.
+- Treat every argument as if a stranger sent it. Any mod can call your exports. For a path, use [`AddonFiles`](https://docs.projectviewpoint.org/api/files.md).
+  For an address, use [`AddonDownloads`](https://docs.projectviewpoint.org/api/downloads.md). Their rules apply to an argument from Lua too.
 
 ## The errors that Lua sees
 
@@ -1638,7 +1638,7 @@ one.
 Use `AddonDownloads` to get a file from the internet. Do not open network connections yourself: `java.net` makes the
 label **Red**. Viewpoint asks the player **each time**, and shows the full address.
 
-**Permission:** `downloads`, with the hosts in `downloads.hosts`. The file goes into your [`AddonFiles`](https://project-viewpoint.github.io/viewpoint-docs/api/files.md)
+**Permission:** `downloads`, with the hosts in `downloads.hosts`. The file goes into your [`AddonFiles`](https://docs.projectviewpoint.org/api/files.md)
 folder, so you also need the `files` permission.
 
 ```properties
@@ -1664,7 +1664,7 @@ A test compiles this code against the API and runs it in an addon.
   refuses the others with an `IllegalArgumentException` at the call.
 - Use a host that is in `downloads.hosts`. If the server redirects to a different host, put that host in the list also.
   Viewpoint follows at most three redirects, and judges each one as it judges the first address.
-- Give the file a name with the same rules as [`AddonFiles`](https://project-viewpoint.github.io/viewpoint-docs/api/files.md#names).
+- Give the file a name with the same rules as [`AddonFiles`](https://docs.projectviewpoint.org/api/files.md#names).
 - Set `declaredBytes` to the size of the file. The player sees it.
 
 `request(DownloadRequest)` gives a `Pending<DownloadResult>`. Its callbacks run on the main thread. A refusal is not an
@@ -1763,8 +1763,8 @@ resource pack. Thus the same limits apply. No permission is necessary.
 ## Where the assets are
 
 Set the same four keys in the descriptor as a resource pack. `models` is the path of a manifest. The other three are
-folders. Use a version 2 manifest. See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md#models) and
-[Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md). Version 1 is deprecated.
+folders. Use a version 2 manifest. See [Format](https://docs.projectviewpoint.org/resource-packs/format.md#models) and
+[Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md). Version 1 is deprecated.
 
 ```properties
 models=models/manifest.txt
@@ -1785,8 +1785,8 @@ Each path must be in your mod's folder. If it is not, the card shows an error.
 | Data | `ctx.assets().data()` | Files read as bytes, 16 MiB maximum each | `memory.addonDataMiB` |
 
 Code does not load tile textures. To replace the game's tile art, use the `tiles` folder. See
-[Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md). To choose a model with code, use a provider. See
-[Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md).
+[Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md). To choose a model with code, use a provider. See
+[Model providers](https://docs.projectviewpoint.org/api/model-providers.md).
 
 ## Use them
 
@@ -1804,7 +1804,7 @@ if (assets.sounds().available()) {
 
 A load gives a `Pending`. Its callbacks run on the main thread. Viewpoint reads or decodes the asset on a different thread.
 Thus a load does not stop a frame. Call the methods of `ctx.assets()` on the main thread. A name has the same rules as the name
-of a file in [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md): lower-case, at most four parts, and a known extension.
+of a file in [Files](https://docs.projectviewpoint.org/api/files.md): lower-case, at most four parts, and a known extension.
 
 - `data().read(name)` gives a copy of the bytes each time. Viewpoint keeps one copy in the pool until your addon goes off.
   Two reads of one file at the same time are one read.
@@ -1830,7 +1830,7 @@ or you hold half of it, Viewpoint **refuses your asset**:
 - your other assets stay loaded.
 
 Viewpoint never removes the assets of a different package to make space for yours. See
-[Assets & budgets](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md) for the pool sizes and the estimates on the **Performance** tab.
+[Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md) for the pool sizes and the estimates on the **Performance** tab.
 
 > **Tip**
 >
@@ -1913,7 +1913,7 @@ for (AimModifier part : ctx.services().contributions("example.aim.modifiers", Ai
 ```
 
 `contributions` gives the parts in the order of the Active column. The part of the addon nearer the top comes first. See
-[Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md). The id of an extension point is the choice of the addon that owns it. An addon can have 16 parts.
+[Order](https://docs.projectviewpoint.org/concepts/order.md). The id of an extension point is the choice of the addon that owns it. An addon can have 16 parts.
 
 ## Consent and levels
 
@@ -1972,7 +1972,7 @@ permissions=camera
 ## Layers
 
 A `CameraLayer` adds a small change to the camera. Many addons can have a layer at the same time. Viewpoint adds the
-layers together with its own motion. The player's order decides the order of the layers. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+layers together with its own motion. The player's order decides the order of the layers. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 
 A layer has these values. Each is neutral until you set it.
 
@@ -2060,11 +2060,11 @@ These claims work in the same way as the camera claim: one holder, the top of th
 > **Note**
 >
 > These types replace the writes that older addons did with reflection. Reflection into Viewpoint is Red. A layer is Normal.
-> See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+> See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 ## Read the result
 
-`ViewState` tells you if the free camera is on. See [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md).
+`ViewState` tells you if the free camera is on. See [View state](https://docs.projectviewpoint.org/api/view-state.md).
 
 ---
 
@@ -2088,7 +2088,7 @@ first person or third person. When the gunplay is off, the game aims, and Viewpo
 All of them run on the main thread. Keep them short. Get them from `ctx.combat()`. Viewpoint closes what you registered when
 your addon goes off.
 
-Places and lines use the coordinates of the [view state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md): `x` east, `y` south, `z` up in levels, where
+Places and lines use the coordinates of the [view state](https://docs.projectviewpoint.org/api/view-state.md): `x` east, `y` south, `z` up in levels, where
 Viewpoint draws things. Angles are in degrees. A yaw of 0 looks east, 90 looks south.
 
 ## Listeners
@@ -2127,7 +2127,7 @@ ctx.combat().shots(new ShotListener() {
 
 A `SwayProvider` adds sway to the crosshair, for example for the breath, a wound or tiredness. Many addons can add sway.
 
-- Viewpoint asks the providers in the order of the player. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+- Viewpoint asks the providers in the order of the player. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - Each provider gets the aim with the sway of Viewpoint only. Viewpoint adds the sway of all the providers to it.
 - The crosshair and the shot go to the sum, also outside the aim ring.
 - All the providers together move the crosshair at most 10 degrees each way.
@@ -2217,12 +2217,12 @@ canvas.pixels(argb);                              // 64 * 64 pixels, 0xAARRGGBB,
 - A provider that throws, returns `null`, or shows a picture of another addon is a fault. The dot then comes back.
 
 If you want to draw the reticle yourself, use a draw callback at the `crosshair` point. The card of such an addon says
-**draws over the whole screen**. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md).
+**draws over the whole screen**. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md).
 
 > **Note**
 >
 > These types replace the hooks that older addons put on the aim and on the crosshair. Viewpoint refuses a hook on a
-> method that has been removed. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md#removed-members).
+> method that has been removed. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md#removed-members).
 
 ---
 
@@ -2234,7 +2234,7 @@ A resource pack puts a model on a sprite with a fixed rule. A provider puts a mo
 model depends on something that a manifest cannot say.
 
 **Permission:** `models`. The models come from the manifest that your descriptor names with `models=`. See
-[Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md#models).
+[Format](https://docs.projectviewpoint.org/resource-packs/format.md#models).
 
 ```properties
 permissions=models
@@ -2270,11 +2270,11 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
   to show the art of the game.
 - **Order.** If several providers name the same sprite, Viewpoint asks them in the order of the player. The first answer
   that is not `ModelRef.NONE` wins. If no provider answers, Viewpoint uses the model of the resource packs. Then it uses
-  the art of the game. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+  the art of the game. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - **Make your models once.** Call `models.model(...)` before you answer, for example in `enable`. The answer runs on the
   main thread while a level is built, and must not allocate.
 - For a model that depends only on whether the object is lit, or that is the same for all the facings of an object, a
-  resource pack of version 2 is easier. See [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md).
+  resource pack of version 2 is easier. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
 
 > **Caution**
 >
@@ -2287,7 +2287,7 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
 
 Viewpoint keeps your answer until it builds the level again. The game does not tell Viewpoint when the items of a container
 change, so the crate above keeps its old model. You must tell Viewpoint: call `models.changed(object)` when your answer
-changes. To know when it changes, use a [hook](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
+changes. To know when it changes, use a [hook](https://docs.projectviewpoint.org/patching/managed-patching.md).
 
 ```properties
 permissions=models,hooks
@@ -2348,7 +2348,7 @@ public final class CrateHooks {
   that change a container, for example `AddItem(String)` and `removeAllItems()`. To follow them, hook them too. A change
   that you do not hook shows when the game next builds the level.
 - **The hooks wait for a safe point.** Until then, nothing calls `changed`. See
-  [When hooks install](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#when-hooks-install).
+  [When hooks install](https://docs.projectviewpoint.org/patching/managed-patching.md#when-hooks-install).
 
 ## AttachmentProvider: characters
 
@@ -2375,8 +2375,8 @@ models.attach(character -> ((IsoGameCharacter) character).isZombie() ? hat : Mod
 - The model follows the bone in all the poses of the character, also in a crowd far away. On the player's own head in
   first person, it only casts a shadow, as a hat of the game does.
 - The model comes from the manifest of your addon. It counts in `memory.packMiB`. See
-  [Assets & budgets](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md).
-- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) are
+  [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md).
+- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) are
   for world objects only, and an attachment does not glow.
 
 ## Cost
@@ -2442,9 +2442,9 @@ uniform float uAddon_example_lean_angle;
 For the addon `example.lean` and the value `angle`, this is the name above. Viewpoint sets the value on each Viewpoint
 program that declares the uniform. This includes:
 
-- the passes of a Shaderpack. See [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md#values-of-addons);
-- the snippets of addons. See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md);
-- the programs that you make with `Gpu`. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md);
+- the passes of a Shaderpack. See [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md#values-of-addons);
+- the snippets of addons. See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md);
+- the programs that you make with `Gpu`. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md);
 - the programs of an Iris pack. Viewpoint binds the values by name for each program that declares them.
 
 A program that does not declare the uniform gets nothing. A declared value that you have not set is 0. When your addon
@@ -2460,7 +2460,7 @@ goes off, its values are 0 again.
 > **Note**
 >
 > The game gives events of the fight itself, for example a shot. You do not have to pulse them. See
-> [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md#event-values).
+> [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md#event-values).
 
 ---
 
@@ -2474,7 +2474,7 @@ game method starts or ends. You declare the hook. Viewpoint installs it.
 Viewpoint reads your hooks from the jar before it shows the consent dialog. It runs the hooks of all active addons in
 the player's order. The player can see each active hook and veto it.
 
-**Permission:** `hooks`, with each hooked class in `hooks.targets`. You can hook game methods and the listed methods of Viewpoint. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md). You cannot hook a class of another addon.
+**Permission:** `hooks`, with each hooked class in `hooks.targets`. You can hook game methods and the listed methods of Viewpoint. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md). You cannot hook a class of another addon.
 
 ```properties
 permissions=hooks
@@ -2617,7 +2617,7 @@ both of these are true:
 A `thread = ANY` hook makes the label **Amber**. Your handler must not use game objects.
 
 With `thread = RENDER`, your handler runs on the render thread. Use it only for a method of Viewpoint that the
-[internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) marks as a render method. A `RENDER` handler can read and set the
+[internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) marks as a render method. A `RENDER` handler can read and set the
 arguments and the return value. It cannot use `Gpu` or OpenGL: Viewpoint refuses the jar when the handler's code, or a
 method that it calls, can reach either. If the method is called on another thread, Viewpoint does not run the handler,
 and the card counts the call. A `RENDER` hook makes the label Red.
@@ -2652,7 +2652,7 @@ handler. A `RENDER` hook is also counted in the time of the render thread.
 ## When hooks install
 
 Viewpoint installs and removes hooks only at **safe points** (see
-[Lifecycle & threads](https://project-viewpoint.github.io/viewpoint-docs/concepts/lifecycle-and-threads.md#safe-points)). Until the next safe point, the state is *Active:
+[Lifecycle & threads](https://docs.projectviewpoint.org/concepts/lifecycle-and-threads.md#safe-points)). Until the next safe point, the state is *Active:
 hooks pending*. Use `ctx.hooksLive()` or `ctx.onHooksLive(Runnable)` to know when your hooks are installed.
 
 ## The hook list
@@ -2683,7 +2683,7 @@ of the method.
 > **Note**
 >
 > You can keep your ZombieBuddy `@Patch` classes. Viewpoint reads them in an addon jar. See
-> [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+> [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 ---
 
@@ -2700,7 +2700,7 @@ of the method.
 An addon can hook some methods of Viewpoint itself, and read some of its members. This is for the cases where
 `viewpoint.api` does not have what you need. Look at `viewpoint.api` first.
 
-Viewpoint lets you use only the members on the [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md). It does not load a jar
+Viewpoint lets you use only the members on the [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md). It does not load a jar
 that uses another member of Viewpoint.
 
 ## Use, hook and reflect
@@ -2724,7 +2724,7 @@ The list gives three ways to reach a member. Each has a rule.
 ## Declare the hook
 
 Declare a hook on a Viewpoint method as you declare one on a game method. See
-[Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md). The target is the class on the internals list. The method name and
+[Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md). The target is the class on the internals list. The method name and
 the descriptor are the ones that the list gives for the member. Put the class in `hooks.targets`, as for a game class.
 The consent dialog and the update list each hooked member of Viewpoint.
 
@@ -2757,7 +2757,7 @@ call as *skipped off-thread*.
 ## Hot members
 
 Some members run more than 1,000 times each frame. A hook on them is a **costly hook**, and the label is Amber. A typed
-handler is much cheaper than a boxed one. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#typed-handlers).
+handler is much cheaper than a boxed one. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md#typed-handlers).
 
 ## Replacements
 
@@ -2765,10 +2765,10 @@ For some of the most hooked members, `viewpoint.api` has a better way. Use it wh
 
 | Member | Replacement |
 | --- | --- |
-| `ModelCapture.capture`, to put a model on a bone | `AttachmentProvider`. See [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md). |
-| `PackGather.object` | `ModelProvider`. See [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md). |
-| `Shaders.read` | Shader snippets, or a Shaderpack. See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) and [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md). |
-| `Eye.place` | Camera layers. See [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md). |
+| `ModelCapture.capture`, to put a model on a bone | `AttachmentProvider`. See [Model providers](https://docs.projectviewpoint.org/api/model-providers.md). |
+| `PackGather.object` | `ModelProvider`. See [Model providers](https://docs.projectviewpoint.org/api/model-providers.md). |
+| `Shaders.read` | Shader snippets, or a Shaderpack. See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) and [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md). |
+| `Eye.place` | Camera layers. See [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md). |
 
 `AttachmentProvider` adds a model to a bone. It does not move a bone. This release has no API that changes the pose of a
 character. A hook on `ModelCapture.capture` is the only way that Viewpoint lists, and its level is Red. An API for this is
@@ -2787,7 +2787,7 @@ the replacement.
 - A member whose descriptor changes is a gone member plus a new member.
 
 Examples of members that are gone: `FP.snapshot` (use `ViewListener.onFrame`) and `SceneDrawer.drawCrosshair` (use
-`ReticleProvider`, or the `crosshair` draw point). The page [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) lists the
+`ReticleProvider`, or the `crosshair` draw point). The page [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) lists the
 changes of each release.
 
 > **Caution**
@@ -2798,7 +2798,7 @@ changes of each release.
 ## Hooks of other addons
 
 Viewpoint refuses a hook on a class of another addon. If you need an extension point, ask the author to publish a service.
-See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md).
+See [Services](https://docs.projectviewpoint.org/api/services.md).
 
 ---
 
@@ -2896,7 +2896,7 @@ ZombieBuddy mod and the addon of the pilot, the patch runs twice: once from each
 ### 2. Write `@Hook` handlers
 
 Write each patch again as a `@Hook.Before` or `@Hook.After` method with a `HookCall` parameter. The change is small. The
-kind of each hook is then clear, and the player sees what it can do. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
+kind of each hook is then clear, and the player sees what it can do. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md).
 
 ```java title="Before: ZombieBuddy"
 @Patch(className = "zombie.characters.IsoPlayer", methodName = "update")
@@ -2919,7 +2919,7 @@ public final class UpdateHook {
 
 ## Your `@Exposer.LuaClass` classes
 
-Viewpoint reads these classes as [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md), so the Lua of your mod can keep its names. The addon
+Viewpoint reads these classes as [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md), so the Lua of your mod can keep its names. The addon
 needs the `lua` permission.
 
 | In ZombieBuddy | In an addon |
@@ -2932,7 +2932,7 @@ needs the `lua` permission.
 | Public constructors (`X.new`) | **Not exported.** Write a static method that makes the object, or a handle. |
 | Instance methods | **Not exported.** Lua can call them only on an object it already has. |
 | Overloads | **Refused.** Name each method differently, with `@LuaExport(name = "...")` if you need to. |
-| Any argument that Kahlua can convert | A closed set of types. See [The types](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md#the-types). |
+| Any argument that Kahlua can convert | A closed set of types. See [The types](https://docs.projectviewpoint.org/api/lua-exports.md#the-types). |
 
 If a class has `@LuaExport` as well as `@Exposer.LuaClass`, Viewpoint reads it through `@LuaExport` only. The other
 public static methods of the class are not exports, and its `@Exposer.LuaClass` name is not asked for as a global.
@@ -2945,18 +2945,18 @@ Some code that works in a ZombieBuddy mod has a better place in an addon.
 
 | In your ZombieBuddy mod | In an addon |
 | --- | --- |
-| `@Exposer` classes, so that Lua calls your Java | Exports with `@LuaExport`. Your `@Exposer.LuaClass` classes also work, in part (see above): the name is a *requested* global, and Viewpoint refuses it if another mod has it. Exports install within the start limit. See [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md). |
-| A patch on `Shaders.read` that changes library GLSL | A shader snippet, or a Shaderpack. See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) and [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md). |
-| Reflection to read the view or the camera | `ViewState` on the main thread, and `FrameView` in a draw callback. See [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md). |
-| Writes to the look, the eye, the field of view or the view mode | Camera layers and claims. See [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md). |
-| Hooks or reflection on the aim, the shot and the crosshair | `AimListener`, `ShotListener`, `ShotResolver` and `ReticleProvider`. See [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md). |
-| A patch on the choice of the model of an object or a character | `ModelProvider` and `AttachmentProvider`. See [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md). |
-| Direct OpenGL calls | The `Gpu` object in a draw callback. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned). |
-| A hook on another mod's classes | A service of that mod. See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md). |
-| An installer jar that copies a shader pack | A Shaderpack. See [Migrating from Java](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/migrating-from-java.md). |
+| `@Exposer` classes, so that Lua calls your Java | Exports with `@LuaExport`. Your `@Exposer.LuaClass` classes also work, in part (see above): the name is a *requested* global, and Viewpoint refuses it if another mod has it. Exports install within the start limit. See [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md). |
+| A patch on `Shaders.read` that changes library GLSL | A shader snippet, or a Shaderpack. See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) and [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md). |
+| Reflection to read the view or the camera | `ViewState` on the main thread, and `FrameView` in a draw callback. See [View state](https://docs.projectviewpoint.org/api/view-state.md). |
+| Writes to the look, the eye, the field of view or the view mode | Camera layers and claims. See [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md). |
+| Hooks or reflection on the aim, the shot and the crosshair | `AimListener`, `ShotListener`, `ShotResolver` and `ReticleProvider`. See [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md). |
+| A patch on the choice of the model of an object or a character | `ModelProvider` and `AttachmentProvider`. See [Model providers](https://docs.projectviewpoint.org/api/model-providers.md). |
+| Direct OpenGL calls | The `Gpu` object in a draw callback. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned). |
+| A hook on another mod's classes | A service of that mod. See [Services](https://docs.projectviewpoint.org/api/services.md). |
+| An installer jar that copies a shader pack | A Shaderpack. See [Migrating from Java](https://docs.projectviewpoint.org/shaderpacks/migrating-from-java.md). |
 
 If `viewpoint.api` has no replacement for a member that you use, you can hook or call some members of Viewpoint itself.
-See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md).
+See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md).
 
 ## The procedure
 
@@ -2964,7 +2964,7 @@ See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patch
 2. Add `addon.properties`, with `jar=` and `entry=`. The `entry` class must implement `Addon`.
 3. Add `permissions`. Add `hooks.targets`, `files.quotaMiB` and `downloads.hosts` as necessary.
 4. Replace reflection into `viewpoint.*` with `viewpoint.api`. If the API does not have what you need, use or hook a
-   member from the [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md). This gives an Amber or Red label.
+   member from the [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md). This gives an Amber or Red label.
 5. Replace `java.io.File` with `AddonFiles`.
 6. Replace `java.net` with `AddonDownloads`.
 7. Remove all use of ZombieBuddy and ByteBuddy classes. Viewpoint does not load a jar that uses them.
@@ -2978,12 +2978,12 @@ If you also keep a ZombieBuddy build of the mod, give the two builds different m
 ## Your label
 
 Some code that works in a ZombieBuddy mod makes the label Amber or Red in an addon. Some code stops the jar from
-loading, for example your own classes in a `zombie.*` package. See [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md) for what to use.
+loading, for example your own classes in a `zombie.*` package. See [Labels](https://docs.projectviewpoint.org/trust/labels.md) for what to use.
 
 > **The ZombieBuddy policy applies**
 >
 > If the ZombieBuddy policy is `deny-new`, no addon with Java can start. See
-> [ZombieBuddy policy & signatures](https://project-viewpoint.github.io/viewpoint-docs/trust/relation-to-zombiebuddy.md).
+> [ZombieBuddy policy & signatures](https://docs.projectviewpoint.org/trust/relation-to-zombiebuddy.md).
 
 ---
 
@@ -3005,15 +3005,15 @@ hooks.targets=zombie.characters.IsoPlayer,zombie.iso.IsoGridSquare
 ```
 
 Viewpoint refuses each `@Hook` whose `target` is not in this list. The list takes the classes of Viewpoint that are on
-the [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md), as it takes game classes. A new class in the list needs the
-player's consent again. For a class of Viewpoint, each new hooked member needs it also. See [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+the [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md), as it takes game classes. A new class in the list needs the
+player's consent again. For a class of Viewpoint, each new hooked member needs it also. See [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## Refused targets
 
 | Target | Reason |
 | --- | --- |
-| Viewpoint's classes and members that are not in the [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) | Use `viewpoint.api`, or a member from the list. A hook on a listed member gives an Amber or Red label. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md). |
-| Classes of another addon | Hooks on the code of another author cannot be ordered or checked. Ask the author to publish a [service](https://project-viewpoint.github.io/viewpoint-docs/api/services.md). |
+| Viewpoint's classes and members that are not in the [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) | Use `viewpoint.api`, or a member from the list. A hook on a listed member gives an Amber or Red label. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md). |
+| Classes of another addon | Hooks on the code of another author cannot be ordered or checked. Ask the author to publish a [service](https://docs.projectviewpoint.org/api/services.md). |
 | Java's classes | These are not the game's classes. |
 | ZombieBuddy and ByteBuddy | These load and patch the game. |
 | Game code that reads files or opens network connections, as far as Viewpoint can read it | Viewpoint does not let addons change it. |
@@ -3037,7 +3037,7 @@ then names the class.
 
 | Good | Bad |
 | --- | --- |
-| A method that the game calls one time each tick or less: an update, an event, a click. | A method that the game calls thousands of times each frame, for example a square accessor. It is a **costly hook**, unless the handler is [typed](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#typed-handlers). |
+| A method that the game calls one time each tick or less: an update, an event, a click. | A method that the game calls thousands of times each frame, for example a square accessor. It is a **costly hook**, unless the handler is [typed](https://docs.projectviewpoint.org/patching/managed-patching.md#typed-handlers). |
 | A method with one clear overload, selected by its descriptor. | A method whose result depends on a different thread. |
 | A hook that only reads. | A hook that skips a method that the game needs. |
 
@@ -3046,7 +3046,7 @@ then names the class.
 The game calls some methods from threads that are not the main thread. Viewpoint does not run a `thread = MAIN`
 handler for those calls, and counts them. A method of Viewpoint that runs on the render thread takes only a
 `thread = RENDER` hook. Viewpoint refuses a `MAIN` hook on it. See
-[Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#threads).
+[Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md#threads).
 
 > **Caution**
 >
@@ -3071,16 +3071,16 @@ downloads.hosts=github.com,objects.githubusercontent.com
 
 | Permission | Opens | Keys | Page |
 | --- | --- | --- | --- |
-| `hooks` | `@Hook` handlers, and `@Patch` classes in an addon jar. Game methods and listed methods of Viewpoint. | `hooks.targets` | [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) |
-| `files` | `AddonFiles`: a folder for your addon, with a quota | `files.quotaMiB` (optional) | [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) |
-| `downloads` | `AddonDownloads`: a download that the player accepts each time | `downloads.hosts` | [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) |
-| `lua` | `@LuaExport`: Java functions that the Lua of any mod can call | `lua.globals` (optional) | [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) |
-| `camera` | Camera layers, camera claims, look control, view control and cursor claims | None | [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) |
-| `combat` | Aim and shot listeners, sway, shot resolvers and reticles | None | [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) |
-| `models` | `ModelProvider` and `AttachmentProvider` | None | [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md) |
-| `shaders` | `ShaderValues` and `AddonSnippets` | None | [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md), [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) |
-| `draw` | `DrawCallback` and the `Gpu` object | `draw.gpuMiB` (optional) | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) |
-| `vram` | More than 128 MiB of video memory for the `Gpu` objects | `draw.gpuMiB` | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) |
+| `hooks` | `@Hook` handlers, and `@Patch` classes in an addon jar. Game methods and listed methods of Viewpoint. | `hooks.targets` | [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) |
+| `files` | `AddonFiles`: a folder for your addon, with a quota | `files.quotaMiB` (optional) | [Files](https://docs.projectviewpoint.org/api/files.md) |
+| `downloads` | `AddonDownloads`: a download that the player accepts each time | `downloads.hosts` | [Downloads](https://docs.projectviewpoint.org/api/downloads.md) |
+| `lua` | `@LuaExport`: Java functions that the Lua of any mod can call | `lua.globals` (optional) | [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) |
+| `camera` | Camera layers, camera claims, look control, view control and cursor claims | None | [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) |
+| `combat` | Aim and shot listeners, sway, shot resolvers and reticles | None | [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) |
+| `models` | `ModelProvider` and `AttachmentProvider` | None | [Model providers](https://docs.projectviewpoint.org/api/model-providers.md) |
+| `shaders` | `ShaderValues` and `AddonSnippets` | None | [Shader values](https://docs.projectviewpoint.org/api/shader-values.md), [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) |
+| `draw` | `DrawCallback` and the `Gpu` object | `draw.gpuMiB` (optional) | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) |
+| `vram` | More than 128 MiB of video memory for the `Gpu` objects | `draw.gpuMiB` | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) |
 
 These need **no** permission:
 
@@ -3127,7 +3127,7 @@ These changes need the player's consent again:
 - a new member of Viewpoint that you use, reflect or hook.
 
 Until the player gives consent, the addon stays off. This is also true if it was active before. See
-[Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 > **Tip**
 >
@@ -3181,7 +3181,7 @@ The addon:
 - **draws with OpenGL**: it has a draw callback, and it uses the `Gpu` object or the short list of OpenGL calls that
   Viewpoint allows;
 - uses or hooks a member of Viewpoint that has the Amber grade in the
-  [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md);
+  [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md);
 - uses a deprecated member of Viewpoint.
 
 ## What makes a label Red
@@ -3200,19 +3200,19 @@ The addon:
 - uses game code that reads files or opens network connections;
 - has a hook with `thread = RENDER`;
 - uses or hooks a member of Viewpoint that has the Red grade in the
-  [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md);
+  [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md);
 - links to the code of an addon that is Red. The reason reads **uses code of X (Red)**.
 
 An addon that links to the code of another addon (with `requires` and `exports`) takes the highest level of the addons it
-links to. See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md).
+links to. See [Services](https://docs.projectviewpoint.org/api/services.md).
 
 ## What Viewpoint does not load
 
 Viewpoint does not load a jar that breaks one of these rules. The card names the cause.
 
 - Do not use ZombieBuddy or ByteBuddy. The one exception is the `@Patch` and `@Exposer.LuaClass` annotations, which
-  Viewpoint reads and removes. See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
-- Use only the members on the [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md), and only in the way that the
+  Viewpoint reads and removes. See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
+- Use only the members on the [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md), and only in the way that the
   list allows.
 - Do not use a member that Viewpoint has removed (the card shows **Needs an update**).
 - Do not make class loaders, and do not define classes.
@@ -3309,7 +3309,7 @@ The card also shows the licence of the pack, or **No licence given**.
 ## Consent
 
 The player gives consent to one **version** of one package. There is no "allow all". If an update asks for more, the
-player must give consent again. See [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+player must give consent again. See [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ---
 
@@ -3476,7 +3476,7 @@ tell who uploaded it, and it does not tell what the file does.
 - If you have a ZombieBuddy build and an addon build of the same code, give them different mod ids.
 - Do not refer to ZombieBuddy from an addon. Viewpoint refuses the jar. This includes `WatchesAPI`.
 - Two ZombieBuddy annotations are the exception. Viewpoint reads `@Patch` and `@Exposer.LuaClass` in an addon jar and
-  runs them as hooks and as exports. See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+  runs them as hooks and as exports. See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 - A Shaderpack has no jar. ZombieBuddy has no part in it.
 
 > **Note**
@@ -3509,7 +3509,7 @@ of a different package to make space.
 The player can change the pool sizes in Viewpoint's settings, on the **World**, **Memory** page.
 
 Tile textures are different. If the tile packs that the player selects need more, Viewpoint increases their pools, and
-`memory.floorMiB` and `memory.wallMiB`, so that the tiles keep all their detail. See [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md).
+`memory.floorMiB` and `memory.wallMiB`, so that the tiles keep all their detail. See [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md).
 
 If there is no space for your icon, the card shows a tile with a letter.
 
@@ -3563,7 +3563,7 @@ the graphics card a little each frame. Viewpoint reads and parses a Shaderpack o
 > **Note**
 >
 > The estimates are approximate. The **Performance** tab shows them next to the measured values. See
-> [Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md).
+> [Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md).
 
 ---
 
@@ -3682,7 +3682,7 @@ data=data
 
 `models` is the path of the manifest file. `tiles`, `sounds` and `data` are folders. Each path is relative to the
 folder of the pack, and must be in the folder of the pack's version or in `common/` (the folder that holds its
-`media` folder). The [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) page gives the common keys.
+`media` folder). The [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) page gives the common keys.
 
 ## Models
 
@@ -3706,7 +3706,7 @@ group.furniture_seating_indoor_02/Wooden Chair=chair,0,0,0.1,0,1
 | `format=2` | The version of the manifest. |
 | `id`, `name` | The id and name of the manifest, for messages. |
 | `model.<id>=<path>` | A model: an OBJ file, relative to the folder of the manifest. Viewpoint finds its MTL and PNG files from the OBJ file. |
-| `group.<tileset>/<name>=<model>,<degrees>,<x>,<y>,<z>,<scale>` | One line for all the facings of an object. See [Group binds](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md#group-binds). |
+| `group.<tileset>/<name>=<model>,<degrees>,<x>,<y>,<z>,<scale>` | One line for all the facings of an object. See [Group binds](https://docs.projectviewpoint.org/resource-packs/model-states.md#group-binds). |
 | `bind.<sprite>=<model>,<degrees>,<x>,<y>,<z>,<scale>` | The sprite whose square shows this model, the model id, its rotation in degrees, its offset and its scale. A bind is stronger than a group in the same pack. |
 
 > **Note**
@@ -3724,7 +3724,7 @@ The model replaces the art of the sprite: the projected art, the game's own spri
 Viewpoint loads a model the first time that the game shows its sprite. When two packs put a model on the same sprite,
 the pack nearer the top of the Active column wins.
 
-A model can change its parts when its object is lit. See [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md).
+A model can change its parts when its object is lit. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
 
 Each material of the MTL uses the PNG of its `map_Kd` line. When the materials of a model use more than one PNG,
 Viewpoint puts these PNGs together on one texture as it loads the model. Together, they must fit in 2056 Ã— 2056
@@ -3739,25 +3739,25 @@ log. Keep the UVs of a model in the range 0 to 1: a model does not repeat its te
 
 A manifest without `format=2` is version 1. Viewpoint continues to read it. Version 1 has only `bind.` lines: one line
 for each sprite. Viewpoint ignores its `group.` lines, and the log names them. To change a pack to version 2, see
-[Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md).
+[Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md).
 
 This is not the *legacy* flag on a card. That flag shows a pack that its Lua registers, with no descriptor. See
-[Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+[Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 ## Tiles
 
-Tile textures have their own format. See [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md).
+Tile textures have their own format. See [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md).
 
 ## Sounds
 
 `ogg` and `wav` files. The **Performance** line of the card includes them. In this version, Viewpoint does not play the
 sounds of a resource pack, and they do not replace the sounds of the game. To play a sound, put it in an addon. See
-[Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md).
+[Assets](https://docs.projectviewpoint.org/api/assets.md).
 
 ## Data
 
 Read-only files. Viewpoint does not use them itself. An addon reads only the data of its own package. See
-[Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md). The Lua of the mod can read them with the file functions of the game.
+[Assets](https://docs.projectviewpoint.org/api/assets.md). The Lua of the mod can read them with the file functions of the game.
 
 ## Limits
 
@@ -3767,12 +3767,12 @@ Read-only files. Viewpoint does not use them itself. An addon reads only the dat
 | All assets | They count in their pool. If the pool is full, Viewpoint refuses the asset, and the card tells you. |
 | Paths | In the folder of the pack's version or in `common/`, the one that holds its `media` folder. Viewpoint refuses an absolute path, a `\`, and a link or a junction that goes out of it. A `..` is allowed when the file stays in that folder. |
 
-If Viewpoint cannot read a file, the card names the file. See [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md#resource-packs-and-shaderpacks).
+If Viewpoint cannot read a file, the card names the file. See [Labels](https://docs.projectviewpoint.org/trust/labels.md#resource-packs-and-shaderpacks).
 
 > **Note**
 >
 > A resource pack has no Java and no shader code. If you need Java, make an addon. If you need to change how the whole
-> frame is drawn, make a [Shaderpack](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md). Viewpoint does not check the Lua of the
+> frame is drawn, make a [Shaderpack](https://docs.projectviewpoint.org/shaderpacks/format.md). Viewpoint does not check the Lua of the
 > mod. The last line of the label tells the player this.
 
 ---
@@ -3787,7 +3787,7 @@ state changes, Viewpoint changes the parts at once. It does not load a second mo
 
 A version 2 manifest also has **group binds**: one line for all the facings of an object.
 
-To change a version 1 pack, see [Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md).
+To change a version 1 pack, see [Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md).
 
 ## Parts
 
@@ -3840,7 +3840,7 @@ part glows in all the states.
 >
 > Each material uses the texture of its own `map_Kd`. The two copies of a part can use different materials, with
 > different textures. A model that uses one texture for all its states uses less memory. See
-> [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md).
+> [Format](https://docs.projectviewpoint.org/resource-packs/format.md).
 
 ## Lit
 
@@ -3889,9 +3889,9 @@ ignores `bind.<sprite>[lit]=` and names the line in the log.
 
 ## Rules
 
-- See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md#models) for how a model stands on its square.
+- See [Format](https://docs.projectviewpoint.org/resource-packs/format.md#models) for how a model stands on its square.
 - Models count in `memory.packMiB`. Viewpoint loads a model the first time that the game shows it.
-- The package nearer the top of the Active column wins a sprite. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+- The package nearer the top of the Active column wins a sprite. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - A line that Viewpoint cannot read is ignored. The log names its line number.
 
 > **Note**
@@ -3899,7 +3899,7 @@ ignores `bind.<sprite>[lit]=` and names the line in the log.
 > A model with parts works in an older Viewpoint too: there, all its parts show at the same time. A version 2 manifest
 > needs a Viewpoint that supports it. An older Viewpoint ignores its group lines.
 
-For a model that needs code, see [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md).
+For a model that needs code, see [Model providers](https://docs.projectviewpoint.org/api/model-providers.md).
 
 ---
 
@@ -3974,7 +3974,7 @@ Viewpoint also bakes walls into arrays, in `memory.wallMiB`. With walls of 256 Ã
 ## Order
 
 When two packs have the same tile, the pack nearer the top of the Active column wins, for each tile. See
-[Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+[Order](https://docs.projectviewpoint.org/concepts/order.md).
 
 ---
 
@@ -4027,11 +4027,11 @@ occurs, Viewpoint shows the pack as **registered at run time**.
 6. Add a version, an author and an icon.
 
 The manifest does not change in these steps. Then change it to version 2. See
-[Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md).
+[Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md).
 
 > **Note**
 >
-> Legacy packs continue to work, but do not make a new pack in this way. See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md). A resource pack can also have an icon, a version, a
+> Legacy packs continue to work, but do not make a new pack in this way. See [Format](https://docs.projectviewpoint.org/resource-packs/format.md). A resource pack can also have an icon, a version, a
 > changelog, tiles, sounds and data.
 
 ---
@@ -4041,7 +4041,7 @@ The manifest does not change in these steps. Then change it to version 2. See
 > Change an older model pack into a resource pack, replace the lines of each facing with one group bind, and join the models of the states of an object into one model.
 
 Version 1 manifests and older model packs are deprecated. They continue to work. A new pack starts at version 2: see
-[Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md). This page tells you how to change an existing pack, one step at a time. You can stop
+[Format](https://docs.projectviewpoint.org/resource-packs/format.md). This page tells you how to change an existing pack, one step at a time. You can stop
 after any step.
 
 | Step | What you get |
@@ -4054,7 +4054,7 @@ after any step.
 
 An older pack is a mod whose Lua calls `Viewpoint.ModelPacks.register`. Viewpoint shows it as a *legacy* pack.
 
-1. Make the file `media/viewpoint/resourcepacks/<id>/pack.properties`. See [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) for the
+1. Make the file `media/viewpoint/resourcepacks/<id>/pack.properties`. See [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) for the
    id and the common keys.
 2. Add `models=` with the path of your manifest. The path is relative to the folder of the pack.
 3. Move the manifest, the OBJ, MTL and PNG files into the folder of the pack, or set `models=` to their current path.
@@ -4072,7 +4072,7 @@ game.min=42.21
 models=models/manifest.txt
 ```
 
-The manifest does not change. For more, see [Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+The manifest does not change. For more, see [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 ## 2. Use group binds
 
@@ -4139,7 +4139,7 @@ at the same time, the names do not have the tags, or a name has both tags.
 > **Tip**
 >
 > Only the parts that change are in the model two times. A lamp that changes only its shade costs the shade two times,
-> not the whole lamp. See [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) for the objects that can be lit.
+> not the whole lamp. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) for the objects that can be lit.
 
 ## What to check
 
@@ -4170,7 +4170,7 @@ Graphics page.
   - textures/
 
 - The folder name must be the same as the `id`.
-- `shaders/` holds your GLSL files. See [Library files](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/library-files.md).
+- `shaders/` holds your GLSL files. See [Library files](https://docs.projectviewpoint.org/shaderpacks/library-files.md).
 - `textures/` is optional. It holds the images that your shaders read.
 - One mod can hold many Shaderpacks.
 - The id of the package is also the id of the pack.
@@ -4214,7 +4214,7 @@ A Shaderpack has no `jar`, `entry`, `api` or `permissions` key, because it has n
 
 ### Package keys
 
-These keys are the same as in the other descriptors. See [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md).
+These keys are the same as in the other descriptors. See [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md).
 
 | Key | Required | Meaning |
 | --- | --- | --- |
@@ -4223,7 +4223,7 @@ These keys are the same as in the other descriptors. See [Descriptor](https://pr
 | `game.max`, `viewpoint.min`, `viewpoint.max` | No | The ranges that you tested. |
 | `author`, `description`, `icon`, `license`, `changelog` | No | Shown on the card. The card shows the licence, or **No licence given**. |
 | `requires`, `conflicts` | No | Other packages. A package that is your `base` must be in `requires`. |
-| `library` | No | The Viewpoint version that you made the pack for (planned). See [Library files](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/library-files.md#made-for-a-version). |
+| `library` | No | The Viewpoint version that you made the pack for (planned). See [Library files](https://docs.projectviewpoint.org/shaderpacks/library-files.md#made-for-a-version). |
 
 ### Pack keys
 
@@ -4234,7 +4234,7 @@ These keys are the same as in the other descriptors. See [Descriptor](https://pr
 | `options` | The ids of your own options, in the order that the window lists them. |
 | `presets` | The ids of your own presets, in the order of the **Quality** list. |
 | `preset.default` | The preset that a new install starts with. |
-| `passes`, `pass.<id>.*`, `targets`, `target.<name>` | Passes of your own. See [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md). |
+| `passes`, `pass.<id>.*`, `targets`, `target.<name>` | Passes of your own. See [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md). |
 | `pipeline.<knob>` | Which passes of the renderer run, and their sizes. See [The pipeline](#the-pipeline). |
 
 ## Options
@@ -4265,7 +4265,7 @@ define it.
 
 **Saved values.** Each option is a live setting named `pack.<encoded id>.<option id>` in
 `Zomboid/viewpoint-live.properties`. The encoded id writes `.` and `-` as `_`. For `example.dusk`, the setting for
-`warmth` is `pack.example_dusk.warmth`. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+`warmth` is `pack.example_dusk.warmth`. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## Presets
 
@@ -4505,7 +4505,7 @@ that the game does not give.
 
 ## Values of addons
 
-An addon can give a value to your shaders. See [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md). Declare the uniform with the
+An addon can give a value to your shaders. See [Shader values](https://docs.projectviewpoint.org/api/shader-values.md). Declare the uniform with the
 encoded id of the addon in its name:
 
 ```glsl
@@ -4534,7 +4534,7 @@ A file in the `shaders/` folder of your pack replaces the file of the same path 
 - A file that you do not replace comes from your `base`, then from the library. A pack holds only what it changes.
 - `constants.glsl` cannot be replaced. Viewpoint makes it. Any file can `#include "constants.glsl"`.
 - Every stage starts with `#version 330`. Viewpoint adds the defines of the options and the pipeline after this line.
-  See [Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md#options).
+  See [Format](https://docs.projectviewpoint.org/shaderpacks/format.md#options).
 
 An include is a line of this form. Viewpoint expands it before it compiles the file, and it adds `#line` directives so
 that an error names the file and the line.
@@ -4604,7 +4604,7 @@ A few points are inside a shader. The library marks them with comments:
 
 If you replace a library file that has a marker, keep the marker line in the same place in your file. If you drop a
 marker, the snippets of that point do not run in your pack. A message on the Addons page says "the shaderpack X has no
-point Y". See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md).
+point Y". See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md).
 
 ## Made for a version
 
@@ -4639,7 +4639,7 @@ can then switch it off, see its label, and update it with the mod.
 1. Make the folder `media/viewpoint/shaderpacks/<id>/` in your mod. Put it in `common/`, or in the version folder.
 2. Move your `pack.properties` and your `shaders/` folder into it. Add `textures/` if the pack has images.
 3. Add the package keys to `pack.properties`: `format`, `id`, `version` and `game.min`. Add `icon`, `license` and
-   `changelog` if you can. See [Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md).
+   `changelog` if you can. See [Format](https://docs.projectviewpoint.org/shaderpacks/format.md).
 4. Make the folder name the same as the `id`.
 5. Remove the installer jar. Remove `javaJarFile` from `mod.info`. Keep `require=Viewpoint`.
 6. Remove the code that copied files. Nothing copies the pack now.
@@ -4653,7 +4653,7 @@ If your old name is not a correct id, choose a new id.
 
 The options of the pack are saved as `pack.<encoded id>.<option>`. If the encoded id of the new package is the same as the
 old name of the folder pack, the saved options of the player stay. If it is not the same, the player sets the options
-again. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+again. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## If the player still has the old copy
 
@@ -4664,13 +4664,13 @@ changelog to delete the old folder.
 ## If the pack builds on another pack
 
 Put `base=` in `pack.properties`. If the base is a Shaderpack of another mod, add it to `requires`. See
-[Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md#build-on-another-pack).
+[Format](https://docs.projectviewpoint.org/shaderpacks/format.md#build-on-another-pack).
 
 ## If your jar also changed library GLSL
 
 Some jars also patched `Shaders.read` to change library GLSL as the game starts. A Shaderpack does this with files in
 `shaders/`. A small change that must apply under any pack is a shader snippet. See
-[Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+[Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 > **Note**
 >
@@ -4692,7 +4692,7 @@ You'll find them in two places:
 - **Addons** are in **Advanced**, **Addons**.
 - **Resource packs** are in **Graphics**, **Resource Packs**.
 
-Shaderpacks work a little differently and have [their own page](https://project-viewpoint.github.io/viewpoint-docs/players/shaderpacks.md).
+Shaderpacks work a little differently and have [their own page](https://docs.projectviewpoint.org/players/shaderpacks.md).
 
 ## Install an addon
 
@@ -4766,7 +4766,7 @@ further that way. When you drag, drop on the top half of another card to land ab
 
 Order matters when two addons want the same thing. If they change the same model, tile or hook, the one nearer the top
 wins. Some things can only belong to one addon at a time, like the camera or the reticle. The addon nearer the top gets it,
-and the other addon's card tells you who has it. [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md) has the details.
+and the other addon's card tells you who has it. [Order](https://docs.projectviewpoint.org/concepts/order.md) has the details.
 
 ## See what an addon does
 
@@ -4806,7 +4806,7 @@ version. It isn't a promise about what the code will do, and Lua isn't checked a
 | **Red** | Red name and icon, on a red card | The code can do things outside Viewpoint's control. It stays off until you allow it, so only do that for authors you trust. |
 
 Point at the icon or the name to read what the label means. The full wording is on the
-[Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md#the-texts-that-the-player-sees) page.
+[Labels](https://docs.projectviewpoint.org/trust/labels.md#the-texts-that-the-player-sees) page.
 
 A card may also tell you that an addon draws over the whole screen, or that any mod's Lua can call its Java. It's worth
 reading those lines before you turn it on.
@@ -4942,14 +4942,14 @@ use, and the time its passes take on your graphics card each frame, broken down 
 the last second. For a pack from a mod, **Info**, **Performance** shows the same line.
 
 For the full picture, compare your frame rate against the **Default** pack. If you'd like more detail, see
-[Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md).
+[Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md).
 
 > **Tip**
 >
 > If a pack runs slowly on your graphics card, try a lower setting in its Quality list, or turn some effects off in
 > **Shader Options**.
 
-Addons and resource packs are covered in [Managing addons](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md).
+Addons and resource packs are covered in [Managing addons](https://docs.projectviewpoint.org/players/managing-addons.md).
 
 ---
 
@@ -4968,19 +4968,19 @@ and member of `viewpoint.api`. It has:
 
 | Package | Contains | Guide |
 | --- | --- | --- |
-| `viewpoint.api` | `Addon`, `AddonContext`, `Registration`, `Version`, `AddonRender`, `AddonShaders`, `AddonSnippets` | [Getting started](https://project-viewpoint.github.io/viewpoint-docs/start/getting-started.md) |
-| `viewpoint.api.patch` | `@Hook.Before`, `@Hook.After`, `HookCall` | [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) |
-| `viewpoint.api.view` | `ViewState`, `ViewListener` | [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) |
-| `viewpoint.api.settings` | `AddonSettings`, `KeyAction`, `SettingsPage` | [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md) |
-| `viewpoint.api.files` | `AddonFiles`, `Pending` | [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) |
-| `viewpoint.api.net` | `AddonDownloads`, `DownloadRequest`, `DownloadResult` | [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) |
-| `viewpoint.api.assets` | `AddonAssets` | [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md) |
-| `viewpoint.api.lua` | `@LuaExport`, `LuaTable`, `LuaHandle` | [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) |
-| `viewpoint.api.services` | `Services` | [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md) |
-| `viewpoint.api.camera` | `AddonCamera`, `CameraLayer`, `LookControl`, `CameraClaim`, `ViewControl`, `CursorClaim` | [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) |
-| `viewpoint.api.combat` | `AddonCombat`, `AimListener`, `AimState`, `ShotListener`, `ShotEvent`, `ShotHit`, `SwayProvider`, `Sway`, `ShotResolver`, `ResolverClaim`, `ReticleProvider`, `Reticle`, `ReticleImage`, `ReticleClaim` | [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) |
-| `viewpoint.api.models` | `ModelProvider`, `AttachmentProvider`, `ModelRef` | [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md) |
-| `viewpoint.api.render` | `DrawPoint`, `DrawCallback`, `DrawContext`, `FrameView`, `Gpu` (`GpuProgram`, `GpuBuffer`, `GpuTexture`, `GpuMesh`), `Picture`, `Primitive`, `FrameInput`, `ShaderValues`, `ShaderValue`, `ShaderPulse`, `ValueKind`, `SnippetPoint` | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md), [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md), [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) |
+| `viewpoint.api` | `Addon`, `AddonContext`, `Registration`, `Version`, `AddonRender`, `AddonShaders`, `AddonSnippets` | [Getting started](https://docs.projectviewpoint.org/start/getting-started.md) |
+| `viewpoint.api.patch` | `@Hook.Before`, `@Hook.After`, `HookCall` | [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) |
+| `viewpoint.api.view` | `ViewState`, `ViewListener` | [View state](https://docs.projectviewpoint.org/api/view-state.md) |
+| `viewpoint.api.settings` | `AddonSettings`, `KeyAction`, `SettingsPage` | [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md) |
+| `viewpoint.api.files` | `AddonFiles`, `Pending` | [Files](https://docs.projectviewpoint.org/api/files.md) |
+| `viewpoint.api.net` | `AddonDownloads`, `DownloadRequest`, `DownloadResult` | [Downloads](https://docs.projectviewpoint.org/api/downloads.md) |
+| `viewpoint.api.assets` | `AddonAssets` | [Assets](https://docs.projectviewpoint.org/api/assets.md) |
+| `viewpoint.api.lua` | `@LuaExport`, `LuaTable`, `LuaHandle` | [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) |
+| `viewpoint.api.services` | `Services` | [Services](https://docs.projectviewpoint.org/api/services.md) |
+| `viewpoint.api.camera` | `AddonCamera`, `CameraLayer`, `LookControl`, `CameraClaim`, `ViewControl`, `CursorClaim` | [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) |
+| `viewpoint.api.combat` | `AddonCombat`, `AimListener`, `AimState`, `ShotListener`, `ShotEvent`, `ShotHit`, `SwayProvider`, `Sway`, `ShotResolver`, `ResolverClaim`, `ReticleProvider`, `Reticle`, `ReticleImage`, `ReticleClaim` | [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) |
+| `viewpoint.api.models` | `ModelProvider`, `AttachmentProvider`, `ModelRef` | [Model providers](https://docs.projectviewpoint.org/api/model-providers.md) |
+| `viewpoint.api.render` | `DrawPoint`, `DrawCallback`, `DrawContext`, `FrameView`, `Gpu` (`GpuProgram`, `GpuBuffer`, `GpuTexture`, `GpuMesh`), `Picture`, `Primitive`, `FrameInput`, `ShaderValues`, `ShaderValue`, `ShaderPulse`, `ValueKind`, `SnippetPoint` | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md), [Shader values](https://docs.projectviewpoint.org/api/shader-values.md), [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) |
 
 The API uses only `java.*` and `viewpoint.api.*`. `viewpoint-api.jar` has the MIT licence.
 
@@ -4988,11 +4988,11 @@ The API uses only `java.*` and `viewpoint.api.*`. `viewpoint-api.jar` has the MI
 
 | Function | Guide |
 | --- | --- |
-| `Viewpoint.Addons.viewState()` | [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md) |
-| `Viewpoint.Addons.terrainHeight(x, y)` | [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md) |
-| `Viewpoint.Addons.setting(addonId, name)` | [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md) |
-| `Viewpoint.Addons["<id>"]` and the globals of `lua.globals` | [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) |
-| `Viewpoint.ModelPacks.register(modId, path)` | [Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md) |
+| `Viewpoint.Addons.viewState()` | [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md) |
+| `Viewpoint.Addons.terrainHeight(x, y)` | [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md) |
+| `Viewpoint.Addons.setting(addonId, name)` | [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md) |
+| `Viewpoint.Addons["<id>"]` and the globals of `lua.globals` | [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) |
+| `Viewpoint.ModelPacks.register(modId, path)` | [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md) |
 
 ---
 
@@ -5000,7 +5000,7 @@ The API uses only `java.*` and `viewpoint.api.*`. `viewpoint-api.jar` has the MI
 
 > All keys of addon.properties and pack.properties in one table.
 
-All descriptor keys in one table. The [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) page explains them. `A` is an addon. `P` is a
+All descriptor keys in one table. The [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) page explains them. `A` is an addon. `P` is a
 resource pack. `S` is a Shaderpack.
 
 | Key | For | Required | Default | Meaning |
@@ -5050,7 +5050,7 @@ resource pack. `S` is a Shaderpack.
 
 > The label levels, their reasons and the texts that the player sees.
 
-The [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md) page explains the labels. This page gives the texts and the reasons in tables.
+The [Labels](https://docs.projectviewpoint.org/trust/labels.md) page explains the labels. This page gives the texts and the reasons in tables.
 
 ## Texts
 
@@ -5153,7 +5153,7 @@ reads the Lua as text. It does not run it, and it cannot see a name that the Lua
 
 > The permissions, their keys and their limits, in one table.
 
-The [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md) page explains the permissions.
+The [Permissions](https://docs.projectviewpoint.org/trust/permissions.md) page explains the permissions.
 
 | Permission | Keys | Limits | Without it |
 | --- | --- | --- | --- |
@@ -5176,7 +5176,7 @@ These need no permission:
 - services.
 
 A new permission, a new target, a new host, a new export or a larger quota needs the player's consent again. See
-[Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ---
 
@@ -5184,7 +5184,7 @@ A new permission, a new target, a new host, a new export or a larger quota needs
 
 > What each Viewpoint release adds to, deprecates in and removes from the internals list, with the replacements.
 
-Viewpoint changes in each release. The [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) changes with it. This page lists
+Viewpoint changes in each release. The [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) changes with it. This page lists
 the changes of the list, release by release, so that you can update your addon.
 
 Viewpoint writes this page when it builds a release. Do not edit it by hand.
@@ -5208,7 +5208,7 @@ Each row gives the class, the member, the release and, for the last two tables, 
 **Added**
 
 This is the first release with the list: every member of the
-[internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) is new.
+[internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) is new.
 
 **Deprecated**
 
@@ -5324,9 +5324,9 @@ snippets.add(SnippetPoint.GBUFFER_END, "wet", """
 
 - `add` takes the point, a name for messages, the body, and the programs that it runs in. Give no program to run it in
   every program that has the point.
-- Load a long snippet from your data assets, then add it. See [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md).
+- Load a long snippet from your data assets, then add it. See [Assets](https://docs.projectviewpoint.org/api/assets.md).
 - Close the registration to take the snippet out. When your addon goes off, Viewpoint takes out all its snippets.
-- Read the values of your addon by their names, for example `wetness` above. See [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md).
+- Read the values of your addon by their names, for example `wetness` above. See [Shader values](https://docs.projectviewpoint.org/api/shader-values.md).
 
 ## The points
 
@@ -5400,7 +5400,7 @@ draw.gpuMiB=32
 | `FINAL` | The final picture is on the screen, with its colours as shown, before the interface of the game. | The screen |
 
 - No point runs while a Minecraft shader pack draws the frame. The pack owns its targets.
-- At one point, the callbacks of the addons run in the order of the player. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+- At one point, the callbacks of the addons run in the order of the player. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - What you draw at `AFTER_OPAQUE` to `BEFORE_POST` goes through the post-processing of Viewpoint. Write the depth too, if
   you draw into the world: the light in the air goes over a pixel that has the depth of the sky.
 
@@ -5437,7 +5437,7 @@ A callback runs on the render thread. Draw into the target that is bound.
 ## Cost
 
 Viewpoint measures the time of each callback on the render thread and on the graphics card. See
-[Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md).
+[Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md).
 
 ## The Gpu object
 

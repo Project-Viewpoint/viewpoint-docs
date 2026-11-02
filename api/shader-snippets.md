@@ -27,9 +27,9 @@ snippets.add(SnippetPoint.GBUFFER_END, "wet", """
 
 - `add` takes the point, a name for messages, the body, and the programs that it runs in. Give no program to run it in
   every program that has the point.
-- Load a long snippet from your data assets, then add it. See [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md).
+- Load a long snippet from your data assets, then add it. See [Assets](https://docs.projectviewpoint.org/api/assets.md).
 - Close the registration to take the snippet out. When your addon goes off, Viewpoint takes out all its snippets.
-- Read the values of your addon by their names, for example `wetness` above. See [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md).
+- Read the values of your addon by their names, for example `wetness` above. See [Shader values](https://docs.projectviewpoint.org/api/shader-values.md).
 
 ## The points
 
@@ -78,4 +78,4 @@ When an addon with snippets goes on or off, Viewpoint compiles the programs with
 
 ---
 
-Previous: [Glossary](https://project-viewpoint.github.io/viewpoint-docs/reference/glossary.md) | Next: [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Glossary](https://docs.projectviewpoint.org/reference/glossary.md) | Next: [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

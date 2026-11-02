@@ -8,7 +8,7 @@ state changes, Viewpoint changes the parts at once. It does not load a second mo
 
 A version 2 manifest also has **group binds**: one line for all the facings of an object.
 
-To change a version 1 pack, see [Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md).
+To change a version 1 pack, see [Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md).
 
 ## Parts
 
@@ -61,7 +61,7 @@ part glows in all the states.
 >
 > Each material uses the texture of its own `map_Kd`. The two copies of a part can use different materials, with
 > different textures. A model that uses one texture for all its states uses less memory. See
-> [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md).
+> [Format](https://docs.projectviewpoint.org/resource-packs/format.md).
 
 ## Lit
 
@@ -110,9 +110,9 @@ ignores `bind.<sprite>[lit]=` and names the line in the log.
 
 ## Rules
 
-- See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md#models) for how a model stands on its square.
+- See [Format](https://docs.projectviewpoint.org/resource-packs/format.md#models) for how a model stands on its square.
 - Models count in `memory.packMiB`. Viewpoint loads a model the first time that the game shows it.
-- The package nearer the top of the Active column wins a sprite. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+- The package nearer the top of the Active column wins a sprite. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - A line that Viewpoint cannot read is ignored. The log names its line number.
 
 > **Note**
@@ -120,8 +120,8 @@ ignores `bind.<sprite>[lit]=` and names the line in the log.
 > A model with parts works in an older Viewpoint too: there, all its parts show at the same time. A version 2 manifest
 > needs a Viewpoint that supports it. An older Viewpoint ignores its group lines.
 
-For a model that needs code, see [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md).
+For a model that needs code, see [Model providers](https://docs.projectviewpoint.org/api/model-providers.md).
 
 ---
 
-Previous: [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md) | Next: [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Format](https://docs.projectviewpoint.org/resource-packs/format.md) | Next: [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

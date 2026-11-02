@@ -13,7 +13,7 @@ A file in the `shaders/` folder of your pack replaces the file of the same path 
 - A file that you do not replace comes from your `base`, then from the library. A pack holds only what it changes.
 - `constants.glsl` cannot be replaced. Viewpoint makes it. Any file can `#include "constants.glsl"`.
 - Every stage starts with `#version 330`. Viewpoint adds the defines of the options and the pipeline after this line.
-  See [Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md#options).
+  See [Format](https://docs.projectviewpoint.org/shaderpacks/format.md#options).
 
 An include is a line of this form. Viewpoint expands it before it compiles the file, and it adds `#line` directives so
 that an error names the file and the line.
@@ -83,7 +83,7 @@ A few points are inside a shader. The library marks them with comments:
 
 If you replace a library file that has a marker, keep the marker line in the same place in your file. If you drop a
 marker, the snippets of that point do not run in your pack. A message on the Addons page says "the shaderpack X has no
-point Y". See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md).
+point Y". See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md).
 
 ## Made for a version
 
@@ -95,4 +95,4 @@ This notice is planned. It can come after API 1.0.
 
 ---
 
-Previous: [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md) | Next: [Migrating from Java](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/migrating-from-java.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md) | Next: [Migrating from Java](https://docs.projectviewpoint.org/shaderpacks/migrating-from-java.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

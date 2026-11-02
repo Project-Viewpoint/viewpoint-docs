@@ -77,4 +77,4 @@ An addon with no active hooks, no callbacks and no assets adds no cost to the fr
 
 ---
 
-Previous: [Assets & budgets](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md) | Next: [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md) | Next: [Format](https://docs.projectviewpoint.org/resource-packs/format.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

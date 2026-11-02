@@ -21,7 +21,7 @@ Each package has one state at a time. The card shows it. Viewpoint compares a pa
 | **Lingering** | Off, but Java has not yet released its classes from memory. The card shows **Inactive**. |
 | **Failed** | It did not load, `enable` failed, or its hooks did not install. The card gives the cause. |
 | **Suspended** | Stopped for this session. A handler threw an exception, or the server does not list the mod of a `side=gameplay` addon. |
-| **Needs an update** | The addon uses a member of Viewpoint that Viewpoint has removed. The card names the member and the replacement, or says that nothing replaces it. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md#removed-members). |
+| **Needs an update** | The addon uses a member of Viewpoint that Viewpoint has removed. The card names the member and the replacement, or says that nothing replaces it. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md#removed-members). |
 
 A resource pack and a Shaderpack use the same states, but not the states that are about code.
 
@@ -119,7 +119,7 @@ Three things keep your classes in memory that Viewpoint cannot clear for you. Do
 A loaded addon keeps the jar that it loaded, in memory. If the files on disk change, also if only the jar changes, the
 card shows a dot and *update available, applies at next enable or restart*. The next enable reads the new jar and compares it with the player's consent. An
 update that asks for more never starts without the player's consent. This is also true after a restart. See
-[Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## Suspension
 
@@ -159,7 +159,7 @@ Viewpoint does file work, downloads and asset decoding on its own threads. You g
 Your code runs on the render thread only in two places:
 
 - a **draw callback**, which uses the `Gpu` object and a short list of OpenGL calls. See
-  [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned);
+  [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned);
 - a hook with `thread = RENDER`, which can read and set values only. It cannot draw.
 
 Viewpoint measures each of these calls. If one throws an exception, Viewpoint suspends the addon. Values from the main
@@ -177,7 +177,7 @@ The javadoc of each public API method has a `@thread` tag. It tells you the thre
 
 A hook has `thread = MAIN` by default. If the game calls the hooked method from a different thread, Viewpoint **does
 not run your handler**. The card counts the call as *skipped off-thread*. You can use `thread = ANY` for a handler that
-reads only values. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#threads).
+reads only values. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md#threads).
 
 ## Re-entry
 
@@ -186,4 +186,4 @@ does not recurse into your handlers. The card counts these skipped calls.
 
 ---
 
-Previous: [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) | Next: [Versions & compatibility](https://project-viewpoint.github.io/viewpoint-docs/concepts/versions-and-compatibility.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) | Next: [Versions & compatibility](https://docs.projectviewpoint.org/concepts/versions-and-compatibility.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

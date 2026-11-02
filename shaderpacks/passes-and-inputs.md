@@ -131,7 +131,7 @@ that the game does not give.
 
 ## Values of addons
 
-An addon can give a value to your shaders. See [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md). Declare the uniform with the
+An addon can give a value to your shaders. See [Shader values](https://docs.projectviewpoint.org/api/shader-values.md). Declare the uniform with the
 encoded id of the addon in its name:
 
 ```glsl
@@ -145,4 +145,4 @@ not useful without it.
 
 ---
 
-Previous: [Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md) | Next: [Library files](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/library-files.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Format](https://docs.projectviewpoint.org/shaderpacks/format.md) | Next: [Library files](https://docs.projectviewpoint.org/shaderpacks/library-files.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

@@ -21,7 +21,7 @@ can then switch it off, see its label, and update it with the mod.
 1. Make the folder `media/viewpoint/shaderpacks/<id>/` in your mod. Put it in `common/`, or in the version folder.
 2. Move your `pack.properties` and your `shaders/` folder into it. Add `textures/` if the pack has images.
 3. Add the package keys to `pack.properties`: `format`, `id`, `version` and `game.min`. Add `icon`, `license` and
-   `changelog` if you can. See [Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md).
+   `changelog` if you can. See [Format](https://docs.projectviewpoint.org/shaderpacks/format.md).
 4. Make the folder name the same as the `id`.
 5. Remove the installer jar. Remove `javaJarFile` from `mod.info`. Keep `require=Viewpoint`.
 6. Remove the code that copied files. Nothing copies the pack now.
@@ -35,7 +35,7 @@ If your old name is not a correct id, choose a new id.
 
 The options of the pack are saved as `pack.<encoded id>.<option>`. If the encoded id of the new package is the same as the
 old name of the folder pack, the saved options of the player stay. If it is not the same, the player sets the options
-again. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+again. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## If the player still has the old copy
 
@@ -46,13 +46,13 @@ changelog to delete the old folder.
 ## If the pack builds on another pack
 
 Put `base=` in `pack.properties`. If the base is a Shaderpack of another mod, add it to `requires`. See
-[Format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md#build-on-another-pack).
+[Format](https://docs.projectviewpoint.org/shaderpacks/format.md#build-on-another-pack).
 
 ## If your jar also changed library GLSL
 
 Some jars also patched `Shaders.read` to change library GLSL as the game starts. A Shaderpack does this with files in
 `shaders/`. A small change that must apply under any pack is a shader snippet. See
-[Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+[Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 > **Note**
 >
@@ -62,4 +62,4 @@ Some jars also patched `Shaders.read` to change library GLSL as the game starts.
 
 ---
 
-Previous: [Library files](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/library-files.md) | Next: [Managing addons](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Library files](https://docs.projectviewpoint.org/shaderpacks/library-files.md) | Next: [Managing addons](https://docs.projectviewpoint.org/players/managing-addons.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

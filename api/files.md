@@ -92,4 +92,4 @@ one.
 
 ---
 
-Previous: [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) | Next: [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) | Next: [Downloads](https://docs.projectviewpoint.org/api/downloads.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

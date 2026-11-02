@@ -2,7 +2,7 @@
 
 > What each Viewpoint release adds to, deprecates in and removes from the internals list, with the replacements.
 
-Viewpoint changes in each release. The [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) changes with it. This page lists
+Viewpoint changes in each release. The [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) changes with it. This page lists
 the changes of the list, release by release, so that you can update your addon.
 
 Viewpoint writes this page when it builds a release. Do not edit it by hand.
@@ -26,7 +26,7 @@ Each row gives the class, the member, the release and, for the last two tables, 
 **Added**
 
 This is the first release with the list: every member of the
-[internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) is new.
+[internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) is new.
 
 **Deprecated**
 
@@ -71,4 +71,4 @@ players use.
 
 ---
 
-Previous: [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) | Next: [Glossary](https://project-viewpoint.github.io/viewpoint-docs/reference/glossary.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) | Next: [Glossary](https://docs.projectviewpoint.org/reference/glossary.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

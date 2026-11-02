@@ -7,7 +7,7 @@ It is a Java properties file in UTF-8. A comment is a full line that starts with
 value.
 
 The folder of the file tells Viewpoint the kind: `addons/`, `resourcepacks/` or `shaderpacks/`. See
-[Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md).
+[Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md).
 
 ```properties title="addon.properties"
 format=1
@@ -42,7 +42,7 @@ Viewpoint ignores a key that it does not know, and writes it to the log. If `for
 Viewpoint reads, the package is **Incompatible**. The card tells you this.
 
 Viewpoint **refuses** a package when a required key is missing or a value is not valid. For example: an id that does not
-follow the [rules for ids](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#ids), a version that is not dotted numbers, a path that goes out of
+follow the [rules for ids](https://docs.projectviewpoint.org/concepts/package-kinds.md#ids), a version that is not dotted numbers, a path that goes out of
 the package folder (with `..`), or a permission that Viewpoint does not know. The card names each key and tells why. The
 player cannot switch on a refused package. Viewpoint also refuses a descriptor that is larger than 64 KiB.
 
@@ -53,7 +53,7 @@ All descriptors use these keys.
 | Key | Required | Meaning |
 | --- | --- | --- |
 | `format` | Yes | The format of the descriptor: `1`. |
-| `id` | Yes | The id of the package (see [Ids](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#ids)). The folder name must be the same. |
+| `id` | Yes | The id of the package (see [Ids](https://docs.projectviewpoint.org/concepts/package-kinds.md#ids)). The folder name must be the same. |
 | `name` | Yes | The name on the card. |
 | `version` | Yes | The version of the package: major, minor and patch, each of at most three digits (`MMM.NNN.PPP`, for example `1.2.0`). Consent is for one version. |
 | `author` | No | The name of the author on the card. |
@@ -74,17 +74,17 @@ Only `addon.properties` uses these keys. Another descriptor ignores them.
 | Key | Required | Meaning |
 | --- | --- | --- |
 | `side` | No | `client` (the default) or `gameplay`. See [`side`](#side). |
-| `api` | Yes | The API version that you compiled against: `1.0`. See [Versions & compatibility](https://project-viewpoint.github.io/viewpoint-docs/concepts/versions-and-compatibility.md). |
+| `api` | Yes | The API version that you compiled against: `1.0`. See [Versions & compatibility](https://docs.projectviewpoint.org/concepts/versions-and-compatibility.md). |
 | `jar` | Yes | The name of the jar in the package folder. Do not use `javaJarFile`. |
 | `entry` | Yes | The class that implements `Addon`. |
-| `settings` | No | A `settings.properties` file. See [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md). |
-| `permissions` | No | A list of the permissions that the addon asks for, with commas between them. See [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md). |
-| `hooks.targets` | With `hooks` | The classes that the addon can hook, with commas between them. A game class or a listed class of Viewpoint. See [Hookable targets](https://project-viewpoint.github.io/viewpoint-docs/patching/hookable-targets.md). |
+| `settings` | No | A `settings.properties` file. See [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md). |
+| `permissions` | No | A list of the permissions that the addon asks for, with commas between them. See [Permissions](https://docs.projectviewpoint.org/trust/permissions.md). |
+| `hooks.targets` | With `hooks` | The classes that the addon can hook, with commas between them. A game class or a listed class of Viewpoint. See [Hookable targets](https://docs.projectviewpoint.org/patching/hookable-targets.md). |
 | `files.quotaMiB` | No | The space for the files folder of the addon, in MiB. The default is 64. More than 64 needs the player's consent. |
-| `draw.gpuMiB` | No | The video memory for the `Gpu` objects of the addon, in MiB, 1 or more. The default is 64. More than 128 needs the permission `vram`. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md). |
+| `draw.gpuMiB` | No | The video memory for the `Gpu` objects of the addon, in MiB, 1 or more. The default is 64. More than 128 needs the permission `vram`. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md). |
 | `downloads.hosts` | With `downloads` | The hosts that the addon can download from, with commas between them. |
 | `lua.globals` | No | Names of Lua globals for your exports, with commas between them. Without it, the exports are in `Viewpoint.Addons["<id>"]`. |
-| `exports` | No | The Java packages that other addons can link to. See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md). |
+| `exports` | No | The Java packages that other addons can link to. See [Services](https://docs.projectviewpoint.org/api/services.md). |
 
 ## Asset keys
 
@@ -92,12 +92,12 @@ An addon and a resource pack use these keys. A Shaderpack does not.
 
 | Key | Required | Meaning |
 | --- | --- | --- |
-| `models`, `tiles`, `sounds`, `data` | No | The assets. `models` is the path of a model manifest. The other three are folders. See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md). |
+| `models`, `tiles`, `sounds`, `data` | No | The assets. `models` is the path of a model manifest. The other three are folders. See [Format](https://docs.projectviewpoint.org/resource-packs/format.md). |
 
 ## Shaderpack keys
 
 A Shaderpack uses the common keys, and the keys of its pack. It has no `jar`, `entry`, `api` or `permissions`. It can
-also set `library`, the Viewpoint version that you made the pack for. See [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md).
+also set `library`, the Viewpoint version that you made the pack for. See [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md).
 
 ## Version ranges
 
@@ -136,13 +136,13 @@ Viewpoint runs only on the client. Your code runs on the client also when the se
 
 If you call a service without its permission, your code gets a `SecurityException`. If a hook target is not in
 `hooks.targets`, the addon cannot start. The card tells you this before the player sees a consent dialog. See
-[Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md).
+[Permissions](https://docs.projectviewpoint.org/trust/permissions.md).
 
 ## Encoded keys
 
 A setting of an addon is saved as `addon.<encoded id>.<name>`. An option of a Shaderpack is saved as
 `pack.<encoded id>.<option>`. A shader value is `uAddon_<encoded id>_<name>`. The encoded id writes `.` and `-` as `_`.
-See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## The descriptor of a resource pack
 
@@ -161,8 +161,8 @@ It uses the common keys and the asset keys. It has no `jar`, `entry`, `api` or `
 
 > **Tip**
 >
-> The [Descriptor keys](https://project-viewpoint.github.io/viewpoint-docs/reference/descriptor-keys.md) page has all keys in one table.
+> The [Descriptor keys](https://docs.projectviewpoint.org/reference/descriptor-keys.md) page has all keys in one table.
 
 ---
 
-Previous: [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md) | Next: [Lifecycle & threads](https://project-viewpoint.github.io/viewpoint-docs/concepts/lifecycle-and-threads.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md) | Next: [Lifecycle & threads](https://docs.projectviewpoint.org/concepts/lifecycle-and-threads.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

@@ -21,7 +21,7 @@ of a different package to make space.
 The player can change the pool sizes in Viewpoint's settings, on the **World**, **Memory** page.
 
 Tile textures are different. If the tile packs that the player selects need more, Viewpoint increases their pools, and
-`memory.floorMiB` and `memory.wallMiB`, so that the tiles keep all their detail. See [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md).
+`memory.floorMiB` and `memory.wallMiB`, so that the tiles keep all their detail. See [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md).
 
 If there is no space for your icon, the card shows a tile with a letter.
 
@@ -75,8 +75,8 @@ the graphics card a little each frame. Viewpoint reads and parses a Shaderpack o
 > **Note**
 >
 > The estimates are approximate. The **Performance** tab shows them next to the measured values. See
-> [Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md).
+> [Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md).
 
 ---
 
-Previous: [ZombieBuddy policy & signatures](https://project-viewpoint.github.io/viewpoint-docs/trust/relation-to-zombiebuddy.md) | Next: [Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [ZombieBuddy policy & signatures](https://docs.projectviewpoint.org/trust/relation-to-zombiebuddy.md) | Next: [Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

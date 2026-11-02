@@ -8,7 +8,7 @@ game method starts or ends. You declare the hook. Viewpoint installs it.
 Viewpoint reads your hooks from the jar before it shows the consent dialog. It runs the hooks of all active addons in
 the player's order. The player can see each active hook and veto it.
 
-**Permission:** `hooks`, with each hooked class in `hooks.targets`. You can hook game methods and the listed methods of Viewpoint. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md). You cannot hook a class of another addon.
+**Permission:** `hooks`, with each hooked class in `hooks.targets`. You can hook game methods and the listed methods of Viewpoint. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md). You cannot hook a class of another addon.
 
 ```properties
 permissions=hooks
@@ -151,7 +151,7 @@ both of these are true:
 A `thread = ANY` hook makes the label **Amber**. Your handler must not use game objects.
 
 With `thread = RENDER`, your handler runs on the render thread. Use it only for a method of Viewpoint that the
-[internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) marks as a render method. A `RENDER` handler can read and set the
+[internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) marks as a render method. A `RENDER` handler can read and set the
 arguments and the return value. It cannot use `Gpu` or OpenGL: Viewpoint refuses the jar when the handler's code, or a
 method that it calls, can reach either. If the method is called on another thread, Viewpoint does not run the handler,
 and the card counts the call. A `RENDER` hook makes the label Red.
@@ -186,7 +186,7 @@ handler. A `RENDER` hook is also counted in the time of the render thread.
 ## When hooks install
 
 Viewpoint installs and removes hooks only at **safe points** (see
-[Lifecycle & threads](https://project-viewpoint.github.io/viewpoint-docs/concepts/lifecycle-and-threads.md#safe-points)). Until the next safe point, the state is *Active:
+[Lifecycle & threads](https://docs.projectviewpoint.org/concepts/lifecycle-and-threads.md#safe-points)). Until the next safe point, the state is *Active:
 hooks pending*. Use `ctx.hooksLive()` or `ctx.onHooksLive(Runnable)` to know when your hooks are installed.
 
 ## The hook list
@@ -217,8 +217,8 @@ of the method.
 > **Note**
 >
 > You can keep your ZombieBuddy `@Patch` classes. Viewpoint reads them in an addon jar. See
-> [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+> [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 ---
 
-Previous: [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md) | Next: [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Shader values](https://docs.projectviewpoint.org/api/shader-values.md) | Next: [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

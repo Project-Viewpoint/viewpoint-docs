@@ -11,7 +11,7 @@
 An addon can hook some methods of Viewpoint itself, and read some of its members. This is for the cases where
 `viewpoint.api` does not have what you need. Look at `viewpoint.api` first.
 
-Viewpoint lets you use only the members on the [internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md). It does not load a jar
+Viewpoint lets you use only the members on the [internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md). It does not load a jar
 that uses another member of Viewpoint.
 
 ## Use, hook and reflect
@@ -35,7 +35,7 @@ The list gives three ways to reach a member. Each has a rule.
 ## Declare the hook
 
 Declare a hook on a Viewpoint method as you declare one on a game method. See
-[Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md). The target is the class on the internals list. The method name and
+[Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md). The target is the class on the internals list. The method name and
 the descriptor are the ones that the list gives for the member. Put the class in `hooks.targets`, as for a game class.
 The consent dialog and the update list each hooked member of Viewpoint.
 
@@ -68,7 +68,7 @@ call as *skipped off-thread*.
 ## Hot members
 
 Some members run more than 1,000 times each frame. A hook on them is a **costly hook**, and the label is Amber. A typed
-handler is much cheaper than a boxed one. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#typed-handlers).
+handler is much cheaper than a boxed one. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md#typed-handlers).
 
 ## Replacements
 
@@ -76,10 +76,10 @@ For some of the most hooked members, `viewpoint.api` has a better way. Use it wh
 
 | Member | Replacement |
 | --- | --- |
-| `ModelCapture.capture`, to put a model on a bone | `AttachmentProvider`. See [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md). |
-| `PackGather.object` | `ModelProvider`. See [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md). |
-| `Shaders.read` | Shader snippets, or a Shaderpack. See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) and [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md). |
-| `Eye.place` | Camera layers. See [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md). |
+| `ModelCapture.capture`, to put a model on a bone | `AttachmentProvider`. See [Model providers](https://docs.projectviewpoint.org/api/model-providers.md). |
+| `PackGather.object` | `ModelProvider`. See [Model providers](https://docs.projectviewpoint.org/api/model-providers.md). |
+| `Shaders.read` | Shader snippets, or a Shaderpack. See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) and [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md). |
+| `Eye.place` | Camera layers. See [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md). |
 
 `AttachmentProvider` adds a model to a bone. It does not move a bone. This release has no API that changes the pose of a
 character. A hook on `ModelCapture.capture` is the only way that Viewpoint lists, and its level is Red. An API for this is
@@ -98,7 +98,7 @@ the replacement.
 - A member whose descriptor changes is a gone member plus a new member.
 
 Examples of members that are gone: `FP.snapshot` (use `ViewListener.onFrame`) and `SceneDrawer.drawCrosshair` (use
-`ReticleProvider`, or the `crosshair` draw point). The page [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) lists the
+`ReticleProvider`, or the `crosshair` draw point). The page [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) lists the
 changes of each release.
 
 > **Caution**
@@ -109,8 +109,8 @@ changes of each release.
 ## Hooks of other addons
 
 Viewpoint refuses a hook on a class of another addon. If you need an extension point, ask the author to publish a service.
-See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md).
+See [Services](https://docs.projectviewpoint.org/api/services.md).
 
 ---
 
-Previous: [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) | Next: [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) | Next: [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

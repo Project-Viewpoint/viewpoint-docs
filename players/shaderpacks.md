@@ -62,15 +62,15 @@ use, and the time its passes take on your graphics card each frame, broken down 
 the last second. For a pack from a mod, **Info**, **Performance** shows the same line.
 
 For the full picture, compare your frame rate against the **Default** pack. If you'd like more detail, see
-[Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md).
+[Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md).
 
 > **Tip**
 >
 > If a pack runs slowly on your graphics card, try a lower setting in its Quality list, or turn some effects off in
 > **Shader Options**.
 
-Addons and resource packs are covered in [Managing addons](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md).
+Addons and resource packs are covered in [Managing addons](https://docs.projectviewpoint.org/players/managing-addons.md).
 
 ---
 
-Previous: [Managing addons](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md) | Next: [API reference](https://project-viewpoint.github.io/viewpoint-docs/reference/api.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Managing addons](https://docs.projectviewpoint.org/players/managing-addons.md) | Next: [API reference](https://docs.projectviewpoint.org/reference/api.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

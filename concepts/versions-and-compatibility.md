@@ -11,7 +11,7 @@ not the same as the Viewpoint version.
   implement never gets a new abstract method.
 - **Deprecated members** stay for two releases. Then they are removed.
 - **Use `viewpoint.api` when you can.** You can also use or hook some of Viewpoint's internal members. They are in the
-  [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md). Internal members can change in each release, and they
+  [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md). Internal members can change in each release, and they
   give your addon an Amber or Red label. Viewpoint does not load a jar that uses an internal member that is not in the
   list.
 
@@ -41,7 +41,7 @@ The passes of a Shaderpack have a version also. Ask for it with `Version.has("pa
 ## Internal members change
 
 The members of Viewpoint on the internals list have no promise of stability. Each release can add, deprecate or remove
-members. [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) lists the changes of each release.
+members. [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) lists the changes of each release.
 
 | The member is | What occurs |
 | --- | --- |
@@ -73,4 +73,4 @@ A jar that you compile for API 1.0 loads in all 1.x versions.
 
 ---
 
-Previous: [Lifecycle & threads](https://project-viewpoint.github.io/viewpoint-docs/concepts/lifecycle-and-threads.md) | Next: [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Lifecycle & threads](https://docs.projectviewpoint.org/concepts/lifecycle-and-threads.md) | Next: [Order](https://docs.projectviewpoint.org/concepts/order.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

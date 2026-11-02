@@ -72,7 +72,7 @@ for (AimModifier part : ctx.services().contributions("example.aim.modifiers", Ai
 ```
 
 `contributions` gives the parts in the order of the Active column. The part of the addon nearer the top comes first. See
-[Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md). The id of an extension point is the choice of the addon that owns it. An addon can have 16 parts.
+[Order](https://docs.projectviewpoint.org/concepts/order.md). The id of an extension point is the choice of the addon that owns it. An addon can have 16 parts.
 
 ## Consent and levels
 
@@ -115,4 +115,4 @@ not move a call to another thread.
 
 ---
 
-Previous: [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md) | Next: [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Assets](https://docs.projectviewpoint.org/api/assets.md) | Next: [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

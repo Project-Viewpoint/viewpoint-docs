@@ -23,7 +23,7 @@ draw.gpuMiB=32
 | `FINAL` | The final picture is on the screen, with its colours as shown, before the interface of the game. | The screen |
 
 - No point runs while a Minecraft shader pack draws the frame. The pack owns its targets.
-- At one point, the callbacks of the addons run in the order of the player. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+- At one point, the callbacks of the addons run in the order of the player. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - What you draw at `AFTER_OPAQUE` to `BEFORE_POST` goes through the post-processing of Viewpoint. Write the depth too, if
   you draw into the world: the light in the air goes over a pixel that has the depth of the sky.
 
@@ -60,7 +60,7 @@ A callback runs on the render thread. Draw into the target that is bound.
 ## Cost
 
 Viewpoint measures the time of each callback on the render thread and on the graphics card. See
-[Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md).
+[Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md).
 
 ## The Gpu object
 
@@ -129,4 +129,4 @@ Make your buffers with `BufferUtils`, and use the `Gpu` object instead.
 
 ---
 
-Previous: [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

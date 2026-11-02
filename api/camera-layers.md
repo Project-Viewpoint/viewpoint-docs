@@ -14,7 +14,7 @@ permissions=camera
 ## Layers
 
 A `CameraLayer` adds a small change to the camera. Many addons can have a layer at the same time. Viewpoint adds the
-layers together with its own motion. The player's order decides the order of the layers. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+layers together with its own motion. The player's order decides the order of the layers. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 
 A layer has these values. Each is neutral until you set it.
 
@@ -102,12 +102,12 @@ These claims work in the same way as the camera claim: one holder, the top of th
 > **Note**
 >
 > These types replace the writes that older addons did with reflection. Reflection into Viewpoint is Red. A layer is Normal.
-> See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+> See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 ## Read the result
 
-`ViewState` tells you if the free camera is on. See [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md).
+`ViewState` tells you if the free camera is on. See [View state](https://docs.projectviewpoint.org/api/view-state.md).
 
 ---
 
-Previous: [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md) | Next: [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Services](https://docs.projectviewpoint.org/api/services.md) | Next: [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

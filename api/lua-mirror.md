@@ -5,7 +5,7 @@
 `Viewpoint.Addons` is a mirror for reading. A Lua mod can read two things: the view state, and the settings that an addon
 shares. Viewpoint changes nothing through these functions.
 
-To call the Java functions of your own addon from Lua, use exports. See [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md). The
+To call the Java functions of your own addon from Lua, use exports. See [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md). The
 exports of an addon are in `Viewpoint.Addons["<id>"]`. The functions on this page are in `Viewpoint.Addons` itself.
 
 ## The functions
@@ -41,7 +41,7 @@ if v and v.on then
 end
 ```
 
-The fields and units are the same as in [`ViewState`](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md). The coordinates are the game's world
+The fields and units are the same as in [`ViewState`](https://docs.projectviewpoint.org/api/view-state.md). The coordinates are the game's world
 coordinates.
 
 ## Rules
@@ -52,10 +52,10 @@ coordinates.
 - `setting` gives the value that the player has set now. This includes a value that has an effect only at the next
   enable.
 - The table that you get is a copy. If you change it, nothing changes in Viewpoint.
-- `Viewpoint.Addons` is one table that every mod shares, and it also holds the [exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) of the addons by
+- `Viewpoint.Addons` is one table that every mod shares, and it also holds the [exports](https://docs.projectviewpoint.org/api/lua-exports.md) of the addons by
   their ids. Lua lets a mod write to it. A mod that does can change what a different mod reads from it. Viewpoint does
   not protect the table.
 
 ---
 
-Previous: [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md) | Next: [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md) | Next: [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

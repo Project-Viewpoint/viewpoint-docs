@@ -8,8 +8,8 @@ resource pack. Thus the same limits apply. No permission is necessary.
 ## Where the assets are
 
 Set the same four keys in the descriptor as a resource pack. `models` is the path of a manifest. The other three are
-folders. Use a version 2 manifest. See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md#models) and
-[Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md). Version 1 is deprecated.
+folders. Use a version 2 manifest. See [Format](https://docs.projectviewpoint.org/resource-packs/format.md#models) and
+[Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md). Version 1 is deprecated.
 
 ```properties
 models=models/manifest.txt
@@ -30,8 +30,8 @@ Each path must be in your mod's folder. If it is not, the card shows an error.
 | Data | `ctx.assets().data()` | Files read as bytes, 16 MiB maximum each | `memory.addonDataMiB` |
 
 Code does not load tile textures. To replace the game's tile art, use the `tiles` folder. See
-[Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md). To choose a model with code, use a provider. See
-[Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md).
+[Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md). To choose a model with code, use a provider. See
+[Model providers](https://docs.projectviewpoint.org/api/model-providers.md).
 
 ## Use them
 
@@ -49,7 +49,7 @@ if (assets.sounds().available()) {
 
 A load gives a `Pending`. Its callbacks run on the main thread. Viewpoint reads or decodes the asset on a different thread.
 Thus a load does not stop a frame. Call the methods of `ctx.assets()` on the main thread. A name has the same rules as the name
-of a file in [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md): lower-case, at most four parts, and a known extension.
+of a file in [Files](https://docs.projectviewpoint.org/api/files.md): lower-case, at most four parts, and a known extension.
 
 - `data().read(name)` gives a copy of the bytes each time. Viewpoint keeps one copy in the pool until your addon goes off.
   Two reads of one file at the same time are one read.
@@ -75,7 +75,7 @@ or you hold half of it, Viewpoint **refuses your asset**:
 - your other assets stay loaded.
 
 Viewpoint never removes the assets of a different package to make space for yours. See
-[Assets & budgets](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md) for the pool sizes and the estimates on the **Performance** tab.
+[Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md) for the pool sizes and the estimates on the **Performance** tab.
 
 > **Tip**
 >
@@ -84,4 +84,4 @@ Viewpoint never removes the assets of a different package to make space for your
 
 ---
 
-Previous: [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) | Next: [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Downloads](https://docs.projectviewpoint.org/api/downloads.md) | Next: [Services](https://docs.projectviewpoint.org/api/services.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

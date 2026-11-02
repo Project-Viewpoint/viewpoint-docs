@@ -47,13 +47,13 @@ occurs, Viewpoint shows the pack as **registered at run time**.
 6. Add a version, an author and an icon.
 
 The manifest does not change in these steps. Then change it to version 2. See
-[Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md).
+[Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md).
 
 > **Note**
 >
-> Legacy packs continue to work, but do not make a new pack in this way. See [Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md). A resource pack can also have an icon, a version, a
+> Legacy packs continue to work, but do not make a new pack in this way. See [Format](https://docs.projectviewpoint.org/resource-packs/format.md). A resource pack can also have an icon, a version, a
 > changelog, tiles, sounds and data.
 
 ---
 
-Previous: [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md) | Next: [Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md) | Next: [Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

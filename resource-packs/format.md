@@ -34,7 +34,7 @@ data=data
 
 `models` is the path of the manifest file. `tiles`, `sounds` and `data` are folders. Each path is relative to the
 folder of the pack, and must be in the folder of the pack's version or in `common/` (the folder that holds its
-`media` folder). The [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) page gives the common keys.
+`media` folder). The [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) page gives the common keys.
 
 ## Models
 
@@ -58,7 +58,7 @@ group.furniture_seating_indoor_02/Wooden Chair=chair,0,0,0.1,0,1
 | `format=2` | The version of the manifest. |
 | `id`, `name` | The id and name of the manifest, for messages. |
 | `model.<id>=<path>` | A model: an OBJ file, relative to the folder of the manifest. Viewpoint finds its MTL and PNG files from the OBJ file. |
-| `group.<tileset>/<name>=<model>,<degrees>,<x>,<y>,<z>,<scale>` | One line for all the facings of an object. See [Group binds](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md#group-binds). |
+| `group.<tileset>/<name>=<model>,<degrees>,<x>,<y>,<z>,<scale>` | One line for all the facings of an object. See [Group binds](https://docs.projectviewpoint.org/resource-packs/model-states.md#group-binds). |
 | `bind.<sprite>=<model>,<degrees>,<x>,<y>,<z>,<scale>` | The sprite whose square shows this model, the model id, its rotation in degrees, its offset and its scale. A bind is stronger than a group in the same pack. |
 
 > **Note**
@@ -76,7 +76,7 @@ The model replaces the art of the sprite: the projected art, the game's own spri
 Viewpoint loads a model the first time that the game shows its sprite. When two packs put a model on the same sprite,
 the pack nearer the top of the Active column wins.
 
-A model can change its parts when its object is lit. See [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md).
+A model can change its parts when its object is lit. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
 
 Each material of the MTL uses the PNG of its `map_Kd` line. When the materials of a model use more than one PNG,
 Viewpoint puts these PNGs together on one texture as it loads the model. Together, they must fit in 2056 × 2056
@@ -91,25 +91,25 @@ log. Keep the UVs of a model in the range 0 to 1: a model does not repeat its te
 
 A manifest without `format=2` is version 1. Viewpoint continues to read it. Version 1 has only `bind.` lines: one line
 for each sprite. Viewpoint ignores its `group.` lines, and the log names them. To change a pack to version 2, see
-[Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md).
+[Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md).
 
 This is not the *legacy* flag on a card. That flag shows a pack that its Lua registers, with no descriptor. See
-[Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+[Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 ## Tiles
 
-Tile textures have their own format. See [Tiles](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/tiles.md).
+Tile textures have their own format. See [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md).
 
 ## Sounds
 
 `ogg` and `wav` files. The **Performance** line of the card includes them. In this version, Viewpoint does not play the
 sounds of a resource pack, and they do not replace the sounds of the game. To play a sound, put it in an addon. See
-[Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md).
+[Assets](https://docs.projectviewpoint.org/api/assets.md).
 
 ## Data
 
 Read-only files. Viewpoint does not use them itself. An addon reads only the data of its own package. See
-[Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md). The Lua of the mod can read them with the file functions of the game.
+[Assets](https://docs.projectviewpoint.org/api/assets.md). The Lua of the mod can read them with the file functions of the game.
 
 ## Limits
 
@@ -119,14 +119,14 @@ Read-only files. Viewpoint does not use them itself. An addon reads only the dat
 | All assets | They count in their pool. If the pool is full, Viewpoint refuses the asset, and the card tells you. |
 | Paths | In the folder of the pack's version or in `common/`, the one that holds its `media` folder. Viewpoint refuses an absolute path, a `\`, and a link or a junction that goes out of it. A `..` is allowed when the file stays in that folder. |
 
-If Viewpoint cannot read a file, the card names the file. See [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md#resource-packs-and-shaderpacks).
+If Viewpoint cannot read a file, the card names the file. See [Labels](https://docs.projectviewpoint.org/trust/labels.md#resource-packs-and-shaderpacks).
 
 > **Note**
 >
 > A resource pack has no Java and no shader code. If you need Java, make an addon. If you need to change how the whole
-> frame is drawn, make a [Shaderpack](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md). Viewpoint does not check the Lua of the
+> frame is drawn, make a [Shaderpack](https://docs.projectviewpoint.org/shaderpacks/format.md). Viewpoint does not check the Lua of the
 > mod. The last line of the label tells the player this.
 
 ---
 
-Previous: [Measuring your addon](https://project-viewpoint.github.io/viewpoint-docs/performance/measuring-your-addon.md) | Next: [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Measuring your addon](https://docs.projectviewpoint.org/performance/measuring-your-addon.md) | Next: [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

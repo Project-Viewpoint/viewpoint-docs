@@ -18,7 +18,7 @@ first person or third person. When the gunplay is off, the game aims, and Viewpo
 All of them run on the main thread. Keep them short. Get them from `ctx.combat()`. Viewpoint closes what you registered when
 your addon goes off.
 
-Places and lines use the coordinates of the [view state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md): `x` east, `y` south, `z` up in levels, where
+Places and lines use the coordinates of the [view state](https://docs.projectviewpoint.org/api/view-state.md): `x` east, `y` south, `z` up in levels, where
 Viewpoint draws things. Angles are in degrees. A yaw of 0 looks east, 90 looks south.
 
 ## Listeners
@@ -57,7 +57,7 @@ ctx.combat().shots(new ShotListener() {
 
 A `SwayProvider` adds sway to the crosshair, for example for the breath, a wound or tiredness. Many addons can add sway.
 
-- Viewpoint asks the providers in the order of the player. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+- Viewpoint asks the providers in the order of the player. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - Each provider gets the aim with the sway of Viewpoint only. Viewpoint adds the sway of all the providers to it.
 - The crosshair and the shot go to the sum, also outside the aim ring.
 - All the providers together move the crosshair at most 10 degrees each way.
@@ -147,13 +147,13 @@ canvas.pixels(argb);                              // 64 * 64 pixels, 0xAARRGGBB,
 - A provider that throws, returns `null`, or shows a picture of another addon is a fault. The dot then comes back.
 
 If you want to draw the reticle yourself, use a draw callback at the `crosshair` point. The card of such an addon says
-**draws over the whole screen**. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md).
+**draws over the whole screen**. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md).
 
 > **Note**
 >
 > These types replace the hooks that older addons put on the aim and on the crosshair. Viewpoint refuses a hook on a
-> method that has been removed. See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md#removed-members).
+> method that has been removed. See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md#removed-members).
 
 ---
 
-Previous: [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) | Next: [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) | Next: [Model providers](https://docs.projectviewpoint.org/api/model-providers.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

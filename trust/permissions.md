@@ -14,16 +14,16 @@ downloads.hosts=github.com,objects.githubusercontent.com
 
 | Permission | Opens | Keys | Page |
 | --- | --- | --- | --- |
-| `hooks` | `@Hook` handlers, and `@Patch` classes in an addon jar. Game methods and listed methods of Viewpoint. | `hooks.targets` | [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md) |
-| `files` | `AddonFiles`: a folder for your addon, with a quota | `files.quotaMiB` (optional) | [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) |
-| `downloads` | `AddonDownloads`: a download that the player accepts each time | `downloads.hosts` | [Downloads](https://project-viewpoint.github.io/viewpoint-docs/api/downloads.md) |
-| `lua` | `@LuaExport`: Java functions that the Lua of any mod can call | `lua.globals` (optional) | [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md) |
-| `camera` | Camera layers, camera claims, look control, view control and cursor claims | None | [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) |
-| `combat` | Aim and shot listeners, sway, shot resolvers and reticles | None | [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) |
-| `models` | `ModelProvider` and `AttachmentProvider` | None | [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md) |
-| `shaders` | `ShaderValues` and `AddonSnippets` | None | [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md), [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) |
-| `draw` | `DrawCallback` and the `Gpu` object | `draw.gpuMiB` (optional) | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) |
-| `vram` | More than 128 MiB of video memory for the `Gpu` objects | `draw.gpuMiB` | [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) |
+| `hooks` | `@Hook` handlers, and `@Patch` classes in an addon jar. Game methods and listed methods of Viewpoint. | `hooks.targets` | [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md) |
+| `files` | `AddonFiles`: a folder for your addon, with a quota | `files.quotaMiB` (optional) | [Files](https://docs.projectviewpoint.org/api/files.md) |
+| `downloads` | `AddonDownloads`: a download that the player accepts each time | `downloads.hosts` | [Downloads](https://docs.projectviewpoint.org/api/downloads.md) |
+| `lua` | `@LuaExport`: Java functions that the Lua of any mod can call | `lua.globals` (optional) | [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md) |
+| `camera` | Camera layers, camera claims, look control, view control and cursor claims | None | [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md) |
+| `combat` | Aim and shot listeners, sway, shot resolvers and reticles | None | [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) |
+| `models` | `ModelProvider` and `AttachmentProvider` | None | [Model providers](https://docs.projectviewpoint.org/api/model-providers.md) |
+| `shaders` | `ShaderValues` and `AddonSnippets` | None | [Shader values](https://docs.projectviewpoint.org/api/shader-values.md), [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) |
+| `draw` | `DrawCallback` and the `Gpu` object | `draw.gpuMiB` (optional) | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) |
+| `vram` | More than 128 MiB of video memory for the `Gpu` objects | `draw.gpuMiB` | [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) |
 
 These need **no** permission:
 
@@ -70,7 +70,7 @@ These changes need the player's consent again:
 - a new member of Viewpoint that you use, reflect or hook.
 
 Until the player gives consent, the addon stays off. This is also true if it was active before. See
-[Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 > **Tip**
 >
@@ -79,4 +79,4 @@ Until the player gives consent, the addon stays off. This is also true if it was
 
 ---
 
-Previous: [Hookable targets & refusals](https://project-viewpoint.github.io/viewpoint-docs/patching/hookable-targets.md) | Next: [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Hookable targets & refusals](https://docs.projectviewpoint.org/patching/hookable-targets.md) | Next: [Labels](https://docs.projectviewpoint.org/trust/labels.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

@@ -43,7 +43,7 @@ The addon:
 - **draws with OpenGL**: it has a draw callback, and it uses the `Gpu` object or the short list of OpenGL calls that
   Viewpoint allows;
 - uses or hooks a member of Viewpoint that has the Amber grade in the
-  [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md);
+  [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md);
 - uses a deprecated member of Viewpoint.
 
 ## What makes a label Red
@@ -62,19 +62,19 @@ The addon:
 - uses game code that reads files or opens network connections;
 - has a hook with `thread = RENDER`;
 - uses or hooks a member of Viewpoint that has the Red grade in the
-  [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md);
+  [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md);
 - links to the code of an addon that is Red. The reason reads **uses code of X (Red)**.
 
 An addon that links to the code of another addon (with `requires` and `exports`) takes the highest level of the addons it
-links to. See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md).
+links to. See [Services](https://docs.projectviewpoint.org/api/services.md).
 
 ## What Viewpoint does not load
 
 Viewpoint does not load a jar that breaks one of these rules. The card names the cause.
 
 - Do not use ZombieBuddy or ByteBuddy. The one exception is the `@Patch` and `@Exposer.LuaClass` annotations, which
-  Viewpoint reads and removes. See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
-- Use only the members on the [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md), and only in the way that the
+  Viewpoint reads and removes. See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
+- Use only the members on the [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md), and only in the way that the
   list allows.
 - Do not use a member that Viewpoint has removed (the card shows **Needs an update**).
 - Do not make class loaders, and do not define classes.
@@ -171,8 +171,8 @@ The card also shows the licence of the pack, or **No licence given**.
 ## Consent
 
 The player gives consent to one **version** of one package. There is no "allow all". If an update asks for more, the
-player must give consent again. See [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+player must give consent again. See [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ---
 
-Previous: [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md) | Next: [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Permissions](https://docs.projectviewpoint.org/trust/permissions.md) | Next: [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

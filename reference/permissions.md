@@ -2,7 +2,7 @@
 
 > The permissions, their keys and their limits, in one table.
 
-The [Permissions](https://project-viewpoint.github.io/viewpoint-docs/trust/permissions.md) page explains the permissions.
+The [Permissions](https://docs.projectviewpoint.org/trust/permissions.md) page explains the permissions.
 
 | Permission | Keys | Limits | Without it |
 | --- | --- | --- | --- |
@@ -25,8 +25,8 @@ These need no permission:
 - services.
 
 A new permission, a new target, a new host, a new export or a larger quota needs the player's consent again. See
-[Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ---
 
-Previous: [Labels](https://project-viewpoint.github.io/viewpoint-docs/reference/labels.md) | Next: [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Labels](https://docs.projectviewpoint.org/reference/labels.md) | Next: [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

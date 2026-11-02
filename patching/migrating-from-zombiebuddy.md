@@ -92,7 +92,7 @@ ZombieBuddy mod and the addon of the pilot, the patch runs twice: once from each
 ### 2. Write `@Hook` handlers
 
 Write each patch again as a `@Hook.Before` or `@Hook.After` method with a `HookCall` parameter. The change is small. The
-kind of each hook is then clear, and the player sees what it can do. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
+kind of each hook is then clear, and the player sees what it can do. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md).
 
 ```java title="Before: ZombieBuddy"
 @Patch(className = "zombie.characters.IsoPlayer", methodName = "update")
@@ -115,7 +115,7 @@ public final class UpdateHook {
 
 ## Your `@Exposer.LuaClass` classes
 
-Viewpoint reads these classes as [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md), so the Lua of your mod can keep its names. The addon
+Viewpoint reads these classes as [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md), so the Lua of your mod can keep its names. The addon
 needs the `lua` permission.
 
 | In ZombieBuddy | In an addon |
@@ -128,7 +128,7 @@ needs the `lua` permission.
 | Public constructors (`X.new`) | **Not exported.** Write a static method that makes the object, or a handle. |
 | Instance methods | **Not exported.** Lua can call them only on an object it already has. |
 | Overloads | **Refused.** Name each method differently, with `@LuaExport(name = "...")` if you need to. |
-| Any argument that Kahlua can convert | A closed set of types. See [The types](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md#the-types). |
+| Any argument that Kahlua can convert | A closed set of types. See [The types](https://docs.projectviewpoint.org/api/lua-exports.md#the-types). |
 
 If a class has `@LuaExport` as well as `@Exposer.LuaClass`, Viewpoint reads it through `@LuaExport` only. The other
 public static methods of the class are not exports, and its `@Exposer.LuaClass` name is not asked for as a global.
@@ -141,18 +141,18 @@ Some code that works in a ZombieBuddy mod has a better place in an addon.
 
 | In your ZombieBuddy mod | In an addon |
 | --- | --- |
-| `@Exposer` classes, so that Lua calls your Java | Exports with `@LuaExport`. Your `@Exposer.LuaClass` classes also work, in part (see above): the name is a *requested* global, and Viewpoint refuses it if another mod has it. Exports install within the start limit. See [Lua exports](https://project-viewpoint.github.io/viewpoint-docs/api/lua-exports.md). |
-| A patch on `Shaders.read` that changes library GLSL | A shader snippet, or a Shaderpack. See [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) and [Shaderpack format](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md). |
-| Reflection to read the view or the camera | `ViewState` on the main thread, and `FrameView` in a draw callback. See [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md). |
-| Writes to the look, the eye, the field of view or the view mode | Camera layers and claims. See [Camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md). |
-| Hooks or reflection on the aim, the shot and the crosshair | `AimListener`, `ShotListener`, `ShotResolver` and `ReticleProvider`. See [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md). |
-| A patch on the choice of the model of an object or a character | `ModelProvider` and `AttachmentProvider`. See [Model providers](https://project-viewpoint.github.io/viewpoint-docs/api/model-providers.md). |
-| Direct OpenGL calls | The `Gpu` object in a draw callback. See [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned). |
-| A hook on another mod's classes | A service of that mod. See [Services](https://project-viewpoint.github.io/viewpoint-docs/api/services.md). |
-| An installer jar that copies a shader pack | A Shaderpack. See [Migrating from Java](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/migrating-from-java.md). |
+| `@Exposer` classes, so that Lua calls your Java | Exports with `@LuaExport`. Your `@Exposer.LuaClass` classes also work, in part (see above): the name is a *requested* global, and Viewpoint refuses it if another mod has it. Exports install within the start limit. See [Lua exports](https://docs.projectviewpoint.org/api/lua-exports.md). |
+| A patch on `Shaders.read` that changes library GLSL | A shader snippet, or a Shaderpack. See [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) and [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md). |
+| Reflection to read the view or the camera | `ViewState` on the main thread, and `FrameView` in a draw callback. See [View state](https://docs.projectviewpoint.org/api/view-state.md). |
+| Writes to the look, the eye, the field of view or the view mode | Camera layers and claims. See [Camera layers](https://docs.projectviewpoint.org/api/camera-layers.md). |
+| Hooks or reflection on the aim, the shot and the crosshair | `AimListener`, `ShotListener`, `ShotResolver` and `ReticleProvider`. See [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md). |
+| A patch on the choice of the model of an object or a character | `ModelProvider` and `AttachmentProvider`. See [Model providers](https://docs.projectviewpoint.org/api/model-providers.md). |
+| Direct OpenGL calls | The `Gpu` object in a draw callback. See [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned). |
+| A hook on another mod's classes | A service of that mod. See [Services](https://docs.projectviewpoint.org/api/services.md). |
+| An installer jar that copies a shader pack | A Shaderpack. See [Migrating from Java](https://docs.projectviewpoint.org/shaderpacks/migrating-from-java.md). |
 
 If `viewpoint.api` has no replacement for a member that you use, you can hook or call some members of Viewpoint itself.
-See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md).
+See [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md).
 
 ## The procedure
 
@@ -160,7 +160,7 @@ See [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patch
 2. Add `addon.properties`, with `jar=` and `entry=`. The `entry` class must implement `Addon`.
 3. Add `permissions`. Add `hooks.targets`, `files.quotaMiB` and `downloads.hosts` as necessary.
 4. Replace reflection into `viewpoint.*` with `viewpoint.api`. If the API does not have what you need, use or hook a
-   member from the [Viewpoint internals list](https://project-viewpoint.github.io/viewpoint-docs/reference/viewpoint-internals.md). This gives an Amber or Red label.
+   member from the [Viewpoint internals list](https://docs.projectviewpoint.org/reference/viewpoint-internals.md). This gives an Amber or Red label.
 5. Replace `java.io.File` with `AddonFiles`.
 6. Replace `java.net` with `AddonDownloads`.
 7. Remove all use of ZombieBuddy and ByteBuddy classes. Viewpoint does not load a jar that uses them.
@@ -174,13 +174,13 @@ If you also keep a ZombieBuddy build of the mod, give the two builds different m
 ## Your label
 
 Some code that works in a ZombieBuddy mod makes the label Amber or Red in an addon. Some code stops the jar from
-loading, for example your own classes in a `zombie.*` package. See [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md) for what to use.
+loading, for example your own classes in a `zombie.*` package. See [Labels](https://docs.projectviewpoint.org/trust/labels.md) for what to use.
 
 > **The ZombieBuddy policy applies**
 >
 > If the ZombieBuddy policy is `deny-new`, no addon with Java can start. See
-> [ZombieBuddy policy & signatures](https://project-viewpoint.github.io/viewpoint-docs/trust/relation-to-zombiebuddy.md).
+> [ZombieBuddy policy & signatures](https://docs.projectviewpoint.org/trust/relation-to-zombiebuddy.md).
 
 ---
 
-Previous: [Hooking Viewpoint](https://project-viewpoint.github.io/viewpoint-docs/patching/hooking-viewpoint.md) | Next: [Hookable targets & refusals](https://project-viewpoint.github.io/viewpoint-docs/patching/hookable-targets.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md) | Next: [Hookable targets & refusals](https://docs.projectviewpoint.org/patching/hookable-targets.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

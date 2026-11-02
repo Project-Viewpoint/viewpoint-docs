@@ -3,7 +3,7 @@
 > Read where Viewpoint's view is, what it shows and where the crosshair points, one time each frame.
 
 `ViewState` is a snapshot of Viewpoint's view. You can read it. You cannot change the view with it. To change the view, use
-[camera layers](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md). To follow the aim and the shots, use [aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md).
+[camera layers](https://docs.projectviewpoint.org/api/camera-layers.md). To follow the aim and the shots, use [aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md).
 
 No permission is necessary.
 
@@ -99,10 +99,10 @@ the floor height of the game.
 
 > **Note**
 >
-> The game's Lua can read the same state through `Viewpoint.Addons`. See [Lua mirror](https://project-viewpoint.github.io/viewpoint-docs/api/lua-mirror.md). On the render
+> The game's Lua can read the same state through `Viewpoint.Addons`. See [Lua mirror](https://docs.projectviewpoint.org/api/lua-mirror.md). On the render
 > thread, a draw callback gets the matrices and sizes of the frame in a `FrameView`. See
-> [Draw callbacks](https://project-viewpoint.github.io/viewpoint-docs/api/draw-callbacks.md) (planned).
+> [Draw callbacks](https://docs.projectviewpoint.org/api/draw-callbacks.md) (planned).
 
 ---
 
-Previous: [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md) | Next: [Settings & keys](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Order](https://docs.projectviewpoint.org/concepts/order.md) | Next: [Settings & keys](https://docs.projectviewpoint.org/api/settings-and-keys.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

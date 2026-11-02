@@ -101,4 +101,4 @@ Rules:
 
 ---
 
-Previous: [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md) | Next: [ZombieBuddy policy & signatures](https://project-viewpoint.github.io/viewpoint-docs/trust/relation-to-zombiebuddy.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Labels](https://docs.projectviewpoint.org/trust/labels.md) | Next: [ZombieBuddy policy & signatures](https://docs.projectviewpoint.org/trust/relation-to-zombiebuddy.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

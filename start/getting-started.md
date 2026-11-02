@@ -4,7 +4,7 @@
 
 This page makes an addon that writes a line to the game's log when it switches on and off. The addon has three
 parts: a descriptor, a jar with one class, and a mod folder. The code on this page is the code of
-`minimaladdon` in the source repository. [`sampleaddon`](https://project-viewpoint.github.io/viewpoint-docs/start/sample-walkthrough.md) has a part for each service.
+`minimaladdon` in the source repository. [`sampleaddon`](https://docs.projectviewpoint.org/start/sample-walkthrough.md) has a part for each service.
 
 ## What you need
 
@@ -61,7 +61,7 @@ entry=example.minimal.MinimalAddon
 side=client
 ```
 
-An addon must have `game.min`, `api`, `jar` and `entry`. The [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) page gives all keys.
+An addon must have `game.min`, `api`, `jar` and `entry`. The [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) page gives all keys.
 This addon asks for no permission, because it uses no service that needs one.
 
 ## The class
@@ -132,16 +132,16 @@ tasks.jar {
 
 After you switch it off, none of the code of the addon runs. If you change the jar, the next enable loads the new
 jar. If the new jar asks for more, the player must give consent again. See
-[Lifecycle & threads](https://project-viewpoint.github.io/viewpoint-docs/concepts/lifecycle-and-threads.md) and [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md).
+[Lifecycle & threads](https://docs.projectviewpoint.org/concepts/lifecycle-and-threads.md) and [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md).
 
 ## Next
 
-- Add a [setting and a key](https://project-viewpoint.github.io/viewpoint-docs/api/settings-and-keys.md).
-- Read the [view state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) of every frame.
-- Hook a game method with [managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
-- Add an [offset to the camera](https://project-viewpoint.github.io/viewpoint-docs/api/camera-layers.md) with a layer.
-- Make a [Shaderpack](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/format.md) or a [resource pack](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md) in place of an addon, if you
-  have no code. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md).
+- Add a [setting and a key](https://docs.projectviewpoint.org/api/settings-and-keys.md).
+- Read the [view state](https://docs.projectviewpoint.org/api/view-state.md) of every frame.
+- Hook a game method with [managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md).
+- Add an [offset to the camera](https://docs.projectviewpoint.org/api/camera-layers.md) with a layer.
+- Make a [Shaderpack](https://docs.projectviewpoint.org/shaderpacks/format.md) or a [resource pack](https://docs.projectviewpoint.org/resource-packs/format.md) in place of an addon, if you
+  have no code. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md).
 
 ## If it does not appear
 
@@ -150,8 +150,8 @@ jar. If the new jar asks for more, the player must give consent again. See
 | No card | The mod was off when the game started, or the folder name is not the `id`. | Enable the mod and start the game again. Make the folder name the same as the `id`. |
 | **Incompatible** | `game.min`, `game.max`, `viewpoint.min`, `viewpoint.max` or `api` does not agree with this installation. | Read the card. It names the range. Correct the range or the build. |
 | **Failed** | The jar did not load, or `entry` is not a class that implements `Addon`. | Read the card and `console.txt`. They give the cause. |
-| Nothing occurs when you click the green tick | The check refused the jar, or the ZombieBuddy policy blocks addons with Java. | Read the card. It gives the cause. See [ZombieBuddy policy & signatures](https://project-viewpoint.github.io/viewpoint-docs/trust/relation-to-zombiebuddy.md). |
+| Nothing occurs when you click the green tick | The check refused the jar, or the ZombieBuddy policy blocks addons with Java. | Read the card. It gives the cause. See [ZombieBuddy policy & signatures](https://docs.projectviewpoint.org/trust/relation-to-zombiebuddy.md). |
 
 ---
 
-Previous: [Introduction](https://project-viewpoint.github.io/viewpoint-docs/start/introduction.md) | Next: [Sample walkthrough](https://project-viewpoint.github.io/viewpoint-docs/start/sample-walkthrough.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Introduction](https://docs.projectviewpoint.org/start/introduction.md) | Next: [Sample walkthrough](https://docs.projectviewpoint.org/start/sample-walkthrough.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

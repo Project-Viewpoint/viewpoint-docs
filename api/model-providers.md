@@ -6,7 +6,7 @@ A resource pack puts a model on a sprite with a fixed rule. A provider puts a mo
 model depends on something that a manifest cannot say.
 
 **Permission:** `models`. The models come from the manifest that your descriptor names with `models=`. See
-[Format](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/format.md#models).
+[Format](https://docs.projectviewpoint.org/resource-packs/format.md#models).
 
 ```properties
 permissions=models
@@ -42,11 +42,11 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
   to show the art of the game.
 - **Order.** If several providers name the same sprite, Viewpoint asks them in the order of the player. The first answer
   that is not `ModelRef.NONE` wins. If no provider answers, Viewpoint uses the model of the resource packs. Then it uses
-  the art of the game. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md).
+  the art of the game. See [Order](https://docs.projectviewpoint.org/concepts/order.md).
 - **Make your models once.** Call `models.model(...)` before you answer, for example in `enable`. The answer runs on the
   main thread while a level is built, and must not allocate.
 - For a model that depends only on whether the object is lit, or that is the same for all the facings of an object, a
-  resource pack of version 2 is easier. See [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md).
+  resource pack of version 2 is easier. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
 
 > **Caution**
 >
@@ -59,7 +59,7 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
 
 Viewpoint keeps your answer until it builds the level again. The game does not tell Viewpoint when the items of a container
 change, so the crate above keeps its old model. You must tell Viewpoint: call `models.changed(object)` when your answer
-changes. To know when it changes, use a [hook](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
+changes. To know when it changes, use a [hook](https://docs.projectviewpoint.org/patching/managed-patching.md).
 
 ```properties
 permissions=models,hooks
@@ -120,7 +120,7 @@ public final class CrateHooks {
   that change a container, for example `AddItem(String)` and `removeAllItems()`. To follow them, hook them too. A change
   that you do not hook shows when the game next builds the level.
 - **The hooks wait for a safe point.** Until then, nothing calls `changed`. See
-  [When hooks install](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md#when-hooks-install).
+  [When hooks install](https://docs.projectviewpoint.org/patching/managed-patching.md#when-hooks-install).
 
 ## AttachmentProvider: characters
 
@@ -147,8 +147,8 @@ models.attach(character -> ((IsoGameCharacter) character).isZombie() ? hat : Mod
 - The model follows the bone in all the poses of the character, also in a crowd far away. On the player's own head in
   first person, it only casts a shadow, as a hat of the game does.
 - The model comes from the manifest of your addon. It counts in `memory.packMiB`. See
-  [Assets & budgets](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md).
-- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/model-states.md) are
+  [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md).
+- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) are
   for world objects only, and an attachment does not glow.
 
 ## Cost
@@ -167,4 +167,4 @@ Both types are on a hot path of the game. Viewpoint measures them and shows the 
 
 ---
 
-Previous: [Aim & shots](https://project-viewpoint.github.io/viewpoint-docs/api/aim-and-shots.md) | Next: [Shader values](https://project-viewpoint.github.io/viewpoint-docs/api/shader-values.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Aim & shots](https://docs.projectviewpoint.org/api/aim-and-shots.md) | Next: [Shader values](https://docs.projectviewpoint.org/api/shader-values.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

@@ -2,7 +2,7 @@
 
 > The label levels, their reasons and the texts that the player sees.
 
-The [Labels](https://project-viewpoint.github.io/viewpoint-docs/trust/labels.md) page explains the labels. This page gives the texts and the reasons in tables.
+The [Labels](https://docs.projectviewpoint.org/trust/labels.md) page explains the labels. This page gives the texts and the reasons in tables.
 
 ## Texts
 
@@ -101,4 +101,4 @@ reads the Lua as text. It does not run it, and it cannot see a name that the Lua
 
 ---
 
-Previous: [Descriptor keys](https://project-viewpoint.github.io/viewpoint-docs/reference/descriptor-keys.md) | Next: [Permissions](https://project-viewpoint.github.io/viewpoint-docs/reference/permissions.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Descriptor keys](https://docs.projectviewpoint.org/reference/descriptor-keys.md) | Next: [Permissions](https://docs.projectviewpoint.org/reference/permissions.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

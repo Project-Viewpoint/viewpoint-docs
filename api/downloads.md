@@ -5,7 +5,7 @@
 Use `AddonDownloads` to get a file from the internet. Do not open network connections yourself: `java.net` makes the
 label **Red**. Viewpoint asks the player **each time**, and shows the full address.
 
-**Permission:** `downloads`, with the hosts in `downloads.hosts`. The file goes into your [`AddonFiles`](https://project-viewpoint.github.io/viewpoint-docs/api/files.md)
+**Permission:** `downloads`, with the hosts in `downloads.hosts`. The file goes into your [`AddonFiles`](https://docs.projectviewpoint.org/api/files.md)
 folder, so you also need the `files` permission.
 
 ```properties
@@ -31,7 +31,7 @@ A test compiles this code against the API and runs it in an addon.
   refuses the others with an `IllegalArgumentException` at the call.
 - Use a host that is in `downloads.hosts`. If the server redirects to a different host, put that host in the list also.
   Viewpoint follows at most three redirects, and judges each one as it judges the first address.
-- Give the file a name with the same rules as [`AddonFiles`](https://project-viewpoint.github.io/viewpoint-docs/api/files.md#names).
+- Give the file a name with the same rules as [`AddonFiles`](https://docs.projectviewpoint.org/api/files.md#names).
 - Set `declaredBytes` to the size of the file. The player sees it.
 
 `request(DownloadRequest)` gives a `Pending<DownloadResult>`. Its callbacks run on the main thread. A refusal is not an
@@ -120,4 +120,4 @@ The addon's **Files** tab shows each download: the file, the address, and the ti
 
 ---
 
-Previous: [Files](https://project-viewpoint.github.io/viewpoint-docs/api/files.md) | Next: [Assets](https://project-viewpoint.github.io/viewpoint-docs/api/assets.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Files](https://docs.projectviewpoint.org/api/files.md) | Next: [Assets](https://docs.projectviewpoint.org/api/assets.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

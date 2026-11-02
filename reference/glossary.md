@@ -40,4 +40,4 @@
 
 ---
 
-Previous: [Internals changes](https://project-viewpoint.github.io/viewpoint-docs/reference/internals-changes.md) | Next: [Shader snippets](https://project-viewpoint.github.io/viewpoint-docs/api/shader-snippets.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Internals changes](https://docs.projectviewpoint.org/reference/internals-changes.md) | Next: [Shader snippets](https://docs.projectviewpoint.org/api/shader-snippets.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

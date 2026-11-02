@@ -58,7 +58,7 @@ tell who uploaded it, and it does not tell what the file does.
 - If you have a ZombieBuddy build and an addon build of the same code, give them different mod ids.
 - Do not refer to ZombieBuddy from an addon. Viewpoint refuses the jar. This includes `WatchesAPI`.
 - Two ZombieBuddy annotations are the exception. Viewpoint reads `@Patch` and `@Exposer.LuaClass` in an addon jar and
-  runs them as hooks and as exports. See [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+  runs them as hooks and as exports. See [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 - A Shaderpack has no jar. ZombieBuddy has no part in it.
 
 > **Note**
@@ -68,4 +68,4 @@ tell who uploaded it, and it does not tell what the file does.
 
 ---
 
-Previous: [Updates & changelogs](https://project-viewpoint.github.io/viewpoint-docs/trust/updates-and-changelogs.md) | Next: [Assets & budgets](https://project-viewpoint.github.io/viewpoint-docs/performance/assets-and-budgets.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Updates & changelogs](https://docs.projectviewpoint.org/trust/updates-and-changelogs.md) | Next: [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

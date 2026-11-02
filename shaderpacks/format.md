@@ -16,7 +16,7 @@ Graphics page.
   - textures/
 
 - The folder name must be the same as the `id`.
-- `shaders/` holds your GLSL files. See [Library files](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/library-files.md).
+- `shaders/` holds your GLSL files. See [Library files](https://docs.projectviewpoint.org/shaderpacks/library-files.md).
 - `textures/` is optional. It holds the images that your shaders read.
 - One mod can hold many Shaderpacks.
 - The id of the package is also the id of the pack.
@@ -60,7 +60,7 @@ A Shaderpack has no `jar`, `entry`, `api` or `permissions` key, because it has n
 
 ### Package keys
 
-These keys are the same as in the other descriptors. See [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md).
+These keys are the same as in the other descriptors. See [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md).
 
 | Key | Required | Meaning |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ These keys are the same as in the other descriptors. See [Descriptor](https://pr
 | `game.max`, `viewpoint.min`, `viewpoint.max` | No | The ranges that you tested. |
 | `author`, `description`, `icon`, `license`, `changelog` | No | Shown on the card. The card shows the licence, or **No licence given**. |
 | `requires`, `conflicts` | No | Other packages. A package that is your `base` must be in `requires`. |
-| `library` | No | The Viewpoint version that you made the pack for (planned). See [Library files](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/library-files.md#made-for-a-version). |
+| `library` | No | The Viewpoint version that you made the pack for (planned). See [Library files](https://docs.projectviewpoint.org/shaderpacks/library-files.md#made-for-a-version). |
 
 ### Pack keys
 
@@ -80,7 +80,7 @@ These keys are the same as in the other descriptors. See [Descriptor](https://pr
 | `options` | The ids of your own options, in the order that the window lists them. |
 | `presets` | The ids of your own presets, in the order of the **Quality** list. |
 | `preset.default` | The preset that a new install starts with. |
-| `passes`, `pass.<id>.*`, `targets`, `target.<name>` | Passes of your own. See [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md). |
+| `passes`, `pass.<id>.*`, `targets`, `target.<name>` | Passes of your own. See [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md). |
 | `pipeline.<knob>` | Which passes of the renderer run, and their sizes. See [The pipeline](#the-pipeline). |
 
 ## Options
@@ -111,7 +111,7 @@ define it.
 
 **Saved values.** Each option is a live setting named `pack.<encoded id>.<option id>` in
 `Zomboid/viewpoint-live.properties`. The encoded id writes `.` and `-` as `_`. For `example.dusk`, the setting for
-`warmth` is `pack.example_dusk.warmth`. See [Package kinds](https://project-viewpoint.github.io/viewpoint-docs/concepts/package-kinds.md#the-encoded-id).
+`warmth` is `pack.example_dusk.warmth`. See [Package kinds](https://docs.projectviewpoint.org/concepts/package-kinds.md#the-encoded-id).
 
 ## Presets
 
@@ -218,4 +218,4 @@ The files that the player accepted are the files that Viewpoint compiles.
 
 ---
 
-Previous: [Migrate to version 2](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/migrating.md) | Next: [Passes & inputs](https://project-viewpoint.github.io/viewpoint-docs/shaderpacks/passes-and-inputs.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md) | Next: [Passes & inputs](https://docs.projectviewpoint.org/shaderpacks/passes-and-inputs.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

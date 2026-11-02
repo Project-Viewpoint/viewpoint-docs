@@ -43,7 +43,7 @@ When the game calls a hooked method:
 4. The `After` handlers run from bottom to top. The pre-empted handlers do not run in this step.
 
 Viewpoint keeps a copy of the handler list from the start of the call. A veto or a new order during the call does not
-change which `After` handlers run for that call. See [Managed patching](https://project-viewpoint.github.io/viewpoint-docs/patching/managed-patching.md).
+change which `After` handlers run for that call. See [Managed patching](https://docs.projectviewpoint.org/patching/managed-patching.md).
 
 ## The first position
 
@@ -52,4 +52,4 @@ different position.
 
 ---
 
-Previous: [Versions & compatibility](https://project-viewpoint.github.io/viewpoint-docs/concepts/versions-and-compatibility.md) | Next: [View state](https://project-viewpoint.github.io/viewpoint-docs/api/view-state.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Versions & compatibility](https://docs.projectviewpoint.org/concepts/versions-and-compatibility.md) | Next: [View state](https://docs.projectviewpoint.org/api/view-state.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

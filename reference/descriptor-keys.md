@@ -2,7 +2,7 @@
 
 > All keys of addon.properties and pack.properties in one table.
 
-All descriptor keys in one table. The [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) page explains them. `A` is an addon. `P` is a
+All descriptor keys in one table. The [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) page explains them. `A` is an addon. `P` is a
 resource pack. `S` is a Shaderpack.
 
 | Key | For | Required | Default | Meaning |
@@ -48,4 +48,4 @@ resource pack. `S` is a Shaderpack.
 
 ---
 
-Previous: [API reference](https://project-viewpoint.github.io/viewpoint-docs/reference/api.md) | Next: [Labels](https://project-viewpoint.github.io/viewpoint-docs/reference/labels.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [API reference](https://docs.projectviewpoint.org/reference/api.md) | Next: [Labels](https://docs.projectviewpoint.org/reference/labels.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

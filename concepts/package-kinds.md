@@ -45,7 +45,7 @@ Two older kinds of shader pack continue to work. They are not packages.
   consent and no descriptor of the package kind.
 - **Iris packs.** A shader pack made for Minecraft, as a `.zip` or a folder in the same folder. Viewpoint reads it in place.
 
-The **Graphics**, **Shaderpacks** page lists them beside the packages. See [Shaderpacks for players](https://project-viewpoint.github.io/viewpoint-docs/players/shaderpacks.md).
+The **Graphics**, **Shaderpacks** page lists them beside the packages. See [Shaderpacks for players](https://docs.projectviewpoint.org/players/shaderpacks.md).
 
 ## Legacy and Unmanaged are flags
 
@@ -57,7 +57,7 @@ Viewpoint.ModelPacks.register("MyPackMod", "media/models/pack.json")
 
 Viewpoint shows this pack as a resource pack with the id `legacy.<modId>` and the *legacy* flag. The version and the
 game range come from `mod.info`. A legacy pack follows the player's order and switch, as all packages do. See
-[Legacy model packs](https://project-viewpoint.github.io/viewpoint-docs/resource-packs/legacy-model-packs.md).
+[Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md).
 
 **Unmanaged.** A mod that has `javaJarFile` in `mod.info` and requires Viewpoint is loaded by ZombieBuddy. Viewpoint
 does not load it. Viewpoint shows it on a card, with a label that comes from `mod.info` only:
@@ -66,7 +66,7 @@ does not load it. Viewpoint shows it on a card, with a label that comes from `mo
 - Red, when the mod starts before Viewpoint: **loads before Viewpoint**
 
 Viewpoint does not read the jar of an Unmanaged mod. Viewpoint cannot order it, switch it off, or show what it does. To
-change it into an addon, see [Migrating from ZombieBuddy](https://project-viewpoint.github.io/viewpoint-docs/patching/migrating-from-zombiebuddy.md).
+change it into an addon, see [Migrating from ZombieBuddy](https://docs.projectviewpoint.org/patching/migrating-from-zombiebuddy.md).
 
 > **Note**
 >
@@ -77,8 +77,8 @@ change it into an addon, see [Migrating from ZombieBuddy](https://project-viewpo
 
 Each kind has a page of its own in the settings window: **Advanced**, **Addons**; **Graphics**, **Resource Packs**; and
 **Graphics**, **Shaderpacks**. The first two have an **Inactive** column and an **Active** column. When two packages change the same thing, the package nearer the top of the
-Active column wins. The Shaderpacks page has no order. See [Order](https://project-viewpoint.github.io/viewpoint-docs/concepts/order.md) and
-[Managing addons](https://project-viewpoint.github.io/viewpoint-docs/players/managing-addons.md).
+Active column wins. The Shaderpacks page has no order. See [Order](https://docs.projectviewpoint.org/concepts/order.md) and
+[Managing addons](https://docs.projectviewpoint.org/players/managing-addons.md).
 
 ## Ids
 
@@ -113,4 +113,4 @@ If Viewpoint does not accept an id, the card tells you. Use a short lower-case i
 
 ---
 
-Previous: [Sample walkthrough](https://project-viewpoint.github.io/viewpoint-docs/start/sample-walkthrough.md) | Next: [Descriptor](https://project-viewpoint.github.io/viewpoint-docs/concepts/descriptor.md) | All pages: [llms.txt](https://project-viewpoint.github.io/viewpoint-docs/llms.txt)
+Previous: [Sample walkthrough](https://docs.projectviewpoint.org/start/sample-walkthrough.md) | Next: [Descriptor](https://docs.projectviewpoint.org/concepts/descriptor.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)
