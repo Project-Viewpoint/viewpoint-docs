@@ -1,0 +1,1 @@
+var e=async(e,t)=>{let n=e.querySelector(`[data-vp-copy-label]`),r=n?.dataset.resting??n?.textContent??``;n&&(n.dataset.resting=r);let i=`Copied`;try{let e=t().then(e=>new Blob([e],{type:`text/plain`}));await navigator.clipboard.write([new ClipboardItem({"text/plain":e})])}catch{i=`Could not copy`}n&&(n.textContent=i,setTimeout(()=>n.textContent=r,2e3))};export{e as t};

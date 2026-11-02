@@ -1,0 +1,1 @@
+import{t as e}from"./copy.BgI2XOFd.js";for(let t of document.querySelectorAll(`[data-vp-copy-page]`))t.addEventListener(`click`,()=>{let n=document.querySelector(`[data-vp-page-text]`);e(t,async()=>n?n.value:await(await fetch(t.dataset.vpCopyPage)).text())});
