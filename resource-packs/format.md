@@ -76,7 +76,8 @@ The model replaces the art of the sprite: the projected art, the game's own spri
 Viewpoint loads a model the first time that the game shows its sprite. When two packs put a model on the same sprite,
 the pack nearer the top of the Active column wins.
 
-A model can change its parts when its object is lit. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
+A model can change its parts when its object is lit. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md). A model can
+also hold the light of its lamp. See [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md).
 
 Each material of the MTL uses the PNG of its `map_Kd` line. When the materials of a model use more than one PNG,
 Viewpoint puts these PNGs together on one texture as it loads the model. Together, they must fit in 2056 × 2056

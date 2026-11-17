@@ -73,4 +73,4 @@ When two packs have the same tile, the pack nearer the top of the Active column 
 
 ---
 
-Previous: [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) | Next: [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)
+Previous: [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md) | Next: [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

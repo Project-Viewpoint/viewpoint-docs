@@ -49,6 +49,7 @@ A model pack in the older Viewpoint model pack format is a resource pack with th
 | Change what a method of Viewpoint does | `@Hook` on a listed member | [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md) |
 | Replace the game's tile art | The `tiles` folder of a resource pack | [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md) |
 | Choose a model from the state of an object | A version 2 manifest | [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) |
+| Put the light of a lamp in its model | A lamp tag in the OBJ of a resource pack | [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md) |
 | Change how the whole frame looks | A Shaderpack | [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md) |
 
 A page marked *planned* is not written yet. Its feature is part of API 1.0. The sidebar group **Planned** lists these pages.

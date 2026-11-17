@@ -10,7 +10,7 @@ of a different package to make space.
 
 | Asset | Pool | Default size |
 | --- | --- | --- |
-| Models | `memory.packMiB` (video memory) | 768 MiB |
+| Models | `memory.packMiB` (video memory) | 768 MiB (384 MiB minimum) |
 | Textures | `memory.packMiB` (video memory) | 768 MiB, together with models |
 | Sounds | `memory.soundMiB` | 128 MiB |
 | Data files (16 MiB maximum each) | `memory.addonDataMiB` (memory) | 64 MiB |

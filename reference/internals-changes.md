@@ -39,9 +39,18 @@ No member is deprecated.
 | `viewpoint.FP` | `cursorBeforePause` | alpha-0.1.7 | `FP.cursorBefore` |
 | `viewpoint.FP` | `snapshot(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;Lzombie/characters/IsoGameCharacter;I)V` | alpha-0.1.7 | `ViewListener.onFrame` |
 | `viewpoint.SceneDrawer` | `drawCrosshair()V` | alpha-0.1.7 | `ReticleProvider` |
+| `viewpoint.camera.CameraCapture` | `squares(Lviewpoint/core/CameraSquares;Lzombie/iso/IsoCell;DDIF)V` | alpha-0.1.7 | `CameraCapture.squares` |
+| `viewpoint.camera.ThirdPerson` | `capture(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;Lzombie/characters/IsoGameCharacter;F)V` | alpha-0.1.7 | `ThirdPerson.capture` |
+| `viewpoint.gunplay.Gunplay` | `candidates(Lzombie/characters/IsoGameCharacter;Lzombie/inventory/types/HandWeapon;Lzombie/util/list/PZArrayList;)V` | alpha-0.1.7 | `Gunplay.candidates` |
+| `viewpoint.gunplay.Gunplay` | `gather(Lzombie/characters/IsoGameCharacter;Lzombie/network/fields/hit/AttackVars;Lzombie/util/list/PZArrayList;)V` | alpha-0.1.7 | `Gunplay.gather` |
 | `viewpoint.input.Controls` | `eye` | alpha-0.1.7 | `FrameView` |
 | `viewpoint.input.ThirdPerson` | `capture` | alpha-0.1.7 | `CameraLayer` |
 | `viewpoint.interact.LootMenu` | `enabled` | alpha-0.1.7 | None with the same shape. |
+| `viewpoint.interact.LootMenu` | `locked()Z` | alpha-0.1.7 | None with the same shape. |
+| `viewpoint.interact.LootPanel` | `FONT` | alpha-0.1.7 | `MenuStyle.FONT` |
+| `viewpoint.interact.LootPanel` | `hint` | alpha-0.1.7 | None with the same shape. |
+| `viewpoint.interact.LootPanel` | `hint(Lviewpoint/interact/LootRows;)Ljava/lang/String;` | alpha-0.1.7 | `LootKeys.of` |
+| `viewpoint.interact.LootPanel` | `rounded(IIIIIFFFF)V` | alpha-0.1.7 | `PanelShapes.rounded` |
 | `viewpoint.models.RigidCapture` | `item(Lviewpoint/core/Frame;Lzombie/core/skinnedmodel/model/WorldItemModelDrawer;Lzombie/iso/IsoGridSquare;Lzombie/inventory/InventoryItem;)Z` | alpha-0.1.7 | `RigidCapture.item` |
 | `viewpoint.packs.ModelPacks` | `switches` | alpha-0.1.7 | None with the same shape. |
 | `viewpoint.platform.GlProgram` | `link(Lviewpoint/platform/ShaderPacks$Active;)Lviewpoint/platform/ProgramLinker$Linked;` | alpha-0.1.7 | `GlProgram.link` |
@@ -53,7 +62,8 @@ No member is deprecated.
 | `viewpoint.world.ChunkCache` | `update(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;I)V` | alpha-0.1.7 | `ChunkCache.update` |
 | `viewpoint.world.Facades` | `facadeTile(Lzombie/iso/IsoGridSquare;ZI)Lzombie/iso/sprite/IsoSprite;` | alpha-0.1.7 | None with the same shape. |
 | `viewpoint.world.Facades` | `roomTile(Lzombie/iso/RoomDef;Lzombie/iso/areas/IsoRoom;ZI)Lzombie/iso/sprite/IsoSprite;` | alpha-0.1.7 | `Facades.roomTile` |
-| `viewpoint.world.PackGather` | `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFI)V` | alpha-0.1.7 | `viewpoint.world.PackGather.place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` |
+| `viewpoint.world.PackGather` | `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFI)V` | alpha-0.1.7 | `viewpoint.world.PackGather.place(Lzombie/iso/IsoObject;Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` |
+| `viewpoint.world.PackGather` | `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` | alpha-0.1.7 | `viewpoint.world.PackGather.place(Lzombie/iso/IsoObject;Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` |
 | `viewpoint.world.Recipe` | `model(Lviewpoint/world/Recipe;Lviewpoint/packs/PackBind;ZFFFIII)V` | alpha-0.1.7 | `viewpoint.world.Recipe.model(Lviewpoint/world/Recipe;Lviewpoint/packs/PackBind;ZFFFIIII)Lviewpoint/world/Recipe$Op;` |
 | `viewpoint.world.WallMesher` | `back(Lzombie/iso/sprite/IsoSprite;Lviewpoint/world/TileMesh;Lzombie/core/textures/Texture;Lzombie/iso/IsoGridSquare;Lzombie/iso/IsoGridSquare;Lzombie/iso/RoomDef;ZIZFFFFF[Z)V` | alpha-0.1.7 | `WallMesher.back` |
 | `viewpoint.world.WallMesher` | `wall(Lzombie/iso/sprite/IsoSprite;Lviewpoint/world/TileMesh;Lzombie/core/textures/Texture;Lzombie/iso/IsoGridSquare;FFFZ[Z)Z` | alpha-0.1.7 | `WallMesher.wall` |

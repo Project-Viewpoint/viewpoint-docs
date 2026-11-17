@@ -57,6 +57,8 @@ map_Kd lamp.png
 Blender writes `Ke` when the material has an emission colour. Use a glowing material only on a `[lit]` part, or the
 part glows in all the states.
 
+A glow does not light the objects near it. To put the light of a lamp in its model, see [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md).
+
 > **Note**
 >
 > Each material uses the texture of its own `map_Kd`. The two copies of a part can use different materials, with
@@ -124,4 +126,4 @@ For a model that needs code, see [Model providers](https://docs.projectviewpoint
 
 ---
 
-Previous: [Format](https://docs.projectviewpoint.org/resource-packs/format.md) | Next: [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)
+Previous: [Format](https://docs.projectviewpoint.org/resource-packs/format.md) | Next: [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md) | All pages: [llms.txt](https://docs.projectviewpoint.org/llms.txt)

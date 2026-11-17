@@ -74,6 +74,10 @@ or you hold half of it, Viewpoint **refuses your asset**:
 - the card shows the same message;
 - your other assets stay loaded.
 
+For models (`memory.packMiB`), one package can hold half of the pool or 384 MiB, the larger of the two. Before
+Viewpoint refuses one of your models, it unloads your models that the screen does not show and that the game did not ask
+for in the last 10 seconds. When the player comes back, Viewpoint loads them again.
+
 Viewpoint never removes the assets of a different package to make space for yours. See
 [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md) for the pool sizes and the estimates on the **Performance** tab.
 

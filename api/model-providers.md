@@ -36,7 +36,8 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
   the text before it. Viewpoint asks your provider only for the sprites that you name. Every other sprite skips the
   providers.
 - **When.** Viewpoint asks when it builds the level of the object, within the ring where it draws the models of the
-  packs. It keeps the answer until it builds that level again: when the game changes something on the level, or when
+  packs. For a lamp, Viewpoint also asks the first time that it lights the lamp, anywhere in the loaded map, if it has
+  no answer for it yet. It keeps the answer until it builds that level again: when the game changes something on the level, or when
   you call `models.changed(object)`. A change of the items in a container is not one of these changes.
 - **Answers.** A `ModelRef` from `models.model(...)`, `ModelRef.NONE` to let the next provider answer, or `ModelRef.ART`
   to show the art of the game.
@@ -47,6 +48,9 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
   main thread while a level is built, and must not allocate.
 - For a model that depends only on whether the object is lit, or that is the same for all the facings of an object, a
   resource pack of version 2 is easier. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
+- **Lamps.** The [lamp tags](https://docs.projectviewpoint.org/resource-packs/lamps.md) of your model light the lamp. Viewpoint keeps your answer for the
+  light of the lamp as for its level, until you call `models.changed(object)`. It does not ask again each time that
+  the light changes.
 
 > **Caution**
 >
@@ -148,8 +152,8 @@ models.attach(character -> ((IsoGameCharacter) character).isZombie() ? hat : Mod
   first person, it only casts a shadow, as a hat of the game does.
 - The model comes from the manifest of your addon. It counts in `memory.packMiB`. See
   [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md).
-- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) are
-  for world objects only, and an attachment does not glow.
+- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) and
+  the [lamp tags](https://docs.projectviewpoint.org/resource-packs/lamps.md) are for world objects only. An attachment does not glow or light.
 
 ## Cost
 

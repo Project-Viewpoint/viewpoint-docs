@@ -25,7 +25,7 @@ pass.dof.when=depthOfField
 | Key | Meaning |
 | --- | --- |
 | `passes` | The ids of your passes. Within a stage they run in this order. |
-| `pass.<id>.stage` | `translucent`, `composite` or `final`. Required. |
+| `pass.<id>.stage` | `translucent`, `composite`, `final` or `screen`. Required. |
 | `pass.<id>.fragment` | Its fragment shader: a path in `shaders/`. Required. |
 | `pass.<id>.vertex` | Its vertex shader. The default is `screen.vert`: one triangle over the screen, with `vUv` from 0 to 1. |
 | `pass.<id>.inputs` | What it reads, with spaces between the names. Use at most 12. |
@@ -47,6 +47,7 @@ pass.dof.when=depthOfField
 | `translucent` | After the glass. Before the bounce light, the weather and the air. | The lit HDR image, with the depth of the scene drawn. |
 | `composite` | After the air and the bloom. Before `post.frag`. | The HDR image that `post.frag` is about to read. |
 | `final` | After anti-aliasing. Before the rain over the image. | The finished image, after the tone curve. |
+| `screen` | Over the screen, after the upscaler. Before the crosshair and the interface. | The screen. |
 
 - What a pass writes at `translucent` or `composite` goes into the history of anti-aliasing. This is what reflections
   want, because anti-aliasing smooths their noise.
@@ -54,6 +55,9 @@ pass.dof.when=depthOfField
 - At `final`, the image can be at the size of the screen while the other inputs are at the size of the frame. Read the
   other inputs by their UV.
 - Without a pass at `final`, the frame is drawn as without passes. A pack with no passes pays nothing.
+- A pass at `screen` has no inputs, and it writes `color`. What it writes is a multiplier: the screen is multiplied by
+  it, as for a vignette. The upscalers and frame generation do not see this pass as part of the picture. They keep it
+  still, as they keep the interface. Use `uResolution` for the size of the screen.
 
 ## The inputs
 

@@ -34,7 +34,7 @@ A member can be **hook only**. You can hook it, but you cannot call it.
 
 A field on this page is for reading. You cannot write to it. Use `viewpoint.api` to change the state of Viewpoint.
 
-The list has 806 members in 167 classes.
+The list has 801 members in 167 classes.
 
 #### `viewpoint.CombatHooks`
 
@@ -95,7 +95,7 @@ Class that is not public (hook only). Level: Red.
 | Member | Use or hook | Thread | Level | Since | Replacement |
 | --- | --- | --- | --- | --- | --- |
 | `blocks(Lzombie/iso/IsoCell;Lzombie/iso/IsoGridSquare;)B` | hook, reflect | `any` | hook Amber, reflect Red | alpha-0.1.7 |  |
-| `squares(Lviewpoint/core/CameraSquares;Lzombie/iso/IsoCell;DDIF)V` | hook | `any` | Amber | alpha-0.1.7 |  |
+| `squares(Lviewpoint/core/CameraSquares;Lzombie/iso/IsoCell;DDIFFLjava/util/function/Predicate;)V` | hook | `any` | Amber | alpha-0.1.7 |  |
 
 #### `viewpoint.camera.CameraRig`
 
@@ -175,7 +175,7 @@ Public class. Level: Red.
 | Member | Use or hook | Thread | Level | Since | Replacement |
 | --- | --- | --- | --- | --- | --- |
 | `behind(Lzombie/characters/IsoGameCharacter;Z)V` | hook | `any` | Amber | alpha-0.1.7 |  |
-| `capture(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;Lzombie/characters/IsoGameCharacter;F)V` | hook | `any` | Amber | alpha-0.1.7 |  |
+| `capture(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;Lzombie/characters/IsoGameCharacter;FFLjava/util/function/Predicate;)V` | hook | `any` | Amber | alpha-0.1.7 |  |
 | `declare()V` | hook | `any` | Amber | alpha-0.1.7 |  |
 | `flip()V` | use, reflect | `any` | use Amber, reflect Red | alpha-0.1.7 |  |
 | `flipping` | reflect | `any` | Red | alpha-0.1.7 |  |
@@ -350,9 +350,9 @@ Public class. Level: Red.
 | `RING` | reflect | `any` | Red | alpha-0.1.7 |  |
 | `active(Lzombie/characters/IsoGameCharacter;Lzombie/inventory/types/HandWeapon;)Z` | hook, reflect | `any` | hook Amber, reflect Red | alpha-0.1.7 |  |
 | `aimsFirearm(Lzombie/characters/IsoGameCharacter;Lzombie/inventory/types/HandWeapon;)Z` | hook | `any` | Amber | alpha-0.1.7 |  |
-| `candidates(Lzombie/characters/IsoGameCharacter;Lzombie/inventory/types/HandWeapon;Lzombie/util/list/PZArrayList;)V` | hook | `any` | Red | alpha-0.1.7 |  |
+| `candidates(Lzombie/characters/IsoGameCharacter;Lzombie/inventory/types/HandWeapon;Ljava/util/List;)V` | hook | `any` | Red | alpha-0.1.7 |  |
 | `fresh()Z` | reflect | `any` | Red | alpha-0.1.7 |  |
-| `gather(Lzombie/characters/IsoGameCharacter;Lzombie/network/fields/hit/AttackVars;Lzombie/util/list/PZArrayList;)V` | hook | `any` | Amber | alpha-0.1.7 |  |
+| `gather(Lzombie/characters/IsoGameCharacter;Lzombie/network/fields/hit/AttackVars;Ljava/util/List;)V` | hook | `any` | Amber | alpha-0.1.7 |  |
 | `hitListMade(Lzombie/characters/IsoGameCharacter;)V` | hook | `any` | Red | alpha-0.1.7 |  |
 | `pattern(Lzombie/inventory/types/HandWeapon;)D` | reflect | `any` | Red | alpha-0.1.7 |  |
 | `reticle(Lzombie/iso/sprite/IsoReticle;)Z` | hook | `any` | Red | alpha-0.1.7 |  |
@@ -601,7 +601,6 @@ Public class. Level: Red.
 | Member | Use or hook | Thread | Level | Since | Replacement |
 | --- | --- | --- | --- | --- | --- |
 | `keyDown(IZ)Z` | use, hook | `any` | Amber | alpha-0.1.7 |  |
-| `locked()Z` | reflect | `any` | Red | alpha-0.1.7 |  |
 | `loot` | reflect | `any` | Red | alpha-0.1.7 |  |
 | `loot()Z` | reflect | `any` | Red | alpha-0.1.7 |  |
 | `mouse()V` | hook | `any` | Amber | alpha-0.1.7 |  |
@@ -619,12 +618,8 @@ Public class. Level: Red.
 
 | Member | Use or hook | Thread | Level | Since | Replacement |
 | --- | --- | --- | --- | --- | --- |
-| `FONT` | reflect | `any` | Red | alpha-0.1.7 |  |
 | `draw()V` | hook | `any` | Amber | alpha-0.1.7 |  |
-| `hint` | reflect | `any` | Red | alpha-0.1.7 |  |
-| `hint(Lviewpoint/interact/LootRows;)Ljava/lang/String;` | hook, reflect | `any` | hook Amber, reflect Red | alpha-0.1.7 |  |
 | `render()V` | hook | `any` | Amber | alpha-0.1.7 |  |
-| `rounded(IIIIIFFFF)V` | hook, reflect | `any` | hook Amber, reflect Red | alpha-0.1.7 |  |
 
 #### `viewpoint.interact.LootRows`
 
@@ -1890,7 +1885,7 @@ Class that is not public (hook only). Level: Red.
 | `begin(Lviewpoint/world/Recipe;Z)V` | hook | `any` | Amber | alpha-0.1.7 |  |
 | `end()V` | hook | `any` | Amber | alpha-0.1.7 |  |
 | `object(Lzombie/iso/IsoObject;Lzombie/iso/sprite/IsoSprite;FFFI)Z` | hook, reflect | `any` | hook Amber, reflect Red | alpha-0.1.7 |  |
-| `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` | hook | `any` | Amber | alpha-0.1.7 |  |
+| `place(Lzombie/iso/IsoObject;Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` | hook | `any` | Amber | alpha-0.1.7 |  |
 
 #### `viewpoint.world.Recipe`
 

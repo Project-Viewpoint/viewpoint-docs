@@ -73,6 +73,7 @@ A model pack in the older Viewpoint model pack format is a resource pack with th
 | Change what a method of Viewpoint does | `@Hook` on a listed member | [Hooking Viewpoint](https://docs.projectviewpoint.org/patching/hooking-viewpoint.md) |
 | Replace the game's tile art | The `tiles` folder of a resource pack | [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md) |
 | Choose a model from the state of an object | A version 2 manifest | [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) |
+| Put the light of a lamp in its model | A lamp tag in the OBJ of a resource pack | [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md) |
 | Change how the whole frame looks | A Shaderpack | [Shaderpack format](https://docs.projectviewpoint.org/shaderpacks/format.md) |
 
 A page marked *planned* is not written yet. Its feature is part of API 1.0. The sidebar group **Planned** lists these pages.
@@ -1829,6 +1830,10 @@ or you hold half of it, Viewpoint **refuses your asset**:
 - the card shows the same message;
 - your other assets stay loaded.
 
+For models (`memory.packMiB`), one package can hold half of the pool or 384 MiB, the larger of the two. Before
+Viewpoint refuses one of your models, it unloads your models that the screen does not show and that the game did not ask
+for in the last 10 seconds. When the player comes back, Viewpoint loads them again.
+
 Viewpoint never removes the assets of a different package to make space for yours. See
 [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md) for the pool sizes and the estimates on the **Performance** tab.
 
@@ -2264,7 +2269,8 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
   the text before it. Viewpoint asks your provider only for the sprites that you name. Every other sprite skips the
   providers.
 - **When.** Viewpoint asks when it builds the level of the object, within the ring where it draws the models of the
-  packs. It keeps the answer until it builds that level again: when the game changes something on the level, or when
+  packs. For a lamp, Viewpoint also asks the first time that it lights the lamp, anywhere in the loaded map, if it has
+  no answer for it yet. It keeps the answer until it builds that level again: when the game changes something on the level, or when
   you call `models.changed(object)`. A change of the items in a container is not one of these changes.
 - **Answers.** A `ModelRef` from `models.model(...)`, `ModelRef.NONE` to let the next provider answer, or `ModelRef.ART`
   to show the art of the game.
@@ -2275,6 +2281,9 @@ This provider is not complete. See [When the answer changes](#when-the-answer-ch
   main thread while a level is built, and must not allocate.
 - For a model that depends only on whether the object is lit, or that is the same for all the facings of an object, a
   resource pack of version 2 is easier. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
+- **Lamps.** The [lamp tags](https://docs.projectviewpoint.org/resource-packs/lamps.md) of your model light the lamp. Viewpoint keeps your answer for the
+  light of the lamp as for its level, until you call `models.changed(object)`. It does not ask again each time that
+  the light changes.
 
 > **Caution**
 >
@@ -2376,8 +2385,8 @@ models.attach(character -> ((IsoGameCharacter) character).isZombie() ? hat : Mod
   first person, it only casts a shadow, as a hat of the game does.
 - The model comes from the manifest of your addon. It counts in `memory.packMiB`. See
   [Assets & budgets](https://docs.projectviewpoint.org/performance/assets-and-budgets.md).
-- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) are
-  for world objects only, and an attachment does not glow.
+- An attachment shows all its parts. The `[lit]` and `[!lit]` tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) and
+  the [lamp tags](https://docs.projectviewpoint.org/resource-packs/lamps.md) are for world objects only. An attachment does not glow or light.
 
 ## Cost
 
@@ -3498,7 +3507,7 @@ of a different package to make space.
 
 | Asset | Pool | Default size |
 | --- | --- | --- |
-| Models | `memory.packMiB` (video memory) | 768 MiB |
+| Models | `memory.packMiB` (video memory) | 768 MiB (384 MiB minimum) |
 | Textures | `memory.packMiB` (video memory) | 768 MiB, together with models |
 | Sounds | `memory.soundMiB` | 128 MiB |
 | Data files (16 MiB maximum each) | `memory.addonDataMiB` (memory) | 64 MiB |
@@ -3724,7 +3733,8 @@ The model replaces the art of the sprite: the projected art, the game's own spri
 Viewpoint loads a model the first time that the game shows its sprite. When two packs put a model on the same sprite,
 the pack nearer the top of the Active column wins.
 
-A model can change its parts when its object is lit. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md).
+A model can change its parts when its object is lit. See [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md). A model can
+also hold the light of its lamp. See [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md).
 
 Each material of the MTL uses the PNG of its `map_Kd` line. When the materials of a model use more than one PNG,
 Viewpoint puts these PNGs together on one texture as it loads the model. Together, they must fit in 2056 × 2056
@@ -3836,6 +3846,8 @@ map_Kd lamp.png
 Blender writes `Ke` when the material has an emission colour. Use a glowing material only on a `[lit]` part, or the
 part glows in all the states.
 
+A glow does not light the objects near it. To put the light of a lamp in its model, see [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md).
+
 > **Note**
 >
 > Each material uses the texture of its own `map_Kd`. The two copies of a part can use different materials, with
@@ -3900,6 +3912,125 @@ ignores `bind.<sprite>[lit]=` and names the line in the log.
 > needs a Viewpoint that supports it. An older Viewpoint ignores its group lines.
 
 For a model that needs code, see [Model providers](https://docs.projectviewpoint.org/api/model-providers.md).
+
+---
+
+# Lamps
+
+> Put the light of a lamp in its model. Tag a part of the model as the lamp, and give its shape, its colour, its strength and its direction.
+
+A lamp of the game has a light. The sprite of the lamp gives the colour and the radius of the light, and Viewpoint
+puts the light at a position from the type of the lamp. You can put the light **in your model**. Then the light comes
+from the part that you make: the bulb, the lens or the panel.
+
+## The lamp tag
+
+Put a lamp tag in the name of an object (`o`) or a group (`g`) of your OBJ file, as the tags of
+[Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md). The part with the tag is the lamp.
+
+```text title="street_light.obj"
+mtllib street_light.mtl
+o Pole
+usemtl metal
+f ...
+o Lens[lit][lamp,s,2100K,16000lm,cone=70]
+usemtl glass_on
+f ...
+```
+
+A lamp tag is `[lamp]`, or `[lamp,` and a list of items, then `]`. Use commas between the items. The items can be in
+any sequence. Viewpoint knows each item from its form:
+
+| Item | Example | Meaning | If you do not write it |
+| --- | --- | --- | --- |
+| Shape | `p`, `s` or `r` | `p`: a point light, in all directions. `s`: a spot light, in a cone. `r`: a panel, which lights only its front. | `p` |
+| Colour | `2700K` or `#FFB46B` | A temperature in kelvin, or an sRGB colour. Viewpoint uses only the hue. The strength sets the brightness. | The colour of the lamp in the game |
+| Strength | `800lm`, `800` or `9000cd` | Lumens (`lm`, or a number with no unit), or candelas (`cd`: the brightness at the centre of the beam). | The strength of the lamp in the game |
+| `reach=` | `reach=6` | How far the light goes, in squares. The maximum is 20. | From the strength |
+| `cone=` | `cone=70` | A spot only: the full angle of the beam, in degrees. The maximum is 179. | 60 |
+| `soft=` | `soft=10` | A spot only: the width of the soft edge of the beam, in degrees. The maximum is half of the cone. | A third of half the cone |
+| `tilt=` | `tilt=30` | A spot or a panel only: the angle from straight down, in degrees, towards the front of the model. | From the faces of the part |
+| `turn=` | `turn=90` | A spot or a panel only: then the turn, in degrees, as a bind turns (from east towards south). | 0 |
+| `shadow=` | `shadow=no` | `no`: the lamp casts no shadow. | `yes` |
+| `draw=` | `draw=no` | `no`: Viewpoint does not show the part. The part only marks the position of the lamp. | `yes` |
+
+```text title="Examples"
+o Glass[lit][lamp]                         the light of the game, at the glass of a porch lamp
+o Bulb[lit][lamp,p,2700K,800lm,reach=6]    a desk lamp
+o Lens[lamp,s,2100K,16000lm,cone=70]       a sodium street light that shines down
+o Panel[lamp,r,#F2F6FF,2500lm]             a light box that lights its front
+o Marker[lamp,p,3000K,draw=no]             a light inside a lamp shade: the marker does not show
+```
+
+- The tag can be anywhere in the name. `Bulb[lamp,p].001` is correct.
+- Do not use spaces in the tag. Some exporters change a space to `_`.
+- The tag of a group (`g`) is more important than the tag of its object (`o`).
+- A part can have the tags of [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md) too. `[lit]` shows the part only when the
+  lamp is on. The light of the lamp is on only when the lamp is on, with or without `[lit]`.
+
+## Position and direction
+
+- The lamp is at the centre of its part.
+- A spot or a panel points in the direction that the faces of its part point. A flat lens that faces down shines down.
+  A round bulb has no one direction: a spot of a round bulb shines straight down. Use `tilt=` and `turn=` to set the
+  direction.
+- Make your model to face south, as for [Group binds](https://docs.projectviewpoint.org/resource-packs/model-states.md#group-binds). Then `tilt=90` points
+  to the front of the object.
+- The bind moves the lamp with the model: its offset, its turn and its scale. A group bind turns the lamp for each
+  facing.
+- A model has a maximum of 4 lamps. Viewpoint ignores the fifth lamp and writes its name in the log.
+- All the lamps of a model share one shadow, from the centre between them.
+
+## Strength
+
+The box of a bulb gives its lumens. Some values:
+
+| Lamp | Lumens |
+| --- | --- |
+| A candle | 12 |
+| A 40 W bulb | 450 |
+| A 60 W bulb | 800 |
+| A 100 W bulb | 1600 |
+| A fluorescent tube | 2500 |
+| A sodium street light | 16000 |
+
+A lamp lights as far as its light stays brighter than 1 lux. A square is 1.22 m. Thus a lamp of 800 lumens lights
+6.5 squares, and a lamp of the game with a radius of 8 is a lamp of approximately 1200 lumens. A spot puts all its
+lumens in its cone: a narrow spot lights farther than a wide spot. A light goes 20 squares at most.
+If you write `reach=`, the light goes that far.
+
+> **Note**
+>
+> In Viewpoint 0.1.7 the Default look uses the strength to set how far the light goes. The brightness near the lamp is
+> the brightness of the lamps of the game. A look that uses real units of light can use the strength as it is.
+
+## When the lamp lights
+
+- The game turns the lamp on and off: its switch, the power, a bulb that breaks. A street light is on only at night.
+- When the player puts a bulb of a different colour in the lamp, the light has the colour of that bulb.
+- A model with a lamp tag gives all the light of its lamp. Viewpoint does not show the light of the game for it.
+- A model with no lamp tag, or with only tags that Viewpoint cannot read, keeps the light of the game.
+- The tag works only on a lamp of the game: a lamp, a street light, a light that a switch turns on. On a different
+  object, Viewpoint ignores the tag. Fires, fireplaces and televisions keep the light of the game.
+- When the player turns off the models of resource packs, the lamps have the light of the game.
+- When a [model provider](https://docs.projectviewpoint.org/api/model-providers.md) of an addon chooses the model of a lamp, the lamp tags of that model
+  light the lamp.
+- Far from the player, past the part of the map that the game has loaded, the lamps have the light of the game.
+- The light of the lamp changes only the picture. The light that the game uses for play does not change.
+
+## Errors
+
+Viewpoint reads the lamp tags of a model the first time that the game loads a lamp with that model. It writes what
+is wrong in the log, with the name of the part (`model pack lamps:`).
+
+- A tag that Viewpoint cannot read gives no lamp. For example: `spot` in place of `s`, two colours, or `cone=200`.
+- Viewpoint ignores an option that it does not know, and writes it in the log. Thus a pack for a newer Viewpoint
+  works in this version.
+
+> **Caution**
+>
+> A Viewpoint before 0.1.7 does not know the lamp tag. It shows all the parts, also a part with `draw=no`, and the lamp
+> has the light of the game.
 
 ---
 
@@ -4399,7 +4530,7 @@ pass.dof.when=depthOfField
 | Key | Meaning |
 | --- | --- |
 | `passes` | The ids of your passes. Within a stage they run in this order. |
-| `pass.<id>.stage` | `translucent`, `composite` or `final`. Required. |
+| `pass.<id>.stage` | `translucent`, `composite`, `final` or `screen`. Required. |
 | `pass.<id>.fragment` | Its fragment shader: a path in `shaders/`. Required. |
 | `pass.<id>.vertex` | Its vertex shader. The default is `screen.vert`: one triangle over the screen, with `vUv` from 0 to 1. |
 | `pass.<id>.inputs` | What it reads, with spaces between the names. Use at most 12. |
@@ -4421,6 +4552,7 @@ pass.dof.when=depthOfField
 | `translucent` | After the glass. Before the bounce light, the weather and the air. | The lit HDR image, with the depth of the scene drawn. |
 | `composite` | After the air and the bloom. Before `post.frag`. | The HDR image that `post.frag` is about to read. |
 | `final` | After anti-aliasing. Before the rain over the image. | The finished image, after the tone curve. |
+| `screen` | Over the screen, after the upscaler. Before the crosshair and the interface. | The screen. |
 
 - What a pass writes at `translucent` or `composite` goes into the history of anti-aliasing. This is what reflections
   want, because anti-aliasing smooths their noise.
@@ -4428,6 +4560,9 @@ pass.dof.when=depthOfField
 - At `final`, the image can be at the size of the screen while the other inputs are at the size of the frame. Read the
   other inputs by their UV.
 - Without a pass at `final`, the frame is drawn as without passes. A pack with no passes pays nothing.
+- A pass at `screen` has no inputs, and it writes `color`. What it writes is a multiplier: the screen is multiplied by
+  it, as for a vignette. The upscalers and frame generation do not see this pass as part of the picture. They keep it
+  still, as they keep the interface. Use `uResolution` for the size of the screen.
 
 ## The inputs
 
@@ -5221,9 +5356,18 @@ No member is deprecated.
 | `viewpoint.FP` | `cursorBeforePause` | alpha-0.1.7 | `FP.cursorBefore` |
 | `viewpoint.FP` | `snapshot(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;Lzombie/characters/IsoGameCharacter;I)V` | alpha-0.1.7 | `ViewListener.onFrame` |
 | `viewpoint.SceneDrawer` | `drawCrosshair()V` | alpha-0.1.7 | `ReticleProvider` |
+| `viewpoint.camera.CameraCapture` | `squares(Lviewpoint/core/CameraSquares;Lzombie/iso/IsoCell;DDIF)V` | alpha-0.1.7 | `CameraCapture.squares` |
+| `viewpoint.camera.ThirdPerson` | `capture(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;Lzombie/characters/IsoGameCharacter;F)V` | alpha-0.1.7 | `ThirdPerson.capture` |
+| `viewpoint.gunplay.Gunplay` | `candidates(Lzombie/characters/IsoGameCharacter;Lzombie/inventory/types/HandWeapon;Lzombie/util/list/PZArrayList;)V` | alpha-0.1.7 | `Gunplay.candidates` |
+| `viewpoint.gunplay.Gunplay` | `gather(Lzombie/characters/IsoGameCharacter;Lzombie/network/fields/hit/AttackVars;Lzombie/util/list/PZArrayList;)V` | alpha-0.1.7 | `Gunplay.gather` |
 | `viewpoint.input.Controls` | `eye` | alpha-0.1.7 | `FrameView` |
 | `viewpoint.input.ThirdPerson` | `capture` | alpha-0.1.7 | `CameraLayer` |
 | `viewpoint.interact.LootMenu` | `enabled` | alpha-0.1.7 | None with the same shape. |
+| `viewpoint.interact.LootMenu` | `locked()Z` | alpha-0.1.7 | None with the same shape. |
+| `viewpoint.interact.LootPanel` | `FONT` | alpha-0.1.7 | `MenuStyle.FONT` |
+| `viewpoint.interact.LootPanel` | `hint` | alpha-0.1.7 | None with the same shape. |
+| `viewpoint.interact.LootPanel` | `hint(Lviewpoint/interact/LootRows;)Ljava/lang/String;` | alpha-0.1.7 | `LootKeys.of` |
+| `viewpoint.interact.LootPanel` | `rounded(IIIIIFFFF)V` | alpha-0.1.7 | `PanelShapes.rounded` |
 | `viewpoint.models.RigidCapture` | `item(Lviewpoint/core/Frame;Lzombie/core/skinnedmodel/model/WorldItemModelDrawer;Lzombie/iso/IsoGridSquare;Lzombie/inventory/InventoryItem;)Z` | alpha-0.1.7 | `RigidCapture.item` |
 | `viewpoint.packs.ModelPacks` | `switches` | alpha-0.1.7 | None with the same shape. |
 | `viewpoint.platform.GlProgram` | `link(Lviewpoint/platform/ShaderPacks$Active;)Lviewpoint/platform/ProgramLinker$Linked;` | alpha-0.1.7 | `GlProgram.link` |
@@ -5235,7 +5379,8 @@ No member is deprecated.
 | `viewpoint.world.ChunkCache` | `update(Lviewpoint/core/Frame;Lzombie/iso/IsoCell;I)V` | alpha-0.1.7 | `ChunkCache.update` |
 | `viewpoint.world.Facades` | `facadeTile(Lzombie/iso/IsoGridSquare;ZI)Lzombie/iso/sprite/IsoSprite;` | alpha-0.1.7 | None with the same shape. |
 | `viewpoint.world.Facades` | `roomTile(Lzombie/iso/RoomDef;Lzombie/iso/areas/IsoRoom;ZI)Lzombie/iso/sprite/IsoSprite;` | alpha-0.1.7 | `Facades.roomTile` |
-| `viewpoint.world.PackGather` | `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFI)V` | alpha-0.1.7 | `viewpoint.world.PackGather.place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` |
+| `viewpoint.world.PackGather` | `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFI)V` | alpha-0.1.7 | `viewpoint.world.PackGather.place(Lzombie/iso/IsoObject;Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` |
+| `viewpoint.world.PackGather` | `place(Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` | alpha-0.1.7 | `viewpoint.world.PackGather.place(Lzombie/iso/IsoObject;Lviewpoint/packs/PackBind;Lzombie/iso/sprite/IsoSprite;FFFII)Lviewpoint/world/Recipe$Op;` |
 | `viewpoint.world.Recipe` | `model(Lviewpoint/world/Recipe;Lviewpoint/packs/PackBind;ZFFFIII)V` | alpha-0.1.7 | `viewpoint.world.Recipe.model(Lviewpoint/world/Recipe;Lviewpoint/packs/PackBind;ZFFFIIII)Lviewpoint/world/Recipe$Op;` |
 | `viewpoint.world.WallMesher` | `back(Lzombie/iso/sprite/IsoSprite;Lviewpoint/world/TileMesh;Lzombie/core/textures/Texture;Lzombie/iso/IsoGridSquare;Lzombie/iso/IsoGridSquare;Lzombie/iso/RoomDef;ZIZFFFFF[Z)V` | alpha-0.1.7 | `WallMesher.back` |
 | `viewpoint.world.WallMesher` | `wall(Lzombie/iso/sprite/IsoSprite;Lviewpoint/world/TileMesh;Lzombie/core/textures/Texture;Lzombie/iso/IsoGridSquare;FFFZ[Z)Z` | alpha-0.1.7 | `WallMesher.wall` |

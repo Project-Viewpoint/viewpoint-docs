@@ -59,6 +59,7 @@ or a method exists, do not assume that it does. The pages in the group Planned d
 
 - [Format](https://docs.projectviewpoint.org/resource-packs/format.md): The folders of a resource pack, the version 2 model manifest, and the limits of the files.
 - [Model states](https://docs.projectviewpoint.org/resource-packs/model-states.md): One model for all the states of an object. Name the parts that change when the object is lit, make a part glow, and bind all the facings of an object with one line.
+- [Lamps](https://docs.projectviewpoint.org/resource-packs/lamps.md): Put the light of a lamp in its model. Tag a part of the model as the lamp, and give its shape, its colour, its strength and its direction.
 - [Tiles](https://docs.projectviewpoint.org/resource-packs/tiles.md): Replace the game's tile art with your own, with normal and specular textures, as one PNG for each tile.
 - [Legacy model packs](https://docs.projectviewpoint.org/resource-packs/legacy-model-packs.md): How older model packs load, and how to change one into a resource pack.
 - [Migrate to version 2](https://docs.projectviewpoint.org/resource-packs/migrating.md): Change an older model pack into a resource pack, replace the lines of each facing with one group bind, and join the models of the states of an object into one model.
